@@ -1,0 +1,21 @@
+en:
+  hello: "よこそ 映画レビューシステム"
+  app_title: "映画レビューシステム"
+  team:
+    name: "ANBU チーム"
+    email: "anbu.team@example.com"
+    phone: " (123) 456-7890"
+    address: "ハノイ工科大学"
+  log-in: "ログイン"
+  sign-up: "サインアップ"
+  sign-up-now: "今すぐサインアップ!"
+  pages:
+    home: "ホーム"
+  layouts:
+    footer:
+      about_us: "About us"
+      blog: "Blog"
+      faq: "Faq's"
+      contact_us: "Contact us"
+      sitemap: "Site Map"
+      copyright: "All rights reserved"
