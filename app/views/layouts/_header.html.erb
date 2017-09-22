@@ -1,0 +1,24 @@
+<header class="navbar navbar-fixed-top navbar-inverse header">
+  <div class="container">
+    <div class="logo">
+      <%= link_to t("app_title"), root_path %>
+    </div>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <div class="home">
+            <%= link_to t("pages.home"), root_path %>
+          </div>
+        </li>
+        <li>
+          <div class="sign-in">
+            <%= link_to "#", class: "btn btn-primary" do %>
+              <i class="fa fa-sign-in" aria-hidden="true"></i>
+              <%= t "log-in" %>
+            <% end %>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
