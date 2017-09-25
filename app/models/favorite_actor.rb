@@ -1,0 +1,2 @@
+class FavoriteActor < ApplicationRecord
+end

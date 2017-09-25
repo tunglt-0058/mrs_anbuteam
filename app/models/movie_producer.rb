@@ -1,0 +1,2 @@
+class MovieProducer < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class AverageCache < ApplicationRecord
+end
