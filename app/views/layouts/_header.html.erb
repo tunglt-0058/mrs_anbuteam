@@ -3,6 +3,21 @@
     <div class="logo">
       <%= link_to t("app_title"), root_path %>
     </div>
+    <% if user_signed_in? %>
+      <div class="header-search col-md-4">
+        <%= form_tag "#", method: :get do %>
+          <span>
+            <%= text_field_tag :search, params[:search],
+              placeholder: t("search"), class: "form-control search" %>
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </span>
+        <% end %>
+        <span class="search-results">
+          <ul class="results">
+          </ul>
+        </span>
+      </div>
+    <% end %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -10,14 +25,22 @@
             <%= link_to t("pages.home"), root_path %>
           </div>
         </li>
-        <li>
-          <div class="sign-in">
-            <%= link_to "#", class: "btn btn-primary" do %>
-              <i class="fa fa-sign-in" aria-hidden="true"></i>
-              <%= t "log-in" %>
-            <% end %>
-          </div>
-        </li>
+        <% if user_signed_in? %>
+          <li>
+            <div class="home">
+              <%= link_to t("log-out"), destroy_user_session_path, method: :delete %>
+            </div>
+          </li>
+        <% else %>
+          <li>
+            <div class="sign-in">
+              <%= link_to new_user_session_path, class: "btn btn-primary" do %>
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                <%= t "log-in" %>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
       </ul>
     </nav>
   </div>

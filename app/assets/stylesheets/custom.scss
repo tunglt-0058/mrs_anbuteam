@@ -11,6 +11,8 @@ $blue1: #00f;
 $mediumblue1: #036;
 
 body {
+  background-color: $gray-medium-light;
+  font: arial;
   padding-top: 60px;
 
 }
@@ -59,15 +61,81 @@ p {
 
 }
 
+.show-list-groups {
+  margin-left: -20px;
+  padding-left: 0;
+  padding-top: 20px;
+
+  h3 {
+    color: $gray-light;
+    font-size: 1.2em;
+    font-weight: bolder;
+
+  }
+}
+
+.show-follow-images {
+  margin-top: -20px;
+  padding-bottom: 35px;
+
+  .new-image {
+    background-color: $white;
+    border: 1px solid $gray-medium-light;
+    margin-bottom: 10px;
+    margin-right: 50px;
+    margin-top: 30px;
+    padding: 10px;
+
+    img {
+      float: left;
+
+    }
+
+    .description-field {
+      border-bottom: 1px solid $gray-medium-light;
+
+    }
+
+    textarea {
+      border: 0;
+      height: 100px;
+      outline: none;
+      padding: 10px;
+      resize: none;
+      width: 90%;
+
+    }
+
+    .image-file {
+      margin-left: 50px;
+      margin-top: 20px;
+
+    }
+
+    .actions {
+      padding-left: 550px;
+      margin-left: -75px;
+
+    }
+  }
+
+  h3 {
+    color: $gray-light;
+    font-size: 1.2em;
+    font-weight: bolder;
+
+  }
+}
+
 .show-static-page {
 
   .center {
     background-image: url('background1.jpg');
+    background-size: 100% 100%;
+    height: 100vh;
     margin-top: -10px;
     text-align: center;
     width: 100%;
-    background-size: 100% 100%;
-    height: 100vh;
 
     h1 {
       color: $white;
@@ -136,20 +204,6 @@ p {
 
 }
 
-footer {
-  border-top: 1px solid $gray-medium-light;
-  margin-top: 45px;
-  padding-top: 5px;
-
-  a {
-    color: $red1;
-
-    &:hover {
-      color: $yellow1;
-
-    }
-  }
-}
 
 .header {
   background-color: $mediumblue1;
@@ -157,12 +211,8 @@ footer {
   .home > a {
     color: $yellow1;
     float: left;
-    font-size: 1.1em;
     font-weight: bold;
-    margin-right: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 15px;
+    padding: 15px;
 
     &:hover {
       color: $white;
@@ -188,13 +238,35 @@ footer {
     font-size: 1.7em;
     font-weight: bold;
     letter-spacing: -1px;
-    margin-right: 10px;
-    padding-top: 9px;
+    padding: 9px;
+    padding-left: 1px;
+    padding-right: 15px;
     text-transform: uppercase;
 
     &:hover {
       color: $white;
       text-decoration: none;
+
+    }
+  }
+
+  .header-search {
+    height: 40px;
+    padding: 7px;
+    padding-top: 9px;
+    position: relative;
+    width: 350px;
+
+    .fa-search {
+      font-size: 17px;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+
+    }
+
+    input {
+      padding-right: 30px;
 
     }
   }
@@ -208,6 +280,67 @@ footer {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 9px;
+
+  }
+
+  .dropdown-toggle {
+    background-color: transparent !important;
+    color: $yellow1 !important;
+    font-weight: bold;
+
+    &:hover {
+      color: $white !important;
+
+    }
+  }
+}
+
+.signup {
+  background-image: url('background1.jpg');
+  margin-top: -10px;
+  text-align: center;
+  width: 100%;
+  background-size: 100% 100%;
+  height: 100vh;
+
+  .mainbox {
+    margin-top: 40px;
+
+  }
+}
+
+.login {
+  background-image: url('background1.jpg');
+  margin-top: -10px;
+  text-align: center;
+  width: 100%;
+  background-size: 100% 100%;
+  height: 100vh;
+
+  .mainbox {
+    margin-top: 40px;
+
+  }
+
+  .input-group {
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+  }
+
+  .checkbox {
+    margin-left: 20px;
+
+  }
+}
+
+.user-user_picture-small {
+  font-size: 1.2em;
+  font-weight: bold;
+
+  img {
+    height: 40px;
+    width: 40px;
 
   }
 }

@@ -1,10 +1,37 @@
 <% provide :title, t("pages.home") %>
-<div class="show-static-page">
-  <div class="center jumbotron">
-    <h1><%= t "hello" %></h1>
-    <%= link_to "#", class: "btn btn-lg btn-primary" do %>
-      <i class="fa fa-user-plus" aria-hidden="true"></i>
-      <%= t "sign-up-now" %>
-    <% end %>
+<% if user_signed_in? %>
+  <div class="container">
+    <div class="col-md-4 show-list-groups">
+      <div class="user-user_picture-small">
+        <%= link_to image_tag("profile.jpg"), "#" %>
+        <%= link_to current_user.name, "#" %>
+      </div>
+      <h3><%= t "groups" %></h3>
+      <div class="list-groups"></div>
+    </div>
+    <div class="col-md-8 show-follow-images">
+      <div class="new-image">
+        <div class="description-field user-user_picture-small">
+          <%= link_to image_tag("profile.jpg"), "#" %>
+          <%= text_area :description, class: "form-control image-description" %>
+        </div>
+        <div class="image-file">
+          <%= file_field :image, class: "image-file" %>
+        </div>
+        <div class="actions">
+          <%= submit_tag t("upload-review"), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+<% else %>
+  <div class="show-static-page">
+    <div class="center jumbotron">
+      <h1><%= t "hello" %></h1>
+      <%= link_to new_user_registration_path, class: "btn btn-lg btn-primary" do %>
+        <i class="fa fa-user-plus" aria-hidden="true"></i>
+        <%= t "sign-up-now" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

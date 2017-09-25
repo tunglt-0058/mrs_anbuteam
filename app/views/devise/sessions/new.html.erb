@@ -1,0 +1,57 @@
+<div class="container login">
+  <div class="mainbox col-md-6 col-md-offset-3">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title"><h1><%= t "log-in" %></h1></div>
+      </div>
+      <div class="panel-body" >
+        <%= form_for resource, as: resource_name,
+          url: session_path(resource_name),
+          html: {class: "form-horizontal", role: "form"} do |f| %>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-user"></i>
+            </span>
+            <%= f.email_field :email, class: "form-control",
+              placeholder: t("login.email") %>
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-lock"></i>
+            </span>
+            <%= f.password_field :password, class: "form-control",
+              placeholder: t("login.password") %>
+          </div>
+
+          <div class="input-group">
+            <%= f.label :remember_me, class: "checkbox" do %>
+              <%= f.check_box :remember_me, class: "_check_box" %>
+              <span><%= t "login.remember-me" %></span>
+            <% end %>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-12 controls">
+              <%= f.submit t("log-in"), class: "btn btn-primary btn-block" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12 control">
+              <div>
+                <% if devise_mapping.registerable? && controller_name != "registrations" %>
+                  <%= t "login.new-here" %>
+                  <b>
+                    <%= link_to t("sign-up-now"),
+                      new_registration_path(resource_name) %>
+                  </b>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
