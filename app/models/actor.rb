@@ -1,0 +1,2 @@
+class Actor < ApplicationRecord
+end

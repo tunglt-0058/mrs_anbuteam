@@ -1,0 +1,2 @@
+class Produce < ApplicationRecord
+end
