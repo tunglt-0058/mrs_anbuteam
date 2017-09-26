@@ -1,0 +1,49 @@
+<% if !params[:order_by]%>
+  <div class="col-lg-9 col-md-9 col-sm-9">
+    <div class="slick_slider">
+      <% @movies.each do |movie| %>
+      <div class="single_iteam">   <%= link_to (image_tag(movie.poster, alt: "poster")), movie  %>
+        <div class="slider_article">
+          <h2><%= link_to movie.name, movie, class: "slider_tittle"%></h2>
+          <p><%= truncate(movie.summary, :length => 200) %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<div class="row">
+  <div class="col-lg-9 col-md-9 col-sm-9">
+    <div class="left_content">
+      <div class="single_post_content">
+        <h2><span>Movie</span></h2>
+        <% @movies.each do |movie| %>
+          <ul class="business_catgnav  wow fadeInDown">
+            <li>
+              <figure class="bsbig_fig">
+                <a href="<%= movie %>" class="featured_img">
+                  <%= link_to (image_tag(movie.poster, alt: "poster", height: "500")), movie %>
+                  <span class="overlay"></span>
+                </a>
+                <figcaption> <%= link_to(movie.name, movie) %></figcaption>
+
+                <p><%= truncate(movie.summary, :length => 200) %></p>
+
+                <% @review = movie.reviews.last %>
+                <% if @review %>
+                  <p>Latest Review</p>
+                  <%= @review.content.scan(/\S+/)[0..100].join(' ').html_safe%>...<%= link_to("See more", @review) %>
+                <% end %>
+              </figure>
+            </li>
+            <li>
+              <hr>
+            </li>
+          </ul>
+        <% end %>
+        <%= will_paginate %>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
