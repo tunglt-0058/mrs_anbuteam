@@ -10,6 +10,7 @@ $yellow1: #ff0;
 $green1: #0f0;
 $blue1: #00f;
 $mediumblue1: #036;
+$blue2: #3B5998;
 
 body {
   background-color: $gray-medium-light;
@@ -210,7 +211,7 @@ p {
   background-color: $mediumblue1;
 
   .home > a {
-    color: $yellow1;
+    color: $white;
     float: left;
     font-weight: bold;
     padding: 15px;
@@ -223,7 +224,7 @@ p {
   }
 
   .sign-in > a {
-    color: $yellow1 !important;
+    color: $white !important;
     font-size: 1.1em;
     font-weight: bold;
 
@@ -234,7 +235,7 @@ p {
   }
 
   .logo > a {
-    color: $yellow1;
+    color: $white;
     float: left;
     font-size: 1.7em;
     font-weight: bold;
@@ -286,7 +287,7 @@ p {
 
   .dropdown-toggle {
     background-color: transparent !important;
-    color: $yellow1 !important;
+    color: $white !important;
     font-weight: bold;
 
     &:hover {
@@ -344,4 +345,30 @@ p {
     width: 40px;
 
   }
+}
+
+.btn-facebook {
+  background: $blue2;
+  border-radius: 0.5;
+  color: $white;
+  border-width: 1px;
+  border-style: solid;
+
+  a {
+    color: $white;
+  }
+}
+
+.btn-facebook:link, .btn-facebook:visited {
+  color: $white;
+}
+
+.btn-facebook:active, .btn-facebook:hover {
+  background: $blue2;
+  color: $white;
+}
+
+.btn-login {
+  margin-top: 10px;
+  width: 260px;
 }

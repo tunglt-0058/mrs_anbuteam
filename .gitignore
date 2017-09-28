@@ -24,3 +24,6 @@
 /config/secrets.yml
 /public/uploads/**
 test/
+
+# Ignore application configuration
+/config/application.yml
