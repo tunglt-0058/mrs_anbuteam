@@ -1,0 +1,104 @@
+<%= form_for(@movie) do |f| %>
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie.errors.count, "error") %>
+        prohibited this movie from being saved:</h2>
+      <ul>
+        <% @movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div align="center">
+    <div class="field">
+      <div class="row">
+        <div class="col-sm-2">
+          <%= label_tag :name, nil, class: "control-label col-sm-2" %>
+        </div>
+        <div class="col-sm-6">
+          <%= f.text_field :name , class: "form-control col-sm-10"%>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <% @genres.each do |genre| %>
+          <div class="col-md-3" align="left">
+            <%= f.check_box :genre_ids, {multiple: true}, genre.id, nil %>
+            <%= genre.name %>
+          </div>
+        <% end %>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <%= label_tag :episodes, nil, class: "control-label col-sm-2" %>
+        </div>
+        <div class="col-sm-2">
+          <%= f.number_field :episodes, class: "form-control col-sm-10" %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-2">
+          <%= label_tag :poster, nil, class: "control-label col-sm-2" %>
+        </div>
+        <div class="col-sm-6">
+          <%= f.text_field :poster , class: "form-control col-sm-10"%>
+        </div>
+      </div>
+
+      <br>
+      <div class="row">
+        <div class="col-sm-2">
+          <%= label_tag :status, nil, class: "control-label col-sm-2" %>
+        </div>
+        <div class="col-sm-6">
+          <%= f.text_field :status , class: "form-control col-sm-10"%>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-2">
+          <%= label_tag :summary, nil, class: "control-label col-sm-2" %>
+        </div>
+
+        <div class="col-sm-6">
+          <%= f.text_area :summary, size: "50x5", class: "form-control col-sm-10" %>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-6">
+          <div id="category-selected"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <%= label_tag :categories, nil, class: "control-label col-sm-2" %>
+        </div>
+        <div class="col-sm-6">
+          <p><%= text_field_tag :q, params[:q], :id =>"categories",
+            :autocomplete => :off, class: "form-control" %></p>
+          <div id="category-links" style="display: none"></div>
+          <div id="categories-result"></div>
+        </div>
+        <div class="col-sm-2" id="category-addNew">Add New</div>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
+  </div>
+
+  <% if @movie %>
+    <% @movie.categories.each do |category|%>
+      <input type="hidden" name="movie[category_ids][]" value="<%= category.id%>">
+    <% end%>
+  <% end%>
+<% end %>
