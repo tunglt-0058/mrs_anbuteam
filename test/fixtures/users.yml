@@ -4,7 +4,7 @@ one:
   name: MyString
   email: MyString
   password: MyString
-  user_picture: MyString
+  avatar: MyString
   cover: MyString
   role: user
 
@@ -12,6 +12,6 @@ two:
   name: MyString
   email: MyString
   password: MyString
-  user_picture: MyString
+  avatar: MyString
   cover: MyString
   role: user

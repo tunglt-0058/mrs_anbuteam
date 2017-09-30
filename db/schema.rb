@@ -163,10 +163,9 @@ ActiveRecord::Schema.define(version: 20170925102140) do
     t.string "name"
     t.string "email"
     t.string "password"
-    t.string "user_picture"
-    t.date "date_of_birth"
-    t.string "role"
-    t.string "sex"
+    t.string "avatar"
+    t.string "role", default: "Regular"
+    t.string "sex", default: "Male"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "encrypted_password", default: "", null: false

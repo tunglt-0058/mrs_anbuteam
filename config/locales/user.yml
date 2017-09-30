@@ -1,0 +1,22 @@
+en:
+  user:
+    edit:
+      not_same: " and current password must be different."
+      password: "パスワード"
+      current_password: "現在のパスワード"
+      password_confirmation: "パスワード確認"
+      not_found: "ユーザーが見つかりません"
+      menu_item:
+        information: "情報"
+        reviews: "レビュー"
+        favorite_movies: "好きな映画"
+        favorite_actors: "好きな俳優"
+      profile:
+        title: "プロフィール"
+        info: "個人情報"
+        email: "メール"
+        name: "名前"
+        role: "役割"
+        sex: "性別"
+        change_pass: "パスワード変更"
+        repeat_pass: "パスワードを繰り返します"

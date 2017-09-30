@@ -1,0 +1,37 @@
+<div class="col-lg-4">
+  <div data-provides="fileinput" class="fileinput fileinput-new">
+    <div data-trigger="fileinput" class="fileinput-preview thumbnail
+      img-circle img-responsive">
+      <%= image_tag user.avatar.thumb.url, id: "avatar" %>
+      <div class="action-button">
+        <%= form_for user, url: user_registration_path, multipart: true,
+          remote: true, method: :patch do |f| %>
+          <% if user.errors.any? %>
+            <% user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          <% end %>
+          <span class="btn btn-default btn-raised btn-file ripple-effect">
+            <span class="fileinput-new">
+              <i class="material-icons md-light pmd-xs">add</i></span>
+            <span class="fileinput-exists">
+              <i class="material-icons md-light pmd-xs">mode_edit</i></span>
+            <%= f.file_field :avatar, class: "upload-avatar" %>
+          </span>
+        <% end %>
+        <a data-dismiss="fileinput" class="btn btn-default btn-raised btn-file
+          ripple-effect fileinput-exists" href="javascript:void(0);">
+          <i class="material-icons md-light pmd-xs">close</i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="menu-portfolio-item">
+    <ul class="portfolio">
+      <li class="filter active"><%= t "user.edit.menu_item.information" %></li>
+      <li class="filter"><%= t "user.edit.menu_item.reviews" %></li>
+      <li class="filter"><%= t "user.edit.menu_item.favorite_movies" %></li>
+      <li class="filter"><%= t "user.edit.menu_item.favorite_actors" %></li>
+    </ul>
+  </div>
+</div>

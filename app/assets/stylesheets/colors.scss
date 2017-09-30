@@ -37,7 +37,7 @@ $frame-inverse: linear-gradient(120deg, $frame-end 0%, $frame-start 100%);
 $relate-book-start: #f3e7e9;
 $relate-book-mid: #e3eeff;
 $relate-book: linear-gradient(to top, $relate-book-start 0%,
-  $relate-book-mid 99%, $relate-book-mid 100%);
+$relate-book-mid 99%, $relate-book-mid 100%);
 $send-req-start: #7de2fc;
 $send-req-end: #b9b6e5;
 $send-req: linear-gradient(35deg, $send-req-start 0%, $send-req-end 100%);
@@ -121,6 +121,15 @@ $approved: #5cb85c;
 $canceled: #f0ad4e;
 $actived-child: #60c2e1;
 $rejected: #d9534f;
+$color-desert-storm-approx: #f8f8f8;
+$color-pesto-approx: #8a6d3b;
+$color-champagne-approx: #faebcc;
+$color-apple-blossom-approx: #a94442;
+$color-oyster-pink-approx: #ebccd1;
+$color-killarney-approx: #3c763d;
+$color-beryl-green-approx: #d6e9c6;
+$pink: #f7639a;
+$menu-profile-color: #4c9cef;
 
 //fonts
 $font-open-sans: Open Sans;
