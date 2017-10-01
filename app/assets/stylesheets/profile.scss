@@ -1,0 +1,371 @@
+@import "colors";
+
+.fileinput {
+  display: inline-block;
+  margin-bottom: 9px;
+  margin-right: 10px;
+  overflow: hidden;
+  transition: .4s ease-in-out;
+  width: 200px;
+
+  .form-control {
+    cursor: text;
+    display: inline-block;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+    padding-top: 7px;
+    vertical-align: middle;
+  }
+
+  .thumbnail {
+    background-color: $color-desert-storm-approx;
+    display: inline-block;
+    height: 200px;
+    margin-bottom: 5px;
+    min-height: 50px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 200px;
+
+    > img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .btn {
+    vertical-align: middle;
+
+    &.btn-default {
+      background-color: $black;
+    }
+  }
+
+  &.input-group {
+    display: table;
+
+    > * {
+      position: relative;
+      z-index: 2;
+  }
+
+    > .btn-file {
+      z-index: 1;
+  }
+  }
+
+  &:hover .action-button {
+    opacity: 1;
+  }
+}
+
+.fileinput-new {
+  .fileinput-exists {
+    display: none;
+  }
+
+  &.input-group .btn-file {
+    border-radius: 0 4px 4px 0;
+
+    &.btn-xs {
+      border-radius: 0 3px 3px 0;
+    }
+
+    &.btn-sm {
+      border-radius: 0 3px 3px 0;
+  }
+
+    &.btn-lg {
+      border-radius: 0 6px 6px 0;
+  }
+}
+
+  .input-group .btn-file {
+    border-radius: 0 4px 4px 0;
+
+    &.btn-xs {
+      border-radius: 0 3px 3px 0;
+    }
+
+    &.btn-sm {
+      border-radius: 0 3px 3px 0;
+    }
+
+    &.btn-lg {
+      border-radius: 0 6px 6px 0;
+    }
+  }
+}
+
+.fileinput-filename {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.form-group {
+  &.has-warning .fileinput {
+    .fileinput-preview {
+      color: $color-pesto-approx;
+    }
+
+    .thumbnail {
+      border-color: $color-champagne-approx;
+    }
+  }
+
+  &.has-error .fileinput {
+    .fileinput-preview {
+      color: $color-apple-blossom-approx;
+    }
+
+    .thumbnail {
+      border-color: $color-oyster-pink-approx;
+    }
+  }
+
+  &.has-success .fileinput {
+    .fileinput-preview {
+      color: $color-killarney-approx;
+    }
+
+    .thumbnail {
+      border-color: $color-beryl-green-approx;
+    }
+  }
+}
+
+.fileupload {
+  .uneditable-input {
+    display: inline-block;
+    height: 28px !important;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .thumbnail {
+    display: inline-block;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+
+    > img {
+      display: inline-block;
+      max-height: 100%;
+      vertical-align: middle;
+    }
+  }
+
+  .btn {
+    background-color: $white !important;
+    font-size: 15px;
+    min-width: 36px;
+    padding: 5px 10px;
+    vertical-align: middle;
+  }
+
+  .fileupload-preview {
+    vertical-align: middle;
+  }
+
+  .close.fileupload-exists {
+    vertical-align: middle;
+  }
+}
+
+.fileupload-new {
+  .fileupload-exists {
+    display: none;
+  }
+
+  .input-append .btn-file {
+    border-radius: 0 3px 3px 0;
+  }
+}
+
+.action-button {
+  bottom: 15px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  transition: .4s ease-in-out;
+  width: 100%;
+}
+
+.prousername {
+  margin-bottom: 20px;
+}
+
+.pmd-card {
+  margin-bottom: 0;
+}
+
+.component-section {
+  margin-bottom: 20px;
+  margin-top: 30px;
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.component-box {
+  margin-bottom: 20px;
+
+  .pmd-card.pmd-card-inverse h3 {
+    color: $white;
+    line-height: 1.4;
+    text-transform: capitalize;
+  }
+
+  .pmd-card-body > .btn {
+    margin: 5px 2px;
+  }
+}
+
+.component-desc {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+@media(max-width: 767px) {
+  .component-section {
+    margin-top: 0;
+  }
+}
+
+.table-title-top-action {
+  margin-top: 20px;
+
+  .btn {
+    margin-left: 20px;
+  }
+}
+
+.pmd-table-row-action {
+  width: 156px;
+
+  a {
+    margin: -8px 0;
+  }
+}
+
+.direct-expand {
+  i::before {
+    content: "\e148";
+    font-family: $font-material;
+  }
+
+  &.child-table-collapse i::before {
+    content: "\e15D";
+  }
+}
+
+.login-card-section {
+  max-width: 400px;
+}
+
+.shadow-demo {
+  margin-bottom: 30px;
+  min-height: 100px;
+}
+
+.fileinput-exists .fileinput-new {
+  display: none;
+}
+
+.fileinput-inline .fileinput-controls {
+  display: inline;
+}
+
+.form-control .fileinput-filename {
+  vertical-align: bottom;
+}
+
+.input-group-addon:not(:first-child) {
+  border-left: 0;
+}
+
+.btn.btn-file {
+  min-width: 36px;
+  overflow: hidden;
+  padding: 5px 5px 4px;
+  position: relative;
+  vertical-align: middle;
+
+  .dic {
+    font-size: 20px;
+  }
+
+  .upload-avatar {
+    cursor: pointer;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.fileupload-exists .fileupload-new {
+  display: none;
+}
+
+.fileupload-inline .fileupload-controls {
+  display: inline;
+}
+
+.btn-file .ripple-wrapper {
+  display: none;
+}
+
+.profile-edit .pmd-textfield .form-control-static {
+  padding-top: 4px;
+}
+
+.floating-action-custom .pmd-floating-action {
+  position: relative;
+}
+
+.range-slider-container .pmd-card {
+  min-height: 90px;
+}
+
+.menu-portfolio-item {
+  width: 200px;
+}
+
+.portfolio {
+  background-color: $menu-profile-color;
+  list-style: none;
+  padding: 30px 10px;
+  text-align: center;
+}
+
+.portfolio li {
+  border: 0;
+  color: $white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 2px 8px;
+  padding: 8px 12px;
+  text-transform: capitalize;
+}
+
+.portfolio li:hover {
+  border: 0;
+  color: $black;
+}
+
+.portfolio .active {
+  background-color: $pink;
+  border-radius: 20px;
+  box-shadow: 0 1px 2px 0 $menu-profile-box-shadow-background;
+  color: $white;
+  padding: 5px 20px;
+}

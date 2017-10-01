@@ -20,6 +20,8 @@ gem "config"
 gem "devise"
 gem "will_paginate", "3.1.0"
 gem "ratyrate"
+gem "carrierwave", "~> 1.0"
+gem "mini_magick", "3.8.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

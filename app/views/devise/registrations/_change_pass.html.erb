@@ -1,0 +1,34 @@
+<h3 class="heading"><%= t "user.edit.profile.change_pass" %></h3>
+<div class="row">
+  <%= form_for user, html: {class: "form-horizontal"}, url:
+    user_registration_path do |f| %>
+    <fieldset>
+    <div class="form-group pmd-textfield">
+      <%= f.label t("user.edit.current_password"), class: "control-label col-sm-3"%>
+      <div class="col-sm-9">
+        <%= f.password_field :current_password, class: "form-control empty", autocomplete: "off", required: true %>
+      </div>
+    </div>
+    <div class="form-group pmd-textfield">
+      <%= f.label t("user.edit.password"), class: "control-label col-sm-3"%>
+      <div class="col-sm-9">
+        <%= f.password_field :password, class: "form-control empty", autocomplete: "off",
+          required: true%>
+      </div>
+    </div>
+    <div class="form-group pmd-textfield">
+      <%= f.label t("user.edit.password_confirmation"), class: "control-label col-sm-3"%>
+      <div class="col-sm-9">
+        <%= f.password_field :password_confirmation, class: "form-control empty", autocomplete: "off", required: true %>
+      </div>
+    </div>
+    <div class="form-group btns">
+      <div class="col-sm-9 col-sm-offset-3">
+      <button type="submit" class="btn btn-primary"><%= t "update" %></button>
+      <button class="btn btn-danger"><%= t "cancel" %></button>
+      </div>
+    </div>
+    </fieldset>
+  <% end %>
+</div>
+<br>

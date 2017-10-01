@@ -2,17 +2,17 @@
 <% if user_signed_in? %>
   <div class="container">
     <div class="col-md-4 show-list-groups">
-      <div class="user-user_picture-small">
-        <%= link_to image_tag("profile.jpg"), "#" %>
-        <%= link_to current_user.name, "#" %>
+      <div class="user-avatar-small">
+        <%= link_to image_tag("avatar.png"), "#" %>
+        <%= link_to current_user.name, edit_user_registration_path %>
       </div>
       <h3><%= t "groups" %></h3>
       <div class="list-groups"></div>
     </div>
     <div class="col-md-8 show-follow-images">
       <div class="new-image">
-        <div class="description-field user-user_picture-small">
-          <%= link_to image_tag("profile.jpg"), "#" %>
+        <div class="description-field user-avatar-small">
+          <%= link_to image_tag("avatar.png"), "#" %>
           <%= text_area :description, class: "form-control image-description" %>
         </div>
         <div class="image-file">

@@ -1,0 +1,47 @@
+<h1 class="section-title" id="services">
+  <span><%= t "user.edit.profile.title" %></span>
+</h1>
+<h3 class="heading"><%= t "user.edit.profile.info" %></h3>
+<div class="row">
+  <%= devise_error_messages! %>
+  <%= form_for user, html: {class: "form-horizontal"},
+    url: user_registration_path do |f| %>
+    <fieldset>
+      <div class="form-group prousername pmd-textfield">
+        <%= f.label t("user.edit.profile.email"), class: "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <p class="form-control-static"><strong>
+            <%= user.email %>
+          </strong></p>
+        </div>
+      </div>
+      <div class="form-group pmd-textfield">
+        <%= f.label t("user.edit.profile.name"), class: "col-sm-3 control-label" %>
+        <div class="col-sm-9">
+          <%= f.text_field :name, class: "form-control empty", id: "inputName",
+            required: true %>
+        </div>
+      </div>
+      <div class="form-group prousername pmd-textfield">
+        <label class="control-label col-sm-3"><%= t "user.edit.profile.role" %></label>
+        <div class="col-sm-9">
+          <p class="form-control-static"><strong><%= user.role %></strong></p>
+        </div>
+      </div>
+      <div class="form-group pmd-textfield">
+        <%= f.label t("user.edit.profile.sex"), class: "col-sm-3 control-label" %>
+        <div class="col-sm-9">
+          <%= f.text_field :sex, class: "form-control empty", id: "inputSex",
+            required: true%>
+        </div>
+      </div>
+      <div class="form-group btns margin-bot-30">
+        <div class="col-sm-9 col-sm-offset-3">
+         <%= f.submit t("update"), class: "btn btn-primary user-edit-btn" %>
+        <button class="btn btn-danger"><%= t "cancel" %></button>
+        </div>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+<br>

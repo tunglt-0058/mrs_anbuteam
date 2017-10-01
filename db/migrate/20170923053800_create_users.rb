@@ -4,10 +4,9 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :email
       t.string :password
-      t.string :user_picture
-      t.date :date_of_birth
-      t.string :role
-      t.string :sex
+      t.string :avatar
+      t.string :role, default: "Regular"
+      t.string :sex, default: "Male"
 
       t.timestamps
     end

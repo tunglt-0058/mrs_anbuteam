@@ -1,0 +1,19 @@
+
+<div id="content" class="pmd-content inner-page">
+  <div class="container-fluid full-width-container about">
+    <div class="page-content profile-edit section-custom">
+      <div class="pmd-card pmd-z-depth">
+        <div class="pmd-card-body">
+          <div class="row">
+            <%= render "sidebar", user: @user %>
+            <div class="col-lg-6 custom-col-8">
+              <%= render "change_info", user: @user %>
+              <%= render "change_pass", user: @user %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

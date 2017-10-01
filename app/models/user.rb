@@ -14,4 +14,6 @@ class User < ApplicationRecord
   has_many :actors, :through => :favorite_actors, :dependent => :destroy
   has_many :favorite_movies
   has_many :movies, :through => :favorite_movies, :dependent => :destroy
+
+  mount_uploader :avatar, AvatarUploader
 end
