@@ -1,0 +1,11 @@
+en:
+  explorer:
+    index:
+      genres: "ジャンル"
+      see_all: "すべて見る"
+  genres:
+    index:
+      all_genres: "すべてのジャンル"
+    show:
+      collection: "コレクション"
+      genre: "ジャンル"
