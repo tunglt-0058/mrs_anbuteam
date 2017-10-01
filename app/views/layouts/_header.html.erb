@@ -25,6 +25,11 @@
             <%= link_to t("pages.home"), root_path %>
           </div>
         </li>
+        <li>
+          <div class="home">
+            <%= link_to t("explorer.index.genres"), genres_path %>
+          </div>
+        </li>
         <% if user_signed_in? %>
           <div class="dropdown">
             <div class="dropbtn drop-text"><%= current_user.name %></div>

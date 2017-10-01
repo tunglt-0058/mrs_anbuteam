@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h2 class="text-uppercase"><%= t "explorer.index.genres" %>
+      <%= link_to t("explorer.index.see_all"), genres_path,
+        class: "pull-right text-capitalize" %>
+    </h2>
+  </div>
+  <div class="col-sm-12 side-menu">
+    <div class="side-menu-container">
+      <ul class="nav navbar-nav">
+        <% genres.each do |genre| %>
+            <li>
+              <%= link_to genre, "data-turbolinks": false do %>
+                <%= genre.name %>
+                <span class="badge"><%= genre.movies.size %></span>
+              <% end %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<br><br>

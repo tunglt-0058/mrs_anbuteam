@@ -1,0 +1,33 @@
+<div class="col-sm-4">
+  <div class="box-outer">
+    <div class="box">
+      <div class="frame">
+        <div class="caption">
+        </div>
+        <div class="img-frame">
+          <%= link_to (image_tag(movie.poster, alt: "poster",
+            height: "200", width: "200")), movie %>
+        </div>
+      </div>
+      <div class="text-column">
+        <span>
+          <% movie.genres.each do |genre| %>
+            <%= link_to genre.name, genre, "data-turbolinks": false %>
+            <%= genre != movie.genres.last ? ", " : nil %>
+          <% end %>
+        </span>
+        <h3>
+          <%= link_to movie.name.truncate(15), movie,
+            "data-turbolinks": false %>
+        </h3>
+        <div class="review-start">
+          <div class="rating_stars">
+            <div class="rating_down">
+              <div class="rating_up" style="width:100%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
