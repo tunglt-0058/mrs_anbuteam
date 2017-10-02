@@ -187,12 +187,13 @@
 
 .header-block {
   align-items: center;
-  background: $black url("http://i.imgur.com/F3UyTof.png") no-repeat left top / cover;
+  background: $black url('banner.jpg') no-repeat left top / cover;
   color: $white;
   display: flex;
   height: 45vh;
   justify-content: center;
   margin-bottom: 20px;
+  margin-top: -10px;
 
   h1 {
     border-left: 3px solid $white;

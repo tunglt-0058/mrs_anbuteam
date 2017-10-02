@@ -25,11 +25,11 @@ class RegistrationsController < Devise::RegistrationsController
     edit_user_registration_path if args[0]
   end
 
-  # def respond_with resource, opts = {}
-  #   if params[:user][:avatar].present?
-  #     render json: resource.avatar
-  #   else
-  #     super
-  #   end
-  # end
+  def respond_with resource, opts = {}
+    if params[:user] && params[:user][:avatar]
+      render json: resource.avatar
+    else
+      super
+    end
+  end
 end
