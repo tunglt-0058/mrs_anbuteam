@@ -15,8 +15,8 @@ $(document).ready(function () {
       data: form_data,
       processData: false,
       contentType: false,
-      success: function(result) {
-        $('#avatar').prop('src', result.thumb.url);
+      complete: function(result) {
+        $('#avatar').prop('src', result.responseJSON.thumb.url);
       }
     });
   });
