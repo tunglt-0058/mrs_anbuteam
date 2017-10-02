@@ -36,6 +36,7 @@ en:
     password: "パスワード"
     remember-me: "覚える"
     new-here: "アカウントがない?"
+    facebook: "Facebookでログイン"
   pages:
     home: "ホーム"
   layouts:
