@@ -1,5 +1,5 @@
 en:
-  hello: "よこそ 映画レビューシステム"
+  hello: "ようこそ映画レビューシステム"
   app_title: "映画レビューシステム"
   team:
     name: "ANBU チーム"
@@ -31,6 +31,7 @@ en:
     password-confirmation: "パスワード確認"
     characters: "文字"
     minimum: "最小 "
+    password-min: "最小 6 文字"
   login:
     email: "メール"
     password: "パスワード"

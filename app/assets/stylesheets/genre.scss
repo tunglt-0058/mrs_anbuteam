@@ -45,9 +45,9 @@
 
   .box-outer {
     &:hover::before {
-      height: 97%;
+      height: 100%;
       opacity: 1;
-      width: 87%;
+      width: 91%;
     }
 
     &:hover .frame .caption {
@@ -153,11 +153,15 @@
       z-index: 99;
 
       span {
-        color: $fuscous-gray-approx;
+        color: $white;
         display: block;
         font: 700 12px / 12px $font-open-sans, $font-sans-serif;
         padding: 0 0 5px;
         text-transform: uppercase;
+
+        a {
+          color: #badfff
+        }
       }
 
       em {
@@ -171,7 +175,7 @@
         margin: 5px 0 10px;
 
         a {
-          color: $black;
+          color: $white;
           text-shadow: 1px 0 0 $white;
         }
       }
