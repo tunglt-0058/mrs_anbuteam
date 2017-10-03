@@ -9,7 +9,7 @@
             height: "200", width: "200")), movie %>
         </div>
       </div>
-      <div class="text-column">
+      <div class="text-column btn-primary">
         <span>
           <% movie.genres.each do |genre| %>
             <%= link_to genre.name, genre, "data-turbolinks": false %>
