@@ -3,7 +3,7 @@
 </h1>
 <h3 class="heading"><%= t "user.edit.profile.info" %></h3>
 <div class="row">
-  <%= devise_error_messages! %>
+  <%= render "shared/error_messages", object: user %>
   <%= form_for user, html: {class: "form-horizontal"},
     url: user_registration_path do |f| %>
     <fieldset>

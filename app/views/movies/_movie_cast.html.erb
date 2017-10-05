@@ -1,0 +1,28 @@
+<div class="movie_cast col-lg-12 col-md-12 col-sm-12">
+  <h1>Cast</h1>
+  <div class="movie_actor">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="left_content">
+        <h2>Actor</h2>
+        <%= link_to "Add new actor", new_actor_path(movie, :type => "add_role") %>
+        <br>
+        <% movie.actors.order(:id).all.each do |actor| %>
+          <%= link_to actor.name, actor %>
+          <br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="movie_role">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <aside class="right_content">
+        <br>
+        <h2>Role</h2>
+        <% MovieActor.where("movie_id = ?", movie.id).order(:actor_id).all.each do |role| %>
+          <%= role.role %>
+          <br>
+        <% end %>
+      </aside>
+    </div>
+  </div>
+</div>

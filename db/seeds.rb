@@ -3,6 +3,14 @@ User.create!([
   password: "tung123", password_confirmation: "tung123"}
 ])
 
+10.times do |n|
+  name  = Faker::Name.name
+  email = "example-#{n+1}@gmail.com"
+  password = "123456"
+  User.create!(name: name, email: email, password: password,
+    password_confirmation: password)
+end
+
 Genre.create!([
   {name: "Action"},
   {name: "Adventure"},
@@ -145,4 +153,53 @@ MovieGenre.create!([
   {genre_id: 15, movie_id: 3},
   {genre_id: 16, movie_id: 6},
   {genre_id: 17, movie_id: 8}
+])
+
+FavoriteMovie.create!([
+  {user_id: 1, movie_id: 1},
+  {user_id: 1, movie_id: 2},
+  {user_id: 1, movie_id: 3},
+  {user_id: 1, movie_id: 4},
+  {user_id: 1, movie_id: 5},
+  {user_id: 2, movie_id: 6},
+  {user_id: 2, movie_id: 2},
+  {user_id: 2, movie_id: 3},
+  {user_id: 2, movie_id: 4},
+  {user_id: 2, movie_id: 5},
+  {user_id: 3, movie_id: 10},
+  {user_id: 3, movie_id: 2},
+  {user_id: 3, movie_id: 3},
+  {user_id: 3, movie_id: 8},
+  {user_id: 3, movie_id: 5},
+  {user_id: 4, movie_id: 1},
+  {user_id: 4, movie_id: 9},
+  {user_id: 4, movie_id: 3},
+  {user_id: 4, movie_id: 4},
+  {user_id: 4, movie_id: 5},
+  {user_id: 5, movie_id: 7},
+  {user_id: 5, movie_id: 2},
+  {user_id: 5, movie_id: 3},
+  {user_id: 5, movie_id: 4},
+  {user_id: 5, movie_id: 5},
+  {user_id: 6, movie_id: 10},
+  {user_id: 7, movie_id: 2},
+  {user_id: 7, movie_id: 3},
+  {user_id: 7, movie_id: 5},
+  {user_id: 7, movie_id: 8},
+  {user_id: 8, movie_id: 1},
+  {user_id: 8, movie_id: 2},
+  {user_id: 8, movie_id: 6},
+  {user_id: 8, movie_id: 4},
+  {user_id: 8, movie_id: 8},
+  {user_id: 9, movie_id: 1},
+  {user_id: 9, movie_id: 2},
+  {user_id: 9, movie_id: 9},
+  {user_id: 9, movie_id: 4},
+  {user_id: 9, movie_id: 10},
+  {user_id: 10, movie_id: 1},
+  {user_id: 10, movie_id: 2},
+  {user_id: 10, movie_id: 6},
+  {user_id: 10, movie_id: 4},
+  {user_id: 10, movie_id: 5}
+
 ])

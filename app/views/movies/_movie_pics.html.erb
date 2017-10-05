@@ -1,0 +1,21 @@
+<div class="movie_pics">
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    <aside class="right_content">
+      <h2>Picture</h2>
+      <%= link_to "Add new image", new_image_path(movie, :imgtype => 'movie') %>
+      <div class="slick_slider">
+        <% if movie.images.count != 0 %>
+          <% movie.images.each do |image| %>
+            <% if movie.images.exists? %>
+              <div class="single_iteam">
+                <%= image_tag(image.link, alt: "image", height:200, width:300) %>
+              </div>
+            <% end %>
+          <% end %>
+        <% else %>
+          <p>This Image is unavailable</p>
+        <% end %>
+      </div>
+    </aside>
+  </div>
+</div>
