@@ -1,0 +1,24 @@
+<% if !movie.reviews.empty? %>
+  <h3>Latest reviews</h3>
+  <% movie.reviews.last(3).each do |r| %>
+    <div class="single_review col-lg-12 col-md-12 col-sm-12">
+      <% rating = Rate.find_by_rater_id_and_rateable_id_and_dimension(r.user_id, movie.id, "score") %>
+      <%= rating_for_user movie, User.find(r.user_id), "score" %>
+      <p>
+        <% r.content.scan(/\S+/)[0..100].join(' ').split(/\n/).each do |paragraph| %>
+          <%= paragraph.html_safe %><br>
+        <% end %>
+      </p>
+      <p>
+        Reviewed by <%= link_to(get_user_name(r.user_id), curr) + " on " + r.updated_at.to_s %>
+      </p>
+      <p><%= link_to("See more", r) %></p>
+    </div>
+  <% end %>
+<% else %>
+  <h1>Don't have any review</h1>
+<% end %>
+<% if current_user %>
+  <%= link_to 'Add Review', new_movie_review_path(movie)%>
+<% end %>
+<br><br><br>

@@ -1,0 +1,22 @@
+<div class="left_content">
+  <div class="movie_title">
+    <div class="col-lg-9 col-md-9 col-sm-9"> <%= movie.name %></div>
+    <img src="<%= movie.poster %>" class="movie_poster">
+  </div>
+  <div class="movie_sum col-lg-12 col-md-12 col-sm-12">
+    <p>
+      <% movie.genres.all.each do |genre| %>
+        <% if genre.name != movie.genres.all.last.name %>
+          <%= link_to genre.name, genre%>,
+        <% else %>
+          <%= link_to genre.name, genre%>.
+        <% end %>
+      <% end %>
+    </p>
+    <p>
+      <% movie.summary.split(/\n/).each do |paragraph| %>
+        <%= paragraph %><br>
+      <% end %>
+    </p>
+  </div>
+</div>

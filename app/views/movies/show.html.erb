@@ -8,151 +8,22 @@
   <%= link_to 'Destroy', @movie, method: :delete, data: { confirm: 'Are you sure?' }%>
   <div class="movie_header col-lg-12 col-md-12 col-sm-12">
     <div class="col-lg-8 col-md-8 col-sm-8">
-      <div class="left_content">
-        <div class="movie_title col-lg-12 col-md-12 col-sm-12">
-          <div class=" movie_poster col-lg-3 col-md-3 col-sm-3">
-            <%= link_to (image_tag(@movie.poster, alt: "poster", class: "poster")),
-              @movie  %>
-          </div>
-          <div class="col-lg-9 col-md-9 col-sm-9"> <%= @movie.name %></div>
-        </div>
-        <div class="movie_sum col-lg-12 col-md-12 col-sm-12">
-          <p>
-            <% @movie.genres.all.each do |genre| %>
-              <% if genre.name != @movie.genres.all.last.name %>
-                <%= link_to genre.name, genre%>,
-              <% else %>
-                <%= link_to genre.name, genre%>.
-              <% end %>
-            <% end %>
-          </p>
-          <p>
-            <% @movie.summary.split(/\n/).each do |paragraph| %>
-              <%= paragraph %><br>
-            <% end %>
-          </p>
-        </div>
-      </div>
+      <%= render "movie_header_left", movie: @movie %>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4">
-      <aside class="right_content">
-
-
-        <% if current_user %>
-          <div class="fav">
-            <input type="hidden" id="movie_id" value="<%= @movie.id%>">
-            <input type="hidden" id="user_id" value="<%= current_user.id %>">
-            <% if not FavoriteMovie.find_by(user_id: current_user.id, movie_id: @movie.id) %>
-              <input type="hidden" id="favorited_id" value="">
-              <button class="btn btn-success" id="favorite">Favorite</button>
-            <% else %>
-              <input type="hidden" id="favorited_id" value="<%= FavoriteMovie.find_by(user_id: current_user.id, movie_id: @movie.id).id %>">
-              <button class="btn btn-success" id="favorite">Favorited</button>
-            <% end %>
-          </div>
-        <% end %>
-      </aside>
+      <%= render "movie_header_right", movie: @movie %>
     </div>
   </div>
 
   <div class="movie_gallery col-lg-12 col-md-12 col-sm-12">
-    <div class="movie_video">
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <div class="left_content">
-          <h2>Video</h2>
-          <%= link_to "Add new video", new_video_path(@movie) %>
-          <div class="slick_slider">
-            <% if @movie.videos.count != 0 %>
-              <% @movie.videos.each do |video| %>
-                <% if @movie.videos.exists? %>
-                  <div class="single_iteam">
-                    <p><iframe width="300" height="200" src="<%= video.link %>"></iframe></p>
-                  </div>
-                <% end %>
-              <% end %>
-            <% else %>
-              <p>This Video is unavailable</p>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="movie_pics">
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <aside class="right_content">
-          <h2>Picture</h2>
-          <%= link_to "Add new image", new_image_path(@movie, :imgtype => 'movie') %>
-          <div class="slick_slider">
-            <% if @movie.images.count != 0 %>
-              <% @movie.images.each do |image| %>
-                <% if @movie.images.exists? %>
-                  <div class="single_iteam">
-                    <%= image_tag(image.link, alt: "image", height:200, width:300) %>
-                  </div>
-                <% end %>
-              <% end %>
-            <% else %>
-              <p>This Image is unavailable</p>
-            <% end %>
-          </div>
-        </aside>
-      </div>
-    </div>
+    <%= render "movie_video", movie: @movie %>
+    <%= render "movie_pics", movie: @movie %>
   </div>
   <h1>Categories</h1><br><br>
   <% @movie.categories.all.each do |category| %>
     <button class="btn btn-theme"><%= link_to category.name, category %></button>
   <% end %>
   <br><br>
-  <div class="movie_cast col-lg-12 col-md-12 col-sm-12">
-    <h1>Cast</h1>
-    <div class="movie_actor">
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <div class="left_content">
-          <h2>Actor</h2>
-          <%= link_to "Add new actor", new_actor_path(@movie, :type => "add_role") %>
-          <br>
-          <% @movie.actors.order(:id).all.each do |actor| %>
-            <%= link_to actor.name, actor %>
-            <br>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="movie_role">
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <aside class="right_content">
-          <br>
-          <h2>Role</h2>
-          <% MovieActor.where("movie_id = ?", @movie.id).order(:actor_id).all.each do |role| %>
-            <%= role.role %>
-            <br>
-          <% end %>
-        </aside>
-      </div>
-    </div>
-  </div>
-  <% if !@movie.reviews.empty? %>
-    <h3>Latest reviews</h3>
-    <% @movie.reviews.last(3).each do |r| %>
-      <div class="single_review col-lg-12 col-md-12 col-sm-12">
-        <% rating = Rate.find_by_rater_id_and_rateable_id_and_dimension(r.user_id, @movie.id, "score") %>
-        <%= rating_for_user @movie, User.find(r.user_id), "score" %>
-        <p>
-          <% r.content.scan(/\S+/)[0..100].join(' ').split(/\n/).each do |paragraph| %>
-            <%= paragraph.html_safe %><br>
-          <% end %>
-        </p>
-        <p>
-          Reviewed by <%= link_to(get_user_name(r.user_id),  @curr) + " on " + r.updated_at.to_s %>
-        </p>
-        <p><%= link_to("See more", r) %></p>
-      </div>
-    <% end %>
-  <% else %>
-    <h1>Don't have any review</h1>
-  <% end %>
-  <% if current_user %>
-    <%= link_to 'Add Review', new_movie_review_path(@movie)%>
-  <% end %>
+  <%= render "movie_cast", movie: @movie %>
+  <%= render "movie_review", movie: @movie %>
 </div>

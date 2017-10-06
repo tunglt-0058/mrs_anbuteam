@@ -1,3 +1,5 @@
+@import "colors";
+
 .single_page {
 
   .movie_header {
@@ -185,4 +187,26 @@ div {
 
 .featured_img {
   position:relative
+}
+
+.movie_poster {
+  background: $white;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px $shadow-light, 0 3px 6px $shadow-normal;
+  margin: 20px 175px 30px 10px;
+  height: 100px;
+  padding: 3px;
+  width: 100px;
+}
+
+@media screen and (max-width: 767px) {
+  .movie_poster {
+    height: 900px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .movie_poster {
+    height: 90px;
+  }
 }

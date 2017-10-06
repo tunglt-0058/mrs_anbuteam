@@ -34,9 +34,9 @@
           <div class="dropdown">
             <div class="dropbtn drop-text"><%= current_user.name %></div>
             <div class="dropdown-content">
-              <%= link_to t("profile"),
-                edit_user_registration_path(current_user) %>
-              <%= link_to t("log-out"), destroy_user_session_path, method: :delete %>
+            <%= link_to t("profile"), current_user,
+              "data-turbolinks":"false", class: "pmd-ripple-effect" %>
+            <%= link_to t("log-out"), destroy_user_session_path, method: :delete %>
             </div>
           </div>
         <% else %>

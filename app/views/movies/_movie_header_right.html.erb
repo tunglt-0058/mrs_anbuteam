@@ -1,0 +1,15 @@
+<aside class="right_content">
+  <% if current_user %>
+    <div class="fav">
+      <input type="hidden" id="movie_id" value="<%= movie.id%>">
+      <input type="hidden" id="user_id" value="<%= current_user.id %>">
+      <% if not FavoriteMovie.find_by(user_id: current_user.id, movie_id: movie.id) %>
+        <input type="hidden" id="favorited_id" value="">
+        <button class="btn btn-success" id="favorite">Favorite</button>
+      <% else %>
+        <input type="hidden" id="favorited_id" value="<%= FavoriteMovie.find_by(user_id: current_user.id, movie_id: movie.id).id %>">
+        <button class="btn btn-success" id="favorite">Favorited</button>
+      <% end %>
+    </div>
+  <% end %>
+</aside>
