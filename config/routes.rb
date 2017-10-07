@@ -25,4 +25,5 @@ Rails.application.routes.draw do
   resources :actors do
     resources :favorite_actors, only: [:create, :destroy]
   end
+  resources :not_found, only: :index
 end

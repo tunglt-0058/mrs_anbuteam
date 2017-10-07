@@ -5,9 +5,11 @@
         <div class="pmd-card-body">
           <div class="row">
             <%= render "devise/registrations/sidebar", user: @user %>
-            <div class="col-lg-6 custom-col-8">
-              <%= render "devise/registrations/change_info", user: @user %>
-              <%= render "devise/registrations/change_pass", user: @user %>
+            <div class="col-lg-8 custom-col-8 profile-content">
+              <div class="info-part">
+                <%= render "devise/registrations/change_info", user: @user %>
+                <%= render "devise/registrations/change_pass", user: @user %>
+              </div>
             </div>
           </div>
         </div>
