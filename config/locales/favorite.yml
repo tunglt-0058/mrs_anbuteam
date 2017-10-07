@@ -1,13 +1,7 @@
 en:
   favorite:
-    destroy_success: "Favorite destroy success!"
-    destroy_fail: "Favorite destroy fail!"
-    favorite: "Favorite"
-    un_favorite: "Un favorite"
-  not_found:
-    user: "User not found!"
-    movie: "Movie not found!"
-    favorite: "Favorite not found!"
-    description: "The page you are looking for was moved, removed,
-      renamed or might never existed."
-    back_to_home: "Back to homepage"
+    destroy_success: "好きな映画を削除すろことが成功した!"
+    destroy_fail: "好きな映画を削除すろことが失敗した!"
+    favorite: "好む"
+    un_favorite: "嫌う"
+
