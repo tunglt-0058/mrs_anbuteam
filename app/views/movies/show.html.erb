@@ -4,26 +4,15 @@
     <li class="active"><%= @movie.name %></li>
     <li><%= link_to('Reviews', movie_reviews_path(@movie)) %></li>
   </ol>
-  <%= link_to 'Edit', edit_movie_path(@movie) %>
-  <%= link_to 'Destroy', @movie, method: :delete, data: { confirm: 'Are you sure?' }%>
   <div class="movie_header col-lg-12 col-md-12 col-sm-12">
-    <div class="col-lg-8 col-md-8 col-sm-8">
-      <%= render "movie_header_left", movie: @movie, favorite: @favorite %>
+    <div class="col-lg-3 col-md-3 col-sm-3">
+      <%= render "movie_header_left", movie: @movie %>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-4">
-      <%= render "movie_header_right", movie: @movie %>
+    <div class="col-lg-9 col-md-9 col-sm-9">
+      <%= render "movie_header_right", movie: @movie, favorite: @favorite %>
     </div>
+    <%= render "movie_sumary", movie: @movie %>
+    <%= render "movie_review", movie: @movie %>
   </div>
 
-  <div class="movie_gallery col-lg-12 col-md-12 col-sm-12">
-    <%= render "movie_video", movie: @movie %>
-    <%= render "movie_pics", movie: @movie %>
-  </div>
-  <h1>Categories</h1><br><br>
-  <% @movie.categories.all.each do |category| %>
-    <button class="btn btn-theme"><%= link_to category.name, category %></button>
-  <% end %>
-  <br><br>
-  <%= render "movie_cast", movie: @movie %>
-  <%= render "movie_review", movie: @movie %>
 </div>
