@@ -17,6 +17,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @favorite = current_user.load_favorite_movies
   end
 
   def new

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 tab-style-1-content">
+      <div class="row">
+        <% movies.each do |movie| %>
+          <%= render "genres/movie", movie: movie %>
+        <% end %>
+      </div>
+      <div class="row">
+        <div class="col-sm-9">
+          <hr>
+          <%= will_paginate movies %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

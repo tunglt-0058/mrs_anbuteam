@@ -1,0 +1,15 @@
+<% provide :title, t("error") %>
+<div class="not-found">
+  <div class="container">
+    <h1 class="text-center"><%= t "error" %></h1>
+    <h2 class="text-center">
+      <%= t "not_found.description" %>
+    </h2>
+    <div class="text-center">
+      <hr>
+      <%= link_to t("not_found.back_to_home"), root_path, class: "btn btn-primary center-block",
+        "data-turbolinks": false %>
+    </div>
+  </div>
+</div>
+<br>

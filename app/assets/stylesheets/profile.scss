@@ -18,7 +18,7 @@
   }
 
   .thumbnail {
-    background-color: $color-desert-storm-approx;
+    background-color: $desert-storm-approx;
     display: inline-block;
     height: 200px;
     margin-bottom: 5px;
@@ -108,31 +108,31 @@
 .form-group {
   &.has-warning .fileinput {
     .fileinput-preview {
-      color: $color-pesto-approx;
+      color: $pesto-approx;
     }
 
     .thumbnail {
-      border-color: $color-champagne-approx;
+      border-color: $champagne-approx;
     }
   }
 
   &.has-error .fileinput {
     .fileinput-preview {
-      color: $color-apple-blossom-approx;
+      color: $apple-blossom-approx;
     }
 
     .thumbnail {
-      border-color: $color-oyster-pink-approx;
+      border-color: $oyster-pink-approx;
     }
   }
 
   &.has-success .fileinput {
     .fileinput-preview {
-      color: $color-killarney-approx;
+      color: $killarney-approx;
     }
 
     .thumbnail {
-      border-color: $color-beryl-green-approx;
+      border-color: $beryl-green-approx;
     }
   }
 }
@@ -340,7 +340,7 @@
 }
 
 .portfolio {
-  background-color: $menu-profile-color;
+  background-color: $menu-profile;
   list-style: none;
   padding: 30px 10px;
   text-align: center;
@@ -357,15 +357,117 @@
   text-transform: capitalize;
 }
 
+.portfolio a {
+  color: $white;
+}
+
 .portfolio li:hover {
   border: 0;
   color: $black;
 }
 
 .portfolio .active {
-  background-color: $blue2;
+  background-color: $side-bar-active;
   border-radius: 20px;
   box-shadow: 0 1px 2px 0 $menu-profile-box-shadow-background;
   color: $white;
   padding: 5px 20px;
+}
+
+.profile-edit {
+  .info-part {
+    transform: scale(1);
+    transition: .5s;
+  }
+
+  .fav-movie-part {
+    height: 0;
+    transform: scale(0);
+    transition: .5s;
+  }
+}
+
+.dropdown-item {
+  transform: scale(0);
+  transition: transform .5s;
+
+  span {
+    background: transparent;
+    border-radius: 25px;
+    padding: 7px 40px;
+    transition: background.3s;
+  }
+}
+
+.filter {
+  font-weight: bold !important;
+  transition: .3s;
+}
+
+.active-child {
+  span {
+    background: $actived-child;
+    border-radius: 25px;
+    box-shadow: 0 1px 2px 0 $menu-profile-box-shadow-background;
+    padding: 7px 40px;
+  }
+}
+
+.reject {
+  background: $rejected;
+}
+
+.cancel {
+  background: $canceled;
+}
+
+.approve {
+  background: $approved;
+}
+
+.not-approve {
+  background: $waiting;
+  transition: .3s;
+}
+
+.cancel-ok,
+.cancel-back {
+  border-radius: 3px;
+  box-shadow: 1px 2px 10px $menu-profile-box-shadow-background;
+  display: none;
+  font-size: 13px;
+  padding: 3px 7px !important;
+  transition: .3s;
+}
+
+.cancel-ok {
+  background: $cancel-ok;
+
+  &:hover {
+    background: $cancel-ok-hover;
+  }
+}
+
+.cancel-back {
+  background: $cancel;
+
+  &:hover {
+    background: $cancel-hover;
+  }
+}
+
+.borrow-row {
+  background: transparent;
+  transition: 2s;
+}
+
+.border-table {
+  border-top: .25px solid $menu-profile-box-shadow-background;
+}
+
+.status-btn {
+  border-radius: 2px;
+  color: $white;
+  font-weight: bold;
+  padding: 5px 10px;
 }

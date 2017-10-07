@@ -2,6 +2,11 @@
   <div class="movie_title">
     <div class="col-lg-9 col-md-9 col-sm-9"> <%= movie.name %></div>
     <img src="<%= movie.poster %>" class="movie_poster">
+    <% if current_user %>
+      <div class="favorite-icon">
+        <%= render "favorite_movies/favorite_form", movie: movie, favorite: favorite %>
+      </div>
+    <% end %>
   </div>
   <div class="movie_sum col-lg-12 col-md-12 col-sm-12">
     <p>

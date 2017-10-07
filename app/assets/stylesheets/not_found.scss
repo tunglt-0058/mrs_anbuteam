@@ -1,0 +1,13 @@
+@import "colors";
+
+.not-found {
+  margin-top: -10px;
+  background-color: $button-create-request;
+  color: $white;
+  height: calc(80vh - 80px);
+
+  h1 {
+    font-size: 50px;
+    margin-top: 150px;
+  }
+}

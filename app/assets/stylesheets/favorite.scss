@@ -1,0 +1,19 @@
+@import "colors";
+
+.btn-favorite {
+  cursor: pointer;
+
+  a {
+    color: $white;
+  }
+}
+
+.pmd-content {
+  overflow-x: hidden;
+}
+
+.favorite-icon {
+  float: right;
+  font-size: 25px;
+  margin-right: 20px;
+}

@@ -25,3 +25,8 @@ $(document).ready(function () {
     $(this).addClass('active');
   });
 });
+
+$('.portfolio .filter').on('click', function() {
+  $('.info-part, .fav-movie-part').css('transform','scale(0)').css('height','0');
+  $($(this).attr('data-trigger')).css('transform','scale(1)').css('height','auto');
+});

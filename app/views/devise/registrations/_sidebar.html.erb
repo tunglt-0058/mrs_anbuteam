@@ -1,4 +1,4 @@
-<div class="col-lg-4">
+<div class="col-lg-3">
   <div data-provides="fileinput" class="fileinput fileinput-new">
     <div data-trigger="fileinput" class="fileinput-preview thumbnail
       img-circle img-responsive">
@@ -28,9 +28,14 @@
   </div>
   <div class="menu-portfolio-item">
     <ul class="portfolio">
-      <li class="filter active"><%= t "user.edit.menu_item.information" %></li>
+      <li class="filter active" data-trigger="info-part">
+        <%= t "user.edit.menu_item.information" %>
+      </li>
       <li class="filter"><%= t "user.edit.menu_item.reviews" %></li>
-      <li class="filter"><%= t "user.edit.menu_item.favorite_movies" %></li>
+      <li class="filter" data-trigger=".fav-movie-part">
+        <%= link_to t("user.edit.menu_item.favorite_movies"),
+        user_path(user, type: "favorite_movie"), remote: true,
+        "data-turbolinks":"false" %></li>
       <li class="filter"><%= t "user.edit.menu_item.favorite_actors" %></li>
     </ul>
   </div>

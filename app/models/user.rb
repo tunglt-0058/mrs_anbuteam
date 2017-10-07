@@ -18,6 +18,14 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+  def load_favorite_movies
+    Movie.where(id: favorite_movies.pluck(:movie_id)).order id: :desc
+  end
+
+  def favorited_movie? movie
+    self.favorite_movies.find_by(movie: movie).present? ? true : false
+  end
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
