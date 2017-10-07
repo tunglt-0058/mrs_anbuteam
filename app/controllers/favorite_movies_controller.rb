@@ -40,7 +40,7 @@ class FavoriteMoviesController < ApplicationController
   end
 
   def find_favorite_movie
-    @favorite = current_user.load_favorite_movies.find_by id: params[:id]
+    @favorite = current_user.favorite_movies.find_by id: params[:id]
     unless @favorite
       flash[:danger] = t "not_found.favorite"
       redirect_to not_found_index_path
