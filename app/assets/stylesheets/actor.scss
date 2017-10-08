@@ -1,0 +1,12 @@
+@import "colors";
+
+.actor_image {
+  border-radius: 2px;
+  box-shadow: 0 2px 4px $shadow-light, 0 3px 6px $shadow-normal;
+  width: 280px;
+  height: 380px;
+  background: #D4D4D4;
+  padding: 3px;
+  margin-left: 10px;
+
+}

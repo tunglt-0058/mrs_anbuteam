@@ -204,21 +204,21 @@ FavoriteMovie.create!([
 ])
 
 Actor.create!([
-  {name: "Arimura Kasumi"},
-  {name: "Anne Watanabe"},
-  {name: "Toma Ikuta"},
-  {name: "Rena Nōnen"},
-  {name: "Satomi Ishihara"},
-  {name: "Fumi Nikaido"},
-  {name: "Sato Takeru"},
-  {name: "Yamashita Tomohisa"},
-  {name: "Yoshitaka Yuriko"},
-  {name: "Matsu Takako"},
-  {name: "Matsumoto Jun"},
-  {name: "Takahata Mitsuki"},
-  {name: "Ayase Haruka"},
-  {name: "Takei Emi"},
-  {name: "Hiro Mizushima"}
+  {name: "Arimura Kasumi", date_of_birth: "10/8/1995", avatar: "https://i.imgur.com/P4J77s7.jpg"},
+  {name: "Anne Watanabe", date_of_birth: "10/6/1992", avatar: "https://i.imgur.com/BLPPpN8.jpg"},
+  {name: "Toma Ikuta", date_of_birth: "13/8/1995", avatar: "https://i.imgur.com/NTmN8D9.jpg"},
+  {name: "Rena Nōnen", date_of_birth: "13/2/1995", avatar: "https://i.imgur.com/Os2JCR8.jpg"},
+  {name: "Satomi Ishihara", date_of_birth: "12/2/1995", avatar: "https://i.imgur.com/lFXzxeA.jpg"},
+  {name: "Fumi Nikaido", date_of_birth: "12/4/1995", avatar: "https://i.imgur.com/Qit2Uck.jpg"},
+  {name: "Sato Takeru", date_of_birth: "10/6/1995", avatar: "https://i.imgur.com/L2ulGv1.jpg"},
+  {name: "Yamashita Tomohisa", date_of_birth: "19/8/1993", avatar: "https://i.imgur.com/trCGIFA.jpg"},
+  {name: "Yoshitaka Yuriko", date_of_birth: "10/8/1995", avatar: "https://i.imgur.com/zs8tqPB.jpg"},
+  {name: "Matsu Takako", date_of_birth: "10/8/1995", avatar: "https://i.imgur.com/q7YOTnM.jpg"},
+  {name: "Matsumoto Jun", date_of_birth: "10/8/1995", avatar: "https://i.imgur.com/BLPPpN8.jpg"},
+  {name: "Takahata Mitsuki", date_of_birth: "10/8/1995", avatar: "https://i.imgur.com/nqNcUUI.jpg"},
+  {name: "Ayase Haruka", date_of_birth: "10/8/1995", avatar: "https://i.imgur.com/guOuRwF.jpg"},
+  {name: "Takei Emi", date_of_birth: "10/8/1995", avatar: "https://i.imgur.com/1CjGz93.jpg"},
+  {name: "Hiro Mizushima", date_of_birth: "10/8/1995", avatar: "https://i.imgur.com/Os2JCR8.jpg"}
 ])
 
 MovieActor.create!([
@@ -251,7 +251,26 @@ MovieActor.create!([
   {movie_id: 9, actor_id: 6},
   {movie_id: 10, actor_id: 7},
   {movie_id: 10, actor_id: 8},
-  {movie_id: 10, actor_id: 10}
+  {movie_id: 10, actor_id: 10},
+  {movie_id: 1, actor_id: 11},
+  {movie_id: 1, actor_id: 12},
+  {movie_id: 2, actor_id: 13},
+  {movie_id: 2, actor_id: 14},
+  {movie_id: 2, actor_id: 11},
+  {movie_id: 3, actor_id: 12},
+  {movie_id: 3, actor_id: 13},
+  {movie_id: 4, actor_id: 14},
+  {movie_id: 4, actor_id: 12},
+  {movie_id: 5, actor_id: 15},
+  {movie_id: 6, actor_id: 13},
+  {movie_id: 6, actor_id: 14},
+  {movie_id: 8, actor_id: 11},
+  {movie_id: 9, actor_id: 14},
+  {movie_id: 9, actor_id: 13},
+  {movie_id: 9, actor_id: 15},
+  {movie_id: 10, actor_id: 15},
+  {movie_id: 10, actor_id: 13},
+  {movie_id: 10, actor_id: 12}
 ])
 
 Category.create!([
