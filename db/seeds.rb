@@ -308,3 +308,18 @@ MovieCategory.create!([
   {movie_id: 10, category_id: 7},
   {movie_id: 10, category_id: 9}
 ])
+
+Review.create!([
+  {content: "otarou is a former yakuza member fresh out of prison and fixated
+    on just one thing: rather than return to a life of crime, the young man
+    aspires to take to the stage of Rakugo, a traditional Japanese form of
+    comedic storytelling. Inspired during his incar", user_id: 1, movie_id: 1},
+  {content: "otarou is a former yakuza member fresh out of prison and fixated
+    on just one thing: rather than return to a life of crime, the young man
+    aspires to take to the stage of Rakugo, a traditional Japanese form of
+    comedic storytelling. Inspired during his incar", user_id: 1, movie_id: 2},
+  {content: "otarou is a former yakuza member fresh out of prison and fixated
+    on just one thing: rather than return to a life of crime, the young man
+    aspires to take to the stage of Rakugo, a traditional Japanese form of
+    comedic storytelling. Inspired during his incar", user_id: 2, movie_id: 1},
+])

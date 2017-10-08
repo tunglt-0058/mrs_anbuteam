@@ -343,7 +343,20 @@ p {
   img {
     height: 40px;
     width: 40px;
+    margin-left: 5px;
+    margin-top: 5px
+  }
+}
 
+.user-avatar-too-small {
+  font-size: 1.2em;
+  font-weight: bold;
+
+  img {
+    height: 16px;
+    width: 16px;
+    margin-left: 5px;
+    margin-top: 5px
   }
 }
 

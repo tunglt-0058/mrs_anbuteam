@@ -43,6 +43,7 @@ class User < ApplicationRecord
     user_ids = following.ids
     user_ids.push self.id
     User.load_know_users user_ids
+  end
 
   def load_favorite_actors
     Actor.where(id: favorite_actors.pluck(:actor_id)).order id: :desc

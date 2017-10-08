@@ -1,6 +1,60 @@
 <% provide :title, t("pages.home") %>
 <% if user_signed_in? %>
-  <%= render "new_feed" %>
+  <div class="container">
+    <div class="col-md-3 ta8">
+       <div class="ltt-news-feed follow_bgr">
+          <div class="left-news-feed">
+            <%= render "left_news_feed", followings: @followings, know_users: @know_users %>
+          </div>
+        </div>
+     </div>
+
+    <div class="col-md-7 show-follow-images">
+      <div class="new-image">
+        <div class="user-avatar-small">
+          <% if current_user.avatar != nil %>
+            <%= link_to image_tag(current_user.avatar), "#" %>
+          <% else %>
+            <%= link_to image_tag("avatar.png"), "#" %>
+          <% end %>
+        </div>
+        <div class="description-field user-avatar-small">
+        </div>
+          <div class="ta8">
+          <%= text_area :description, :placeholder => "Nhap gi vao day di"%>
+          </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-7">
+              <div class="form-group">
+                <div class="btn-group">
+                  <span class="btn btn-default btn-file">
+                      <i class="fa fa-picture-o" aria-hidden="true"></i>
+                      <%= file_field :image, value: "Choose a file" %>
+                  </span>
+                  <%= render "star"%>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+                <select name="privacy" class="form-control privacy-dropdown pull-left input-sm">
+                  <option value="1" selected="selected">Public</option>
+                  <option value="2">Only my friends</option>
+                  <option value="3">Only me</option>
+                </select>
+                  <%= submit_tag t("upload-review"), class: "btn btn-primary btn-re" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% @review.each do |rvw| %>
+        <% user = User.find_by id: rvw.user_id%>
+        <% movie = Movie.find_by id: rvw.movie_id%>
+        <%= render "review", review: rvw, user: user, movie: movie%>
+
+      <% end %>
+    </div>
+  </div>
 <% else %>
   <%= render "home_page" %>
 <% end %>
