@@ -1,2 +1,72 @@
 <aside class="right_content">
+  <div class="movie_title">
+    <%= movie.name %>
+    <% if current_user %>
+      <div class="favorite-icon">
+        <%= render "favorite_movies/favorite_form", movie: movie, favorite: favorite %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if movie.genres %>
+    <p class="movie-info-row">
+      <span><%= t "movies.show.genres" %></span>
+      <% movie.genres.all.each do |genre| %>
+        <% if genre.name != movie.genres.all.last.name %>
+          <%= link_to genre.name, genre %>,
+        <% else %>
+          <%= link_to genre.name, genre %>.
+        <% end %>
+      <% end %>
+    </p>
+  <% end %>
+
+  <% if movie.categories %>
+    <p class="movie-info-row">
+      <span><%= t "movies.show.categories" %></span>
+      <% movie.categories.all.each do |category| %>
+        <% if category.name != movie.categories.all.last.name %>
+          <%= link_to category.name, category %>,
+        <% else %>
+          <%= link_to category.name, category %>.
+        <% end %>
+      <% end %>
+    </p>
+  <% end %>
+
+  <% if movie.actors %>
+    <p class="movie-info-row">
+      <span><%= t "movies.show.actors" %></span>
+      <% movie.actors.all.each do |actor| %>
+        <% if actor.name != movie.actors.all.last.name %>
+          <%= link_to actor.name, actor %>,
+        <% else %>
+          <%= link_to actor.name, actor %>.
+        <% end %>
+      <% end %>
+    </p>
+  <% end %>
+
+  <% if movie.episodes %>
+    <p class="movie-info-row">
+      <span><%= t "movies.show.episodes" %></span>
+      <%= movie.episodes %>
+    </p>
+  <% end %>
+
+  <% if movie.status %>
+    <p class="movie-info-row">
+      <span><%= t "movies.show.status" %></span>
+      <%= movie.status %>
+    </p>
+  <% end %>
+
+  <p class="movie-info-row">
+    <span><%= t "movies.show.rate" %></span>
+    <i class="fa fa-star rate" aria-hidden="true"></i>
+    <i class="fa fa-star rate" aria-hidden="true"></i>
+    <i class="fa fa-star rate" aria-hidden="true"></i>
+    <i class="fa fa-star rate" aria-hidden="true"></i>
+    <i class="fa fa-star rate" aria-hidden="true"></i>
+  </p>
 </aside>

@@ -201,5 +201,91 @@ FavoriteMovie.create!([
   {user_id: 10, movie_id: 6},
   {user_id: 10, movie_id: 4},
   {user_id: 10, movie_id: 5}
+])
 
+Actor.create!([
+  {name: "Arimura Kasumi"},
+  {name: "Anne Watanabe"},
+  {name: "Toma Ikuta"},
+  {name: "Rena Nōnen"},
+  {name: "Satomi Ishihara"},
+  {name: "Fumi Nikaido"},
+  {name: "Sato Takeru"},
+  {name: "Yamashita Tomohisa"},
+  {name: "Yoshitaka Yuriko"},
+  {name: "Matsu Takako"},
+  {name: "Matsumoto Jun"},
+  {name: "Takahata Mitsuki"},
+  {name: "Ayase Haruka"},
+  {name: "Takei Emi"},
+  {name: "Hiro Mizushima"}
+])
+
+MovieActor.create!([
+  {movie_id: 1, actor_id: 1},
+  {movie_id: 1, actor_id: 3},
+  {movie_id: 1, actor_id: 5},
+  {movie_id: 2, actor_id: 2},
+  {movie_id: 2, actor_id: 4},
+  {movie_id: 2, actor_id: 6},
+  {movie_id: 3, actor_id: 3},
+  {movie_id: 3, actor_id: 5},
+  {movie_id: 3, actor_id: 7},
+  {movie_id: 4, actor_id: 8},
+  {movie_id: 4, actor_id: 9},
+  {movie_id: 4, actor_id: 10},
+  {movie_id: 5, actor_id: 6},
+  {movie_id: 5, actor_id: 8},
+  {movie_id: 5, actor_id: 10},
+  {movie_id: 6, actor_id: 1},
+  {movie_id: 6, actor_id: 4},
+  {movie_id: 6, actor_id: 9},
+  {movie_id: 7, actor_id: 2},
+  {movie_id: 7, actor_id: 3},
+  {movie_id: 7, actor_id: 5},
+  {movie_id: 8, actor_id: 6},
+  {movie_id: 8, actor_id: 7},
+  {movie_id: 8, actor_id: 8},
+  {movie_id: 9, actor_id: 2},
+  {movie_id: 9, actor_id: 5},
+  {movie_id: 9, actor_id: 6},
+  {movie_id: 10, actor_id: 7},
+  {movie_id: 10, actor_id: 8},
+  {movie_id: 10, actor_id: 10}
+])
+
+Category.create!([
+  {name: "male protagonist"},
+  {name: "childhood promise"},
+  {name: "daily life"},
+  {name: "contemporary fantasy"},
+  {name: "feel"},
+  {name: "multiple protagonists"},
+  {name: "countryside"},
+  {name: "watercolour style"},
+  {name: "heart-warming"},
+  {name: "fighting"}
+])
+
+MovieCategory.create!([
+  {movie_id: 1, category_id: 1},
+  {movie_id: 1, category_id: 2},
+  {movie_id: 2, category_id: 3},
+  {movie_id: 2, category_id: 4},
+  {movie_id: 3, category_id: 5},
+  {movie_id: 3, category_id: 6},
+  {movie_id: 4, category_id: 7},
+  {movie_id: 4, category_id: 8},
+  {movie_id: 5, category_id: 9},
+  {movie_id: 5, category_id: 10},
+  {movie_id: 6, category_id: 10},
+  {movie_id: 6, category_id: 8},
+  {movie_id: 7, category_id: 6},
+  {movie_id: 7, category_id: 4},
+  {movie_id: 8, category_id: 2},
+  {movie_id: 8, category_id: 1},
+  {movie_id: 9, category_id: 3},
+  {movie_id: 9, category_id: 5},
+  {movie_id: 10, category_id: 7},
+  {movie_id: 10, category_id: 9}
 ])

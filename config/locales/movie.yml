@@ -1,0 +1,10 @@
+en:
+  movies:
+    show:
+      genres: "ジャンル: "
+      episodes: "エピソード: "
+      categories: "カテゴリー: "
+      actors: "俳優: "
+      status: "状態: "
+      rate: "レート: "
+      add_review: "レビューを追加"

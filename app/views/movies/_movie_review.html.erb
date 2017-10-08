@@ -19,6 +19,11 @@
   <h1>Don't have any review</h1>
 <% end %>
 <% if current_user %>
-  <%= link_to 'Add Review', new_movie_review_path(movie)%>
+  <div class="col-md-offset-7">
+    <%= link_to t("movies.show.add_review"), new_movie_review_path(movie), class: "btn btn-danger" %>
+  </div>
 <% end %>
 <br><br><br>
+
+
+

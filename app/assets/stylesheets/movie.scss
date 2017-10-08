@@ -5,7 +5,6 @@
   .movie_header {
     color:#fff;
     font-family: Oswald,arial,Georgia,serif;
-    margin:10px 0 -10px;
     padding:0 0 4px 10px;
     text-transform:capitalize;
     min-height: 200px;
@@ -46,7 +45,7 @@
   }
 
   .movie_sum {
-    font-size: 20px;
+    font-size: 15px;
     text-transform: none;
     margin-top: 20px;
   }
@@ -190,13 +189,14 @@ div {
 }
 
 .movie_poster {
-  background: $white;
   border-radius: 2px;
   box-shadow: 0 2px 4px $shadow-light, 0 3px 6px $shadow-normal;
-  margin: 20px 175px 30px 10px;
-  height: 100px;
+  width: 280px;
+  height: 380px;
+  background: #D4D4D4;
   padding: 3px;
-  width: 100px;
+  margin-left: 10px;
+
 }
 
 @media screen and (max-width: 767px) {
@@ -210,3 +210,11 @@ div {
     height: 90px;
   }
 }
+
+.movie-info-row {
+    margin-top: 10px;
+
+    span {
+      font-weight: bold;
+    }
+  }

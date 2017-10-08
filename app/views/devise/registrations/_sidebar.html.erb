@@ -28,9 +28,11 @@
   </div>
   <div class="menu-portfolio-item">
     <ul class="portfolio">
-      <li class="filter active" data-trigger="info-part">
-        <%= t "user.edit.menu_item.information" %>
-      </li>
+      <%= link_to user_path(user, type: "info"), "data-turbolinks": false,
+        remote: true do %>
+        <li class="filter active" data-trigger=".info-part">
+          <%= t("user.edit.menu_item.information") %></li>
+      <% end %>
       <li class="filter"><%= t "user.edit.menu_item.reviews" %></li>
       <li class="filter" data-trigger=".fav-movie-part">
         <%= link_to t("user.edit.menu_item.favorite_movies"),
