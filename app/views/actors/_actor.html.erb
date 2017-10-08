@@ -1,0 +1,27 @@
+<div class="col-sm-4">
+  <div class="box-outer">
+    <div class="box">
+      <div class="frame">
+        <div class="caption">
+        </div>
+        <div class="img-frame">
+          <%= link_to (image_tag(actor.avatar, alt: "image actor",
+            height: "200", width: "200")), actor %>
+        </div>
+      </div>
+      <div class="text-column btn-primary">
+        <h3>
+          <%= link_to actor.name.truncate(15), actor,
+            "data-turbolinks": false %>
+        </h3>
+        <div class="review-start">
+          <div class="rating_stars">
+            <div class="rating_down">
+              <div class="rating_up" style="width:100%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

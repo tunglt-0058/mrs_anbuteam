@@ -1,0 +1,24 @@
+<aside class="right_content">
+  <div class="movie_title">
+    <span><%= t "actor.name" %></span>
+    <%= actor.name %>
+  </div>
+
+  <p class="movie-info-row">
+    <span><%= t "actor.birth_day" %></span>
+    <%= actor.date_of_birth %>
+  </p>
+
+  <% if actor.movies %>
+    <p class="movie-info-row">
+    <span><%= t "actor.movie" %></span>
+      <% actor.movies.all.each do |movie| %>
+        <% if movie.name != actor.movies.all.last.name %>
+          <%= link_to movie.name, movie %>,
+        <% else %>
+          <%= link_to movie.name, movie %>.
+        <% end %>
+      <% end %>
+    </p>
+  <% end %>
+</aside>

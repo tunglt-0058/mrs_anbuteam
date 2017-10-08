@@ -1,0 +1,15 @@
+<div class="single_page">
+  <ol class="breadcrumb">
+    <li><%= link_to('Home', root_path) %></li>
+    <li class="active"><%= @actor.name %></li>
+  </ol>
+  <div class="movie_header col-lg-12 col-md-12 col-sm-12">
+    <div class="col-lg-3 col-md-3 col-sm-3">
+      <%= render "actors/actor_header_left", actor: @actor %>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9">
+      <%= render "actors/actor_header_right", actor: @actor %>
+    </div>
+  </div>
+
+</div>

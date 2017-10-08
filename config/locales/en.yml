@@ -40,6 +40,7 @@ en:
     facebook: "Facebookでログイン"
   pages:
     home: "ホーム"
+    actor: "アクター"
   layouts:
     footer:
       about_us: "About us"
@@ -48,3 +49,8 @@ en:
       contact_us: "Contact us"
       sitemap: "Site Map"
       copyright: "All rights reserved"
+  actors:
+    index:
+      all_actor: "All actor"
+    show:
+      actor: "actor"
