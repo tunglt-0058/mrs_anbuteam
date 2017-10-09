@@ -1,0 +1,11 @@
+en:
+  load_more: "もっと読み込む"
+  user:
+    email: "メール: "
+    sex: "性別: "
+    follow: "フォロー"
+    unfollow: "アンフォロー"
+  news_feed:
+    no_content: "コンテンツなし"
+    followed_users: "フォローした人"
+    know_users: "知り合い"

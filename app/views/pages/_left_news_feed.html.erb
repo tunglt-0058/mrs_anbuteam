@@ -1,0 +1,17 @@
+<div class="col-md-2 news-feed-left">
+  <div class="above-left">
+    <h3><%= t "news_feed.followed_users" %></h3>
+    <hr>
+    <div class="news-feed-left-content">
+      <%= render "pages/followed_users", followings: followings %>
+    </div>
+  </div>
+
+  <div class="below-left">
+    <h3><%= t "news_feed.know_users" %></h3>
+    <hr>
+    <div class="news-feed-left-content">
+      <%= render "pages/know_users", know_users: know_users %>
+    </div>
+  </div>
+</div>

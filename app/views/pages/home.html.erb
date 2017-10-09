@@ -1,41 +1,6 @@
 <% provide :title, t("pages.home") %>
 <% if user_signed_in? %>
-  <div class="container">
-    <div class="col-md-4 show-list-groups">
-      <div class="user-avatar-small">
-        <% if current_user.avatar != nil %>
-          <%= link_to image_tag(current_user.avatar), "#" %>
-        <% else %>
-          <%= link_to image_tag("avatar.png"), "#" %>
-        <% end %>
-        <%= link_to current_user.name, "#" %>
-      </div>
-      <h3><%= t "groups" %></h3>
-      <div class="list-groups"></div>
-    </div>
-    <div class="col-md-8 show-follow-images">
-      <div class="new-image">
-        <div class="description-field user-avatar-small">
-          <%= link_to image_tag("avatar.png"), "#" %>
-          <%= text_area :description, class: "form-control image-description" %>
-        </div>
-        <div class="image-file">
-          <%= file_field :image, class: "image-file" %>
-        </div>
-        <div class="actions">
-          <%= submit_tag t("upload-review"), class: "btn btn-primary" %>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render "new_feed" %>
 <% else %>
-  <div class="show-static-page">
-    <div class="center jumbotron">
-      <div class="hit-the-floor"><%= t "hello" %></div><br>
-      <%= link_to new_user_registration_path, class: "btn btn-lg btn-primary singup1" do %>
-        <i class="fa fa-user-plus" aria-hidden="true"></i>
-        <%= t "sign-up-now" %>
-      <% end %>
-    </div>
-  </div>
+  <%= render "home_page" %>
 <% end %>

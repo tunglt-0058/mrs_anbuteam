@@ -26,4 +26,9 @@ Rails.application.routes.draw do
     resources :favorite_actors, only: [:create, :destroy]
   end
   resources :not_found, only: :index
+
+  resources :follow_users, only: :index
+  resources :users, only: [:show, :update] do
+    resources :relationships, only: [:create, :destroy]
+  end
 end

@@ -1,0 +1,16 @@
+<div class="col-md-6 col-sm-6 col-xs-6 news-feed-middle middle-follow-users">
+  <% unless users.empty? %>
+    <div class="follow-users-content">
+      <% users.each do |user| %>
+        <%= render "user", user: user %>
+      <% end %>
+    </div>
+
+    <div id="load-more-follow-users">
+      <%= link_to t("load_more"), follow_users_path(type: type,
+        follow_users_offset: users.last.id), remote: true %>
+    </div>
+  <% else %>
+    <h3 class="no-content"><%= t "news_feed.no_content" %></h3>
+  <% end %>
+</div>
