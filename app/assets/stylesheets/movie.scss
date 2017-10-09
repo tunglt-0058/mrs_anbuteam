@@ -2,6 +2,10 @@
 
 .single_page {
 
+  .align-top {
+    margin-top: 6px;
+  }
+
   .movie_header {
     color:#fff;
     font-family: Oswald,arial,Georgia,serif;
@@ -218,3 +222,8 @@ div {
       font-weight: bold;
     }
   }
+
+.cus-link {
+  height: 10px;
+  margin-top: 9px;
+}

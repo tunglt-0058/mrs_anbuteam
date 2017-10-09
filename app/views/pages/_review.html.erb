@@ -1,0 +1,62 @@
+<div class="new-image">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="left_content movie-pic">
+        <%= link_to image_tag(movie.poster), "#" %>
+      </div>
+    </div>
+    <div class="col-md-6-offset-1">
+      <div class="movie-title">
+        <%= movie.name %>
+      </div>
+      <div class="user-avatar-too-small">
+        <% if user.avatar != nil %>
+          <%= link_to image_tag(user.avatar), "#" %>
+        <% else %>
+          <%= link_to image_tag("avatar.png"), "#" %>
+        <% end %>
+         - <%= link_to user.name, "#" %>
+      </div>
+      <div class="catelogy-review">
+        <i class="fa fa-tags"></i>
+        <% movie_genre = MovieGenre.find_by movie_id: movie.id %>
+        <% genre = Genre.find_by id: movie_genre.genre_id %>
+        Genre: <%= genre.name %>
+      </div>
+      <div class="catelogy-review">
+        <i class="fa fa-industry"></i>
+        Rating:
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-o"></i>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-10">
+      <div clas="content-review">
+        <%= review.content %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="panel-footer follow_bgr">
+    <div class="btn-group">
+      <div class="col-md-5">
+        <%= render "star"%>
+      </div>
+      <div class="col-md-2">
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i> Like
+      </div>
+      <div class="col-md-2">
+        <i class="fa fa-thumbs-down" aria-hidden="true"></i> Dislike
+      </div>
+      <div class="col-md-3">
+        <i class="fa fa-comment" aria-hidden="true"></i> Comment
+      </div>
+    </div>
+  </div>
+</div>

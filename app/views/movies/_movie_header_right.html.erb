@@ -69,4 +69,10 @@
     <i class="fa fa-star rate" aria-hidden="true"></i>
     <i class="fa fa-star rate" aria-hidden="true"></i>
   </p>
+
+  <p class="movie-info-row">
+    <% if current_user %>
+      <%= link_to t("movies.show.add_review"), new_movie_review_path(movie), class: "btn btn-danger" %>
+    <% end %>
+  </p>
 </aside>
