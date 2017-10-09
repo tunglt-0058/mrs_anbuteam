@@ -45,6 +45,14 @@ class User < ApplicationRecord
     User.load_know_users user_ids
   end
 
+  def load_favorite_actors
+    Actor.where(id: favorite_actors.pluck(:actor_id)).order id: :desc
+  end
+
+  def favorited_actor? actor
+    self.favorite_actors.find_by(actor: actor).present? ? true : false
+  end
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
