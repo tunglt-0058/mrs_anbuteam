@@ -1,0 +1,14 @@
+<div class="follow-users">
+  <div class="follow-users-header">
+    <span class="follow-users-header-content">
+      <div class="follow-users-header-info">
+        <h6><%= link_to user.name, user %></h6>
+        <div><b><%= t "user.email" %></b><%= user.email %></div>
+        <div><b><%= t "user.sex" %></b><%= user.sex %></div>
+        <div class="follow-users-btn">
+          <%= render "relationships/follow_form", user: user %>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>

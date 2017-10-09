@@ -15,6 +15,15 @@ class User < ApplicationRecord
   has_many :actors, :through => :favorite_actors, :dependent => :destroy
   has_many :favorite_movies
   has_many :movies, :through => :favorite_movies, :dependent => :destroy
+  has_many :active_relationships, class_name: Relationship.name,
+    foreign_key: :follower_id, dependent: :destroy
+  has_many :passive_relationships, class_name: Relationship.name,
+    foreign_key: :followed_id, dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
+
+  scope :load_know_users, -> (user_ids){where.not(id: user_ids)
+    .order id: :desc}
 
   mount_uploader :avatar, AvatarUploader
 
@@ -24,6 +33,16 @@ class User < ApplicationRecord
 
   def favorited_movie? movie
     self.favorite_movies.find_by(movie: movie).present? ? true : false
+  end
+
+  def just_followed
+    following.order(created_at: :desc).limit 10
+  end
+
+  def know_users
+    user_ids = following.ids
+    user_ids.push self.id
+    User.load_know_users user_ids
   end
 
   def self.new_with_session(params, session)
@@ -42,4 +61,23 @@ class User < ApplicationRecord
       user.avatar = auth.info.image
     end
   end
+
+
+  def followed? user
+    following.include? user
+  end
+
+  def follow other_user
+    following << other_user
+    active_relationships.last
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def user_relationship user
+    active_relationships.find_by followed_id: user.id
+  end
+
 end

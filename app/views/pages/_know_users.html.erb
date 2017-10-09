@@ -1,0 +1,14 @@
+<ul>
+  <% if know_users %>
+    <% know_users.each do |user| %>
+      <%= render "pages/user", user: user %>
+    <% end %>
+    <div class="users-load-more">
+      <%= link_to t("load_more"), follow_users_path(type: "know_users") %>
+    </div>
+  <% else %>
+    <p class="no-content">
+      <%= t "news_feed.no_content" %>
+    </p>
+  <% end %>
+</ul>

@@ -1,0 +1,4 @@
+<%= form_for [relationship.followed, relationship], remote: true,
+  method: :delete do |f| %>
+  <%= f.submit t("user.unfollow"), class: "btn btn-danger" %>
+<% end %>

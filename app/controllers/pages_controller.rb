@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-
+  before_action :load_data_static
   def show
     if valid_page?
       render template: "pages/#{params[:page]}"

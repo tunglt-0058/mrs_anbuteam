@@ -1,0 +1,56 @@
+$white-color: #fff;
+$black-color: #000;
+$blue-dark: #365899;
+
+.middle-follow-users {
+  background-color: $white-color !important;
+  padding: 10px !important;
+  z-index: 2;
+
+  .follow-users {
+    border-bottom: 1px solid $black-color;
+    margin-bottom: 10px;
+
+    .follow-users-header {
+      margin-bottom: 10px;
+
+      .follow-users-header-content {
+        .follow-users-header-avatar {
+          border: 1px solid $black-color;
+          display: block;
+          float: left;
+          height: 60px;
+          margin-right: 5px;
+          width: 60px;
+        }
+
+        .follow-users-header-info {
+          overflow: hidden;
+          position: relative;
+
+          .follow-users-btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+
+          h6 {
+            color: $blue-dark;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 0 !important;
+            margin-top: 0 !important;
+          }
+
+          .follow-users-header-user {
+            width: 100%;
+          }
+
+          .comment-info-action {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
