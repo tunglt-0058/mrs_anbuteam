@@ -1,0 +1,4 @@
+<%= link_to actor_favorite_actors_path(actor), remote: true, method: :post,
+  "data-turbolinks": false, title: t("favorite.favorite") do %>
+    <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+<% end %>

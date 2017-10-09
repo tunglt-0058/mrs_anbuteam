@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 tab-style-1-content">
+      <div class="row">
+        <% actors.each do |actor| %>
+          <%= render "actors/actor", actor: actor %>
+        <% end %>
+      </div>
+      <div class="row">
+        <div class="col-sm-9">
+          <hr>
+          <%= will_paginate actors %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

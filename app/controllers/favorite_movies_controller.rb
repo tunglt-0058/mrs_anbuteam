@@ -16,9 +16,9 @@ class FavoriteMoviesController < ApplicationController
 
   def destroy
     if @favorite.destroy
-      flash[:success] = t "favorite.destroy_success"
+      flash[:success] = t "favorite.movie.destroy_success"
     else
-      flash[:danger] = t "favorite.destroy_fail"
+      flash[:danger] = t "favorite.movie.destroy_fail"
     end
   end
 
@@ -42,7 +42,7 @@ class FavoriteMoviesController < ApplicationController
   def find_favorite_movie
     @favorite = current_user.favorite_movies.find_by id: params[:id]
     unless @favorite
-      flash[:danger] = t "not_found.favorite"
+      flash[:danger] = t "not_found.favorite_movie"
       redirect_to not_found_index_path
     end
   end

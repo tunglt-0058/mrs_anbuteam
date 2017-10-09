@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :load_movie, only: [:show]
+  before_action :find_movie, only: [:show]
   helper_method :sort_column, :sort_direction
 
   def index
@@ -17,7 +17,9 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @favorite = current_user.favorite_movies.find_by movie: @movie
+    if current_user
+      @favorite = current_user.favorite_movies.find_by movie: @movie
+    end
   end
 
   def new
@@ -70,8 +72,12 @@ class MoviesController < ApplicationController
 
   private
 
-    def load_movie
+    def find_movie
       @movie = Movie.find(params[:id])
+      unless @movie
+        flash[:danger] = t "not_found.movie"
+        redirect_to not_found_index_path
+      end
     end
 
     def movie_params

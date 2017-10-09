@@ -51,6 +51,6 @@ en:
       copyright: "All rights reserved"
   actors:
     index:
-      all_actor: "All actor"
+      all_actor: "すべての俳優"
     show:
-      actor: "actor"
+      actor: "俳優"

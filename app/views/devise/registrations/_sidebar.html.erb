@@ -38,7 +38,10 @@
         <%= link_to t("user.edit.menu_item.favorite_movies"),
         user_path(user, type: "favorite_movie"), remote: true,
         "data-turbolinks":"false" %></li>
-      <li class="filter"><%= t "user.edit.menu_item.favorite_actors" %></li>
+      <li class="filter" data-trigger=".fav-actor-part">
+        <%= link_to t("user.edit.menu_item.favorite_actors"),
+        user_path(user, type: "favorite_actor"), remote: true,
+        "data-turbolinks":"false" %></li>
     </ul>
   </div>
 </div>

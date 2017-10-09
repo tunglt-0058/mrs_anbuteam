@@ -5,7 +5,11 @@ class ActorsController < ApplicationController
     @actors = Actor.paginate(page: params[:page], per_page: 6).order(id: :desc)
   end
 
-  def show; end
+  def show
+    if current_user
+     @favorite = current_user.favorite_actors.find_by actor: @actor
+    end
+  end
 
   private
 
