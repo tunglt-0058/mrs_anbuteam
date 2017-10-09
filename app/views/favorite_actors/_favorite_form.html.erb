@@ -1,0 +1,5 @@
+<% if current_user.favorited_actor? actor %>
+  <%= render "favorite_actors/favorite", actor: actor, favorite: favorite %>
+<% else %>
+  <%= render "favorite_actors/un_favorite", actor: actor %>
+<% end %>

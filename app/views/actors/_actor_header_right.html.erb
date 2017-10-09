@@ -2,6 +2,11 @@
   <div class="movie_title">
     <span><%= t "actor.name" %></span>
     <%= actor.name %>
+    <% if current_user %>
+      <div class="favorite-icon">
+        <%= render "favorite_actors/favorite_form", actor: actor, favorite: favorite %>
+      </div>
+    <% end %>
   </div>
 
   <p class="movie-info-row">
