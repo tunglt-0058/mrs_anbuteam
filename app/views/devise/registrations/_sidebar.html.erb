@@ -1,4 +1,4 @@
-<div class="col-lg-3">
+<div class="profile-sidebar menu-portfolio-item">
   <div data-provides="fileinput" class="fileinput fileinput-new">
     <div data-trigger="fileinput" class="fileinput-preview thumbnail
       img-circle img-responsive">
@@ -13,7 +13,7 @@
           <% end %>
           <span class="btn btn-default btn-raised btn-file ripple-effect">
             <span class="fileinput-new">
-              <i class="material-icons md-light pmd-xs">add</i></span>
+              <i class="fa fa-picture-o"></i></span>
             <span class="fileinput-exists">
               <i class="material-icons md-light pmd-xs">mode_edit</i></span>
             <%= f.file_field :avatar, class: "upload-avatar" %>
@@ -26,21 +26,34 @@
       </div>
     </div>
   </div>
-  <div class="menu-portfolio-item">
-    <ul class="portfolio">
-      <%= link_to user_path(user, type: "info"), "data-turbolinks": false do %>
-        <li class="filter active" data-trigger=".info-part">
+  <div class="profile-usermenu">
+    <ul class="nav">
+      <li class="active"  >
+        <%= link_to user_path(user, type: "info"), "data-turbolinks": false do %>
+        <i class="fa fa-user-circle"></i>
           <%= t("user.edit.menu_item.information") %></li>
-      <% end %>
-      <li class="filter"><%= t "user.edit.menu_item.reviews" %></li>
+        <% end %>
+      <li class="filter">
+        <a>
+          <i class="fa fa-yelp" aria-hidden="true"></i>
+          <%= t "user.edit.menu_item.reviews" %>
+        </a>
+      </li>
       <li class="filter" data-trigger=".fav-movie-part">
-        <%= link_to t("user.edit.menu_item.favorite_movies"),
-        user_path(user, type: "favorite_movie"), remote: true,
-        "data-turbolinks":"false" %></li>
+        <%= link_to user_path(user, type: "favorite_movie"), remote: true,
+        "data-turbolinks":"false" do %>
+        <i class="fa fa-film"></i>
+          <%= t("user.edit.menu_item.favorite_movies")%>
+        <% end %>
+      </li>
       <li class="filter" data-trigger=".fav-actor-part">
-        <%= link_to t("user.edit.menu_item.favorite_actors"),
-        user_path(user, type: "favorite_actor"), remote: true,
-        "data-turbolinks":"false" %></li>
+        <%= link_to user_path(user, type: "favorite_actor"), remote: true,
+        "data-turbolinks":"false" do %>
+        <i class="fa fa-grav"></i>
+          <%= t("user.edit.menu_item.favorite_actors")%>
+        <% end %>
+      </li>
     </ul>
   </div>
+  <!-- END MENU -->
 </div>

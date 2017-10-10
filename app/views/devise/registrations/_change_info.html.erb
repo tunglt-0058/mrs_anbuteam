@@ -1,5 +1,5 @@
 <h1 class="section-title" id="services">
-  <span><%= t "user.edit.profile.title" %></span>
+  <div class="pro"><%= t "user.edit.profile.title" %></div>
 </h1>
 <h3 class="heading"><%= t "user.edit.profile.info" %></h3>
 <div class="row">
@@ -9,7 +9,7 @@
     <fieldset>
       <div class="form-group prousername pmd-textfield">
         <%= f.label t("user.edit.profile.email"), class: "control-label col-sm-3" %>
-        <div class="col-sm-9">
+        <div class="col-sm-9 width-input">
           <p class="form-control-static"><strong>
             <%= user.email %>
           </strong></p>
@@ -17,20 +17,20 @@
       </div>
       <div class="form-group pmd-textfield">
         <%= f.label t("user.edit.profile.name"), class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
+        <div class="col-sm-9 width-input">
           <%= f.text_field :name, class: "form-control empty", id: "inputName",
             required: true %>
         </div>
       </div>
       <div class="form-group prousername pmd-textfield">
         <label class="control-label col-sm-3"><%= t "user.edit.profile.role" %></label>
-        <div class="col-sm-9">
+        <div class="col-sm-9 width-input">
           <p class="form-control-static"><strong><%= user.role %></strong></p>
         </div>
       </div>
       <div class="form-group pmd-textfield">
         <%= f.label t("user.edit.profile.sex"), class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
+        <div class="col-sm-9 width-input">
           <%= f.text_field :sex, class: "form-control empty", id: "inputSex",
             required: true%>
         </div>
