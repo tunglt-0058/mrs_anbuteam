@@ -6,6 +6,8 @@ en:
     actor: "俳優が見つかりません!"
     favorite_movie: "好きな映画が見つかりません!"
     favorite_actor: "好きな俳優が見つかりません!"
+    review: "レビューが見つかりません!"
+    comment: "コメントが見つかりません!"
     description: "探しているページが移動、削除、名前変更
       または決して存在しなかった可能性があります。"
     back_to_home: "ホームページに戻る"

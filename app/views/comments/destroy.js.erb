@@ -1,0 +1,3 @@
+$('#review-comment-<%= @comment.id %>').remove();
+var size = <%= @review.main_comments.size.to_s %>
+$('#comment-size-<%= @review.id %>').text(size);

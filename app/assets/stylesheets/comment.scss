@@ -1,0 +1,130 @@
+$gray-light: #eee;
+$blue-dark: #365899;
+$black-color: #000;
+$blue-light: #428bca;
+$black-light: #dddfe2;
+
+.reviews-comments {
+    cursor: pointer;
+    margin-right: 10px;
+
+    .reviews-comment-icon {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+
+.review-comment-edit-form {
+  display: none;
+
+  .img-avatar-comment {
+    border: 1px solid $black-color;
+    display: block;
+    float: left;
+    height: 30px !important;
+    margin-right: 10px;
+    width: 30px !important;
+  }
+
+  .comment-form-content {
+    height: 30px !important;
+    overflow: hidden;
+    width: 80%;
+  }
+}
+
+.review-comment-form {
+  display: block;
+  margin-top: 10px;
+
+  .img-avatar-comment {
+    border: 1px solid $gray-light;
+    display: block;
+    float: left;
+    height: 40px !important;
+    margin-right: 10px;
+    width: 40px !important;
+  }
+
+  .comment-form-content {
+    height: 40px !important;
+    overflow: hidden;
+    width: 80%;
+  }
+}
+
+.comment-btn-action {
+  color: $blue-light;
+}
+
+.reply-comments {
+  .review-comment-form {
+    display: block;
+
+    .img-avatar-comment {
+      border: 1px solid $black-color;
+      display: block;
+      float: left;
+      height: 30px !important;
+      margin-right: 10px;
+      width: 30px !important;
+    }
+
+    .comment-form-content {
+      height: 30px !important;
+      overflow: hidden;
+      width: 80%;
+    }
+  }
+}
+
+.comments {
+  margin-bottom: 10px;
+
+  .comments-header {
+    margin-bottom: 10px;
+
+    .avatar-reply-comment {
+      height: 30px;
+      width: 30px;
+    }
+
+    .comments-header-content {
+      .comments-header-avatar {
+        border: 1px solid $black-color;
+        display: block;
+        float: left;
+        height: 40px;
+        margin-right: 5px;
+        width: 40px;
+      }
+
+      .comments-header-info {
+        overflow: hidden;
+        position: relative;
+
+        h6 {
+          color: $blue-dark;
+          font-size: 14px;
+          font-weight: bold;
+          margin-bottom: 0 !important;
+          margin-top: 0 !important;
+        }
+
+        .comments-header-user {
+          width: 100%;
+        }
+
+        .comment-info-action {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.repply-comments {
+  border-left: 2px solid $black-light;
+  padding-left: 10px;
+}

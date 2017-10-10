@@ -1,0 +1,12 @@
+en:
+  review_action:
+    comment: "コメント"
+    reply_comment: "返信"
+    load_more: "レビューをもっと見る"
+  comment:
+    load_more: "コメントをもっと見る"
+    delete: "削除"
+    sure: "あなたは確信していますか？"
+    write: "コメントを書く..."
+    edit: "編集"
+    cancel: "キャンセル"

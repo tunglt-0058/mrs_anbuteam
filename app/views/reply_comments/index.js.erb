@@ -1,0 +1,14 @@
+<% @reply_comments.each do |comment| %>
+  $('#reply-comments-<%= @comment.id %>')
+    .append('<%= j render "reply_comment", comment: comment %>');
+  $('#reply-comments-<%= @comment.id %>').append(
+    '<%= j render "reply_comments/edit_form", comment: @comment,
+    reply_comment: comment %>');
+<% end %>
+<% if @last %>
+  $('#load-more-reply-comments-<%= @comment.id %>').hide();
+<% else %>
+  $('#load-more-reply-comments-<%= @comment.id %>').html(
+    '<%= link_to t("comment.load_more"), comment_reply_comments_path(@comment,
+    reply_comment_offset: @reply_comments.last.id), remote: true %>');
+<% end %>

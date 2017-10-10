@@ -1,0 +1,5 @@
+$('#review-comment-<%= @reply_comment.id %>').show();
+$('#review-comment-edit-form-<%= @reply_comment.id %>').hide();
+$('#review-comment-<%= @reply_comment.id %>')
+  .html('<%= j render "reply_comments/reply_comment_detail",
+  comment: @reply_comment %>');

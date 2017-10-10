@@ -54,9 +54,39 @@
       <div class="col-md-2">
         <i class="fa fa-thumbs-down" aria-hidden="true"></i> Dislike
       </div>
-      <div class="col-md-3">
-        <i class="fa fa-comment" aria-hidden="true"></i> Comment
-      </div>
+      <span class="reviews-comments">
+        <%= image_tag "comment.png", class: "reviews-comment-icon" %>
+        <span id="comment-size-<%= review.id %>">
+          <%= review.main_comments.size %>
+        </span>
+        <%= t "review_action.comment" %>
+      </span>
     </div>
+  </div>
+
+  <div class="review-comment-form">
+    <%= form_for [review, Comment.new], remote: true do |f| %>
+      <%= image_tag avatar_profile(current_user),
+        class: "img-responsive img-avatar-comment" %>
+      <%= f.text_field :content, placeholder: t("comment.write"),
+        class: "form-control comment-form-content",
+        id: "review-comment-form-content-#{review.id}" %>
+    <% end %>
+    <hr>
+  </div>
+
+  <div class="reviews-comments" id="reviews-comments-<%= review.id %>">
+    <% review_comments = review.main_comments.offset(0)
+      .limit Settings.load_more_comment_size %>
+    <% review_comments.each do |comment| %>
+      <%= render "comments/comment", comment: comment %>
+      <%= render "comments/edit_form", review: review, comment: comment %>
+    <% end %>
+  </div>
+  <div id="load-more-review-comments-<%= review.id %>">
+    <% unless review_comments.empty? %>
+      <%= link_to t("comment.load_more"), review_comments_path(review,
+        comment_offset: review_comments.last.id), remote: true %>
+    <% end %>
   </div>
 </div>

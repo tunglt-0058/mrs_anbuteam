@@ -1,0 +1,13 @@
+<% if @reply_comment.reply_id %>
+  $('#reply-comments-<%= @parent_comment.id %>').prepend(
+    '<%= j render "reply_comments/edit_form",
+    comment: @reply_comment.reply, reply_comment: @reply_comment %>');
+  $('#reply-reply-comment-form-content-<%= @parent_comment.id %>').val('');
+<% else %>
+  $('#reply-comments-<%= @parent_comment.id %>').prepend(
+    '<%= j render "reply_comments/edit_form", comment: @reply_comment.parent,
+    reply_comment: @reply_comment %>');
+  $('#reply-comment-form-content-<%= @parent_comment.id %>').val('');
+<% end %>
+$('#reply-comments-<%= @parent_comment.id %>').prepend(
+  '<%= j render "reply_comments/reply_comment", comment: @reply_comment %>');
