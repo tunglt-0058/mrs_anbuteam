@@ -28,8 +28,7 @@
   </div>
   <div class="menu-portfolio-item">
     <ul class="portfolio">
-      <%= link_to user_path(user, type: "info"), "data-turbolinks": false,
-        remote: true do %>
+      <%= link_to user_path(user, type: "info"), "data-turbolinks": false do %>
         <li class="filter active" data-trigger=".info-part">
           <%= t("user.edit.menu_item.information") %></li>
       <% end %>
