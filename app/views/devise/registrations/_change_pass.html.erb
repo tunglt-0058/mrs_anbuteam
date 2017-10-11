@@ -5,20 +5,20 @@
     <fieldset>
     <div class="form-group pmd-textfield">
       <%= f.label t("user.edit.current_password"), class: "control-label col-sm-3"%>
-      <div class="col-sm-9">
+      <div class="col-sm-9 width-input">
         <%= f.password_field :current_password, class: "form-control empty", autocomplete: "off", required: true %>
       </div>
     </div>
-    <div class="form-group pmd-textfield">
+    <div class="form-group pmd-textfield ">
       <%= f.label t("user.edit.password"), class: "control-label col-sm-3"%>
-      <div class="col-sm-9">
+      <div class="col-sm-9 width-input">
         <%= f.password_field :password, class: "form-control empty", autocomplete: "off",
           required: true%>
       </div>
     </div>
     <div class="form-group pmd-textfield">
       <%= f.label t("user.edit.password_confirmation"), class: "control-label col-sm-3"%>
-      <div class="col-sm-9">
+      <div class="col-sm-9 width-input">
         <%= f.password_field :password_confirmation, class: "form-control empty", autocomplete: "off", required: true %>
       </div>
     </div>

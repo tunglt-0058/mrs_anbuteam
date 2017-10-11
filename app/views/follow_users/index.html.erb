@@ -1,6 +1,8 @@
 <div class="ltt-body-content">
-  <div class="ltt-news-feed">
-    <%= render "pages/left_news_feed", followings: @followings, know_users: @know_users %>
+  <div class="ltt-news-feed follow_margin_bottom">
+    <div class="col-md-3 ta8 follow_bgr">
+      <%= render "pages/left_news_feed", followings: @followings, know_users: @know_users %>
+    </div>
     <%= render "middle_follow_users", users: @users, type: @type %>
   </div>
 </div>

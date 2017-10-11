@@ -3,9 +3,11 @@
     <div class="page-content profile-edit section-custom">
       <div class="pmd-card pmd-z-depth">
         <div class="pmd-card-body">
-          <div class="row">
-            <%= render "devise/registrations/sidebar", user: @user %>
-            <div class="col-lg-8 custom-col-8 profile-content">
+          <div class="row profile">
+            <div class="col-md-3">
+              <%= render "devise/registrations/sidebar", user: @user %>
+            </div>
+            <div class="col-md-9 custom-col-8 profile-content">
               <div class="info-part">
                 <%= render "devise/registrations/change_info", user: @user %>
                 <%= render "devise/registrations/change_pass", user: @user %>
