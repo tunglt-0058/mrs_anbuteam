@@ -10,7 +10,12 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :videos
   resources :images
-  resources :reviews
+  resources :reviews do
+    resources :comments, except: :show
+  end
+  resources :comments do
+    resources :reply_comments, except: :show
+  end
   resources :genres
   resources :categories
 

@@ -88,4 +88,7 @@ class User < ApplicationRecord
     active_relationships.find_by followed_id: user.id
   end
 
+  def current_user? user
+    self == user
+  end
 end

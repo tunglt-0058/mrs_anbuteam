@@ -1,0 +1,13 @@
+<% @comments.each do |comment| %>
+  $('#reviews-comments-<%= @review.id %>')
+    .append('<%= j render "comment", comment: comment %>');
+  $('#reviews-comments-<%= @review.id %>')
+    .append('<%= j render "comments/edit_form", comment: comment %>');
+<% end %>
+<% if @last %>
+  $('#load-more-review-comments-<%= @review.id %>').hide();
+<% else %>
+  $('#load-more-review-comments-<%= @review.id %>')
+    .html('<%= link_to t("comment.load_more"), review_comments_path(@review,
+    comment_offset: @comments.last.id), remote: true %>');
+<% end %>

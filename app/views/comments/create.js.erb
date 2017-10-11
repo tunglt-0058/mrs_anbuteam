@@ -1,0 +1,9 @@
+<% if @success %>
+  $('#reviews-comments-<%= @review.id %>')
+    .prepend('<%= j render "comments/edit_form", comment: @comment %>');
+  $('#reviews-comments-<%= @review.id %>')
+    .prepend('<%= j render "comment", comment: @comment %>');
+  $('#review-comment-form-content-<%= @review.id %>').val('');
+  var size = <%= @review.main_comments.size.to_s %>
+  $('#comment-size-<%= @review.id %>').text(size);
+<% end %>

@@ -1,0 +1,14 @@
+<div class="review-comment-edit-form"
+  id="review-comment-edit-form-<%= comment.id %>">
+  <%= form_for [comment.review, comment], remote: true do |f| %>
+    <%= image_tag avatar_profile(current_user),
+      class: "img-responsive img-avatar-comment" %>
+    <%= f.text_field :content, placeholder: t("comment.write"),
+      class: "form-control comment-form-content",
+      id: "comment-form-content-#{comment.id}" %>
+  <% end %>
+  <div class="comment-edit-btn-cancel" id="<%= comment.id %>">
+    <%= t "comment.cancel" %>
+  </div>
+  <hr>
+</div>
