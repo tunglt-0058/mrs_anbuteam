@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 20171009031629) do
     t.string "status"
     t.text "summary"
     t.string "poster"
+    t.float "point", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -165,6 +166,7 @@ ActiveRecord::Schema.define(version: 20171009031629) do
     t.integer "user_id"
     t.integer "movie_id"
     t.integer "comment_number", default: 0
+    t.integer "point", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

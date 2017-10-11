@@ -1,3 +1,9 @@
 load_more_comment_size: 2
 load_more_reply_comment_size: 2
 length_comment: 80
+rate:
+  rate_five: 5
+  rate_four: 4
+  rate_three: 3
+  rate_two: 2
+  rate_one: 1
