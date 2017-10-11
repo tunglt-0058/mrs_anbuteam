@@ -1,0 +1,59 @@
+.movie-rate {
+  .rate-title {
+    font-weight: bolder;
+  }
+
+  .movie-rate-left {
+    margin-bottom: 10px;
+    margin-left: -40px;
+    text-align: center;
+  }
+
+  .movie-rate-right {
+    ul {
+      -webkit-padding-start: 10px;
+
+      li {
+        list-style: none;
+        margin-bottom: 5px;
+
+        .fa-star {
+          float: left;
+          line-height: 20px;
+        }
+
+        .fa-star::before {
+          margin-right: 5px;
+        }
+
+        .bar {
+          float: left;
+          line-height: 20px;
+          margin-left: 10px;
+          padding-left: 5px;
+          width: 80%;
+        }
+
+        .bar-5 {
+          background-color: #88b131;
+        }
+
+        .bar-4 {
+          background-color: #99cc00;
+        }
+
+        .bar-3 {
+          background-color: #ffcf02;
+        }
+
+        .bar-2 {
+          background-color: #ff9f02;
+        }
+
+        .bar-1 {
+          background-color: #ff6f31;
+        }
+      }
+    }
+  }
+}

@@ -12,4 +12,25 @@ class Movie < ApplicationRecord
   has_many :favorite_movies
   has_many :users, :through => :favorite_movies, :dependent => :destroy
   has_many :images, :dependent => :destroy
+
+  ["rate_five", "rate_four", "rate_three", "rate_two", "rate_one"]
+    .each do |rate|
+      define_method rate do
+        reviews.where point: Settings.rate.send(rate)
+      end
+  end
+
+  def avarage_rate
+    (total_rate / reviews.size).to_f
+  end
+
+  private
+  def total_rate
+    sum_rate = 0;
+    ["rate_five", "rate_four", "rate_three", "rate_two", "rate_one"]
+      .each do |rate|
+      sum_rate += self.send(rate).size * Settings.rate.send(rate)
+    end
+    sum_rate
+  end
 end

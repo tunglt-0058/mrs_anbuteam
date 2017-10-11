@@ -6,6 +6,7 @@ class CreateMovies < ActiveRecord::Migration[5.1]
       t.string :status
       t.text :summary
       t.string :poster
+      t.float :point, default: 0
 
       t.timestamps
     end
