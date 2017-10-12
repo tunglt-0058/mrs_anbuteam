@@ -10,7 +10,7 @@
           <% end %>
         </p>
         <%user = User.find(r.user_id)%>
-        Reviewed by <%=link_to user.name, "#"%> on <%=r.updated_at.to_s %>
+        Reviewed by <%=link_to user.name, user_path(user) %> on <%=r.updated_at.to_s %>
         <%= link_to("See more", r) %>
       </div>
     </div>
@@ -19,6 +19,3 @@
   <h1>Don't have any review</h1>
 <% end %>
 <br><br><br>
-
-
-

@@ -9,7 +9,7 @@ class User < ApplicationRecord
     length: {within: Devise.password_length}, allow_nil: true
   validates :name, presence: true, length: {maximum: 50}
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many :reviews
   has_many :favorite_actors
   has_many :actors, :through => :favorite_actors, :dependent => :destroy

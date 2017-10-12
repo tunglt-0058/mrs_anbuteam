@@ -203,6 +203,43 @@ FavoriteMovie.create!([
   {user_id: 10, movie_id: 5}
 ])
 
+FavoriteActor.create!([
+  {user_id: 1, actor_id: 1},
+  {user_id: 1, actor_id: 2},
+  {user_id: 1, actor_id: 3},
+  {user_id: 1, actor_id: 4},
+  {user_id: 1, actor_id: 5},
+  {user_id: 2, actor_id: 1},
+  {user_id: 2, actor_id: 3},
+  {user_id: 2, actor_id: 5},
+  {user_id: 2, actor_id: 7},
+  {user_id: 3, actor_id: 9},
+  {user_id: 3, actor_id: 11},
+  {user_id: 3, actor_id: 12},
+  {user_id: 3, actor_id: 13},
+  {user_id: 4, actor_id: 14},
+  {user_id: 4, actor_id: 2},
+  {user_id: 4, actor_id: 4},
+  {user_id: 5, actor_id: 6},
+  {user_id: 5, actor_id: 8},
+  {user_id: 5, actor_id: 10},
+  {user_id: 6, actor_id: 12},
+  {user_id: 6, actor_id: 14},
+  {user_id: 6, actor_id: 15},
+  {user_id: 7, actor_id: 1},
+  {user_id: 7, actor_id: 2},
+  {user_id: 7, actor_id: 3},
+  {user_id: 7, actor_id: 5},
+  {user_id: 8, actor_id: 8},
+  {user_id: 8, actor_id: 13},
+  {user_id: 8, actor_id: 3},
+  {user_id: 9, actor_id: 5},
+  {user_id: 9, actor_id: 8},
+  {user_id: 9, actor_id: 9},
+  {user_id: 10, actor_id: 2},
+  {user_id: 10, actor_id: 6}
+])
+
 Actor.create!([
   {name: "Arimura Kasumi", date_of_birth: "10/8/1995", avatar: "https://i.imgur.com/P4J77s7.jpg"},
   {name: "Anne Watanabe", date_of_birth: "10/6/1992", avatar: "https://i.imgur.com/BLPPpN8.jpg"},
@@ -316,4 +353,13 @@ Movie.all.each do |movie|
       インスピレーションを受けた"
   movie.point = 5
   movie.save
+end
+
+Review.all.each do |review|
+  (1..5).each do
+    comment = Comment.create user_id: 1, review_id: review.id,
+      content: "この映画は映像の美しさといい音楽の素晴らしさといい、最高の作品だ。"
+    Comment.create user_id: 2, review_id: review.id, parent_id: comment.id,
+    content: "そうですね。本当に面白いです。"
+  end
 end

@@ -41,7 +41,6 @@ class FavoriteActorsController < ApplicationController
 
   def find_favorite_actor
     @favorite = current_user.favorite_actors.find_by id: params[:id]
-    byebug
     unless @favorite
       flash[:danger] = t "not_found.favorite_actor"
       redirect_to not_found_index_path
