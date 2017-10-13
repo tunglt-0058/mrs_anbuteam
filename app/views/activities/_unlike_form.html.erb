@@ -1,0 +1,6 @@
+<%= link_to review_activity_path(review, activity),
+  remote: true, method: :delete, class: "activity-like" do %>
+  <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+  <span class="review-like-size"><%= review.likes.size %></span>
+  <%= t "review_action.like" %>
+<% end %>

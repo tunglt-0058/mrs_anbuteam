@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-md-3">
       <div class="left_content movie-pic">
-        <%= link_to image_tag(movie.poster), "#" %>
+        <%= link_to image_tag(movie.poster), movie_path(movie) %>
       </div>
     </div>
     <div class="col-md-6-offset-1">
       <div class="movie-title">
-        <%= movie.name %>
+        <%= link_to movie.name, movie_path(movie) %>
       </div>
       <div class="user-avatar-too-small">
         <% if user.avatar != nil %>
@@ -15,22 +15,18 @@
         <% else %>
           <%= link_to image_tag("avatar.png"), "#" %>
         <% end %>
-         - <%= link_to user.name, "#" %>
+         - <%= link_to user.name, user_path(user) %>
       </div>
-      <div class="catelogy-review">
+      <div class="category-review">
         <i class="fa fa-tags"></i>
         <% movie_genre = MovieGenre.find_by movie_id: movie.id %>
         <% genre = Genre.find_by id: movie_genre.genre_id %>
         Genre: <%= genre.name %>
       </div>
-      <div class="catelogy-review">
-        <i class="fa fa-industry"></i>
-        Rating:
+      <div class="star">
+        <% (1..review.point).each do |index| %>
           <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-o"></i>
+        <% end %>
       </div>
     </div>
   </div>
@@ -45,17 +41,13 @@
   <br>
   <div class="panel-footer follow_bgr">
     <div class="btn-group">
-      <div class="col-md-5">
-        <%= render "pages/star"%>
-      </div>
-      <div class="col-md-2">
-        <i class="fa fa-thumbs-up" aria-hidden="true"></i> Like
-      </div>
-      <div class="col-md-2">
-        <i class="fa fa-thumbs-down" aria-hidden="true"></i> Dislike
+
+      <div class="review-action">
+        <%= render "activities/activity_form", review: review,
+        activity: review.activity_by_user(current_user) %>
       </div>
       <span class="reviews-comments">
-        <%= image_tag "comment.png", class: "reviews-comment-icon" %>
+        <i class="fa fa-comments" aria-hidden="true"></i>
         <span id="comment-size-<%= review.id %>">
           <%= review.main_comments.size %>
         </span>

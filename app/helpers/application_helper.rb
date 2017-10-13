@@ -22,4 +22,10 @@ module ApplicationHelper
       end
     end
   end
+
+  def check_opacity review, type
+    if current_user && current_user.send(type, review)
+      "activity-opacity"
+    end
+  end
 end

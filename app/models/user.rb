@@ -21,6 +21,7 @@ class User < ApplicationRecord
     foreign_key: :followed_id, dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  has_many :activities, dependent: :destroy
 
   scope :load_know_users, -> (user_ids){where.not(id: user_ids)
     .order id: :desc}
@@ -70,7 +71,6 @@ class User < ApplicationRecord
     end
   end
 
-
   def followed? user
     following.include? user
   end
@@ -90,5 +90,13 @@ class User < ApplicationRecord
 
   def current_user? user
     self == user
+  end
+
+  def liked? review
+    activities.find_by review: review, activity_type: :like
+  end
+
+  def disliked? review
+    activities.find_by review: review, activity_type: :dislike
   end
 end

@@ -16,6 +16,6 @@ class PagesController < ApplicationController
   end
 
   def load_review
-    @review = Review.all
+    @reviews = Review.all
   end
 end

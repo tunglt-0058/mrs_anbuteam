@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :videos
   resources :images
   resources :reviews do
+    resources :activities, only: [:create, :destroy]
     resources :comments, except: :show
   end
   resources :comments do
