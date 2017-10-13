@@ -1,0 +1,47 @@
+<%= form_for(@review, remote: true, :html => { :role => "form" }) do |f| %>
+<div id="error_explanation" class="bg-danger text-danger">
+</div>
+<div class="row">
+  <div class="col-lg-2">
+    <h1 class="review-feild"><%= t("movies.review.content") %></h1>
+  </div>
+  <div class="col-lg-10">
+    <%= f.text_area :content, :class => "form-control first_input"  %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-2 profile-usermenu">
+    <h1 class="review-feild"><%= t("movies.review.rating") %></h1>
+  </div>
+  <div class="col-lg-10">
+    <div class="stars">
+        <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
+        <label class="star star-5" for="star-5"></label>
+        <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
+        <label class="star star-4" for="star-4"></label>
+        <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
+        <label class="star star-3" for="star-3"></label>
+        <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
+        <label class="star star-2" for="star-2"></label>
+        <input class="star star-1" id="star-1" type="radio" name="star" value="1" checked/>
+        <label class="star star-1" for="star-1"></label>
+    </div>
+  </div>
+
+  <%= f.hidden_field :point, :id=>"point" %>
+  <% if (params[:movie_id]) %>
+    <% movie_id = params[:movie_id]%>
+  <% else %>
+    <% movie_id = @review.movie.id %>
+  <% end %>
+  <%= f.hidden_field :movie_id, :value => movie_id %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <div class=" col-lg-8 create-btn">
+    <%= f.submit  @review.new_record? ? t("movies.review.create") :
+      t("movies.review.update"), :class => "btn btn-primary" %>
+    <button type="button" class="btn btn-danger" data-dismiss="modal"
+    aria-label="Close">
+    <span aria-hidden="true"><%= t("movies.review.cancel") %></span></button>
+  </div>
+</div>
+<% end %>

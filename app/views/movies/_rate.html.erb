@@ -1,0 +1,53 @@
+<div id="rate">
+  <div class="movie-rate">
+    <p class="rate-title"><%= t "movies.show.rate" %></p>
+    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12 movie-rate-left">
+      <h1><%= movie.avarage_rate %></h1>
+      <div class="movie-sum-review">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <%= t "movies.show.rate_sum" %>
+        <span><%= movie.reviews.size %></span>
+      </div>
+    </div>
+
+    <div class="col-md-9 col-lg-9 col-sm-8 col-xs-12 movie-rate-right">
+      <ul>
+        <li>
+          <i class="fa fa-star" aria-hidden="true">5</i>
+          <div class="bar bar-5">
+            <span><%= movie.rate_five.size %></span>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        <li>
+          <i class="fa fa-star" aria-hidden="true">4</i>
+          <div class="bar bar-4">
+            <span><%= movie.rate_four.size %></span>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        <li>
+          <i class="fa fa-star" aria-hidden="true">3</i>
+          <div class="bar bar-3">
+            <span><%= movie.rate_three.size %></span>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        <li>
+          <i class="fa fa-star" aria-hidden="true">2</i>
+          <div class="bar bar-2">
+            <span><%= movie.rate_two.size %></span>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+        <li>
+          <i class="fa fa-star" aria-hidden="true">1</i>
+          <div class="bar bar-1">
+            <span><%= movie.rate_one.size %></span>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

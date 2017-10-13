@@ -1,0 +1,39 @@
+// Add the dialog title
+$('#dialog h3').html("<i class='glyphicon glyphicon-plus'></i><%=t("movies.show.add_review")%>");
+
+// Render the new form
+$('.modal-body').html('<%= j render("form") %>');
+
+// Show the dynamic dialog
+$('#dialog').modal("show");
+
+$("#star-5" ).click(function() {
+  $(document).ready(function(){
+    $("#point").val(5);
+  });
+});
+$("#star-4" ).click(function() {
+  $(document).ready(function(){
+    $("#point").val(4);
+  });
+});
+$("#star-3" ).click(function() {
+  $(document).ready(function(){
+    $("#point").val(3);
+  });
+});
+$("#star-2" ).click(function() {
+  $(document).ready(function(){
+    $("#point").val(2);
+  });
+});
+$("#star-1" ).click(function() {
+  $(document).ready(function(){
+    $("#point").val(1);
+  });
+});
+
+// Set focus to the first element
+$('#dialog').on('shown.bs.modal', function () {
+  $('.first_input').focus()
+})

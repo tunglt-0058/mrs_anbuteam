@@ -1,5 +1,6 @@
-document.addEventListener('turbolinks:load', function() {
-  var sum = $('.movie-sum-review span').prop('textContent');
+$('#dialog').modal('toggle');
+$('#rate').html('<%= j render "movies/rate", movie: @movie %>');
+var sum = $('.movie-sum-review span').prop('textContent');
   if (sum == 0) {
     sum = 1;
   }
@@ -13,4 +14,4 @@ document.addEventListener('turbolinks:load', function() {
   $('.bar-3').css('width', rateThree + '%');
   $('.bar-2').css('width', rateTwo + '%');
   $('.bar-1').css('width', rateOne + '%');
-});
+$('#render-reviews').html('<%= j render "movies/movie_review", movie: @movie %>');

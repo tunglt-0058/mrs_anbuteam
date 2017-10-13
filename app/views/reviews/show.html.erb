@@ -1,7 +1,10 @@
 <div class="container show-review">
   <div class="col-log-8 col-md-8">
-    <%= render "review", review: @review, user: @review.user,
-      movie: @review.movie %>
+    <div id="review-edit">
+      <%= render "review_details", review: @review, user: @review.user,
+        movie: @review.movie %>
+    </div>
+    <%= render 'dialog' %>
   </div>
   <div class="col-log-4 col-md-4">
     <div class="top-4">
