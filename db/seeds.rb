@@ -363,3 +363,10 @@ Review.all.each do |review|
     content: "そうですね。本当に面白いです。"
   end
 end
+
+Review.all.each do |review|
+  Activity.create user_id: 2, review: review, activity_type: :like
+  Activity.create user_id: 3, review: review, activity_type: :like
+  Activity.create user_id: 4, review: review, activity_type: :dislike
+  Activity.create user_id: 5, review: review, activity_type: :dislike
+end

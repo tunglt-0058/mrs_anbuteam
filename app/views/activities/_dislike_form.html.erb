@@ -1,0 +1,6 @@
+<%= link_to review_activities_path(review, activity_type: :dislike),
+  remote: true, method: :post, class: "activity-dislike" do %>
+  <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+  <span class="review-dislike-size"><%= review.dislikes.size %></span>
+  <%= t "review_action.dislike" %>
+<% end %>

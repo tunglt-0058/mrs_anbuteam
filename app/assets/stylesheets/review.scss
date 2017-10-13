@@ -164,8 +164,9 @@ h1 { font-size: 1.5em; margin: 10px; }
   font-weight: bold;
 }
 
-.catelogy-review {
+.category-review {
   margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 content-review {
@@ -180,4 +181,40 @@ content-review {
 
 .show-review {
   margin: 20px 0px 40px 20px;
+}
+
+.review-action {
+  float: right;
+
+  .review-like,
+  .review-dislike,
+  .review-comment {
+    padding: 5px;
+  }
+
+  .activity-like,
+  .activity-dislike {
+    text-decoration: none;
+  }
+
+  .activity-like:hover,
+  .activity-dislike:hover {
+    text-decoration: none;
+  }
+}
+
+.star {
+  color: rgb(247, 219, 18);;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.fa-star {
+  color: #f7db12;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.fa-star:hover {
+  color: #f7db12;
 }
