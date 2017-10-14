@@ -224,3 +224,35 @@ $white-dark: #e9ebee;
 .follow_bgr {
   background-color: rgba(0, 51, 102, 0.11);
 }
+
+.news-feed-right {
+  padding: 5px;
+
+  .top-5,
+  .recent {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px;
+  }
+
+  .top-5:hover,
+  .recent:hover {
+    background-color: #f7db12;
+  }
+
+  .recent-list {
+    display: none;
+  }
+
+  .active {
+    background-color: #f7db12;
+  }
+
+  ul {
+    -webkit-padding-start: 0px;
+
+    li {
+      list-style: none;
+    }
+  }
+}

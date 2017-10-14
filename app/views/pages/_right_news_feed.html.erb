@@ -1,0 +1,28 @@
+<div class="top-5 active">
+  <h4 class="tab-title"><%=  t "movies.popular.hot"%></h4>
+</div>
+<div class="recent">
+  <h4 class="tab-title"><%=  t "movies.popular.recent"%></h4>
+</div>
+<hr>
+<div class="top-5-list">
+  <ul>
+    <% top_movies.each_with_index do |movie, index| %>
+      <li>
+        <%= render "movies/mini", index: index + 1, movie: movie %>
+      </li>
+      <hr>
+    <% end %>
+  </ul>
+</div>
+
+<div class="recent-list">
+  <ul>
+    <% recent_movies.take(Settings.load_recent_movies).each_with_index do |movie, index| %>
+      <li>
+        <%= render "movies/mini", index: index + 1, movie: movie %>
+      </li>
+      <hr>
+    <% end %>
+  </ul>
+</div>

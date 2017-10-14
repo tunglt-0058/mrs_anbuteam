@@ -24,6 +24,16 @@ class Movie < ApplicationRecord
     (total_rate / reviews.size).to_f
   end
 
+  class << self
+    def top_movies
+      all.order(point: :desc).limit Settings.load_top_movies
+    end
+
+    def recent_movies
+      all.order(point: :desc).limit Settings.load_recent_movies
+    end
+  end
+
   private
   def total_rate
     sum_rate = 0;
