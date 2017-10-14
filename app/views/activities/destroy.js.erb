@@ -1,4 +1,5 @@
-$('.review-like').html('<%= j render "activities/like",
+var id = '<%= @review.id %>';
+$('.review-like.' + id).html('<%= j render "activities/like",
   review: @review, activity: @activity %>');
-$('.review-dislike').html('<%= j render "activities/dislike",
+$('.review-dislike.' + id).html('<%= j render "activities/dislike",
   review: @review, activity: @activity %>');

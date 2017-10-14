@@ -21,7 +21,8 @@
         <i class="fa fa-tags"></i>
         <% movie_genre = MovieGenre.find_by movie_id: movie.id %>
         <% genre = Genre.find_by id: movie_genre.genre_id %>
-        Genre: <%= genre.name %>
+        <%= t "review_label.genre" %>
+        <%= link_to genre.name, genre_path(genre) %>
       </div>
       <div class="star">
         <% (1..review.point).each do |index| %>
@@ -41,7 +42,6 @@
   <br>
   <div class="panel-footer follow_bgr">
     <div class="btn-group">
-
       <div class="review-action">
         <%= render "activities/activity_form", review: review,
         activity: review.activity_by_user(current_user) %>

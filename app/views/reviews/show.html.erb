@@ -1,3 +1,21 @@
-<div class="show-review">
-  <%= render "review", review: @review, user: @review.user, movie: @review.movie %>
+<div class="container show-review">
+  <div class="col-log-8 col-md-8">
+    <%= render "review", review: @review, user: @review.user,
+      movie: @review.movie %>
+  </div>
+  <div class="col-log-4 col-md-4">
+    <div class="top-4">
+      <h4 class="tab-title"><%=  t "review_label.top_reviews"%></h4>
+    </div>
+    <div class="top-4-list">
+      <ul>
+        <% @top_reviews.take(Settings.load_reviews).each_with_index do |review, index| %>
+          <li>
+            <%= render "review_mini", index: index + 1, review: review %>
+          </li>
+          <hr>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>

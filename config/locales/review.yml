@@ -2,3 +2,6 @@ en:
   review_action:
     like: "ライク"
     dislike: "嫌い"
+  review_label:
+    genre: "ジャンル: "
+    top_reviews: "トップレビュー"

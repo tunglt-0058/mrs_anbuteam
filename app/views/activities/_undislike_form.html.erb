@@ -2,4 +2,5 @@
   remote: true, method: :delete, class: "activity-dislike" do %>
   <i class="fa fa-thumbs-down" aria-hidden="true"></i>
   <span class="review-dislike-size"><%= review.dislikes.size %></span>
+  <%= t "review_action.dislike" %>
 <% end %>

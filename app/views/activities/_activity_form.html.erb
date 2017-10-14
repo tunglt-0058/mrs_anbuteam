@@ -1,9 +1,9 @@
 <span class="activity">
-  <span class="review-like">
+  <span class="review-like <%= review.id %>">
     <%= render "activities/like", review: review, activity: activity %>
   </span>
 
-  <span class="review-dislike">
+  <span class="review-dislike <%= review.id %>">
     <%= render "activities/dislike", review: review, activity: activity %>
   </span>
 </span>
