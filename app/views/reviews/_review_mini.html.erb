@@ -1,0 +1,40 @@
+<div class="movie-mini">
+  <div class="movie-left">
+    <div class="movie-pic">
+      <%= link_to image_tag(review.movie.poster), review_path(review),
+        class: "img-responsive" %>
+    </div>
+  </div>
+
+  <div class="movie-right">
+    <div class="movie-name">
+      <span class="name">
+        <%= link_to review.movie do %>
+          <%= index %>. <%= review.movie.name %>
+        <% end %>
+      </span>
+    </div>
+    <div class="user-avatar-too-small">
+      <% if review.user.avatar != nil %>
+        <%= link_to image_tag(review.user.avatar), "#" %>
+      <% else %>
+        <%= link_to image_tag("avatar.png"), "#" %>
+      <% end %>
+       - <%= link_to review.user.name, user_path(review.user) %>
+    </div>
+    <div class="category-review">
+      <i class="fa fa-tags"></i>
+      <% movie_genre = MovieGenre.find_by movie_id: review.movie.id %>
+      <% genre = Genre.find_by id: movie_genre.genre_id %>
+      <%= t "review_label.genre" %>
+      <%= link_to genre.name, genre_path(genre) %>
+    </div>
+    <div class="star">
+      <% (1..review.point).each do |index| %>
+        <i class="fa fa-star"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+</div>

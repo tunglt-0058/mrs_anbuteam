@@ -181,6 +181,14 @@ content-review {
 
 .show-review {
   margin: 20px 0px 40px 20px;
+
+  ul {
+    -webkit-padding-start: 0px;
+
+    li {
+      list-style: none;
+    }
+  }
 }
 
 .review-action {

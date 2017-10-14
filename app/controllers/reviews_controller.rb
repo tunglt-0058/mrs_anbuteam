@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :find_review
 
   def show
+    @top_reviews = Review.top_reviews
   end
 
   private
