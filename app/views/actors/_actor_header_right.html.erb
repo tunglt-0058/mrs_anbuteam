@@ -11,7 +11,7 @@
 
   <p class="movie-info-row">
     <span><%= t "actor.birth_day" %></span>
-    <%= actor.date_of_birth %>
+    <%= actor.date_of_birth.year %>/<%= actor.date_of_birth.month %>/<%= actor.date_of_birth.day %>
   </p>
 
   <% if actor.movies %>
@@ -25,5 +25,16 @@
         <% end %>
       <% end %>
     </p>
+  <% end %>
+  <% if user_signed_in? %>
+    <%= link_to edit_actor_path(actor),  class: "btn btn-warning" do %>
+      <span class="glyphicon glyphicon-edit"></span>
+      <%= t "actor.action.edit" %>
+    <% end %>
+    <%= link_to "/actors/#{actor.id}",  method: :delete,
+      data: {confirm: "are you sure?"}, class: "btn btn-danger" do %>
+      <span class="glyphicon glyphicon-erase"></span>
+      <%= t("actor.action.delete") %>
+    <% end %>
   <% end %>
 </aside>
