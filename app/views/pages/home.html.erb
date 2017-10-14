@@ -10,11 +10,15 @@
       </div>
     </div>
 
-    <div class="col-md-7 show-follow-images">
+    <div class="col-md-6 show-follow-images">
       <% @reviews.each do |review| %>
         <%= render "reviews/review", review: review, user: review.user,
           movie: review.movie %>
       <% end %>
+    </div>
+    <div class="col-log-3 col-md-3 col-sm-12 col-xs-12 news-feed-right">
+      <%= render "right_news_feed", top_movies: @top_movies,
+        recent_movies: @recent_movies %>
     </div>
   </div>
 <% else %>

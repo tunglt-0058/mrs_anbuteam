@@ -9,3 +9,6 @@ en:
       rate: "レート: "
       rate_sum: "合計: "
       add_review: "レビューを追加"
+    popular:
+      hot: "熱い映画"
+      recent: "最近"

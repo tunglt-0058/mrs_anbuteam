@@ -1,6 +1,8 @@
 load_more_comment_size: 2
 load_more_reply_comment_size: 2
 length_comment: 80
+load_top_movies: 6
+load_recent_movies: 3
 rate:
   rate_five: 5
   rate_four: 4

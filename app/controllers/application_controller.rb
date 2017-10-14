@@ -16,4 +16,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update,
       keys: [:name, :role, :sex, :avatar])
   end
+
+  def load_popular_movies
+    @top_movies = Movie.top_movies.includes :genres
+    @recent_movies = Movie.recent_movies.includes :genres
+  end
 end

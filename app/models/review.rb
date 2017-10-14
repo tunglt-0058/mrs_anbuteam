@@ -13,4 +13,13 @@ class Review < ApplicationRecord
   def activity_by_user user
     activities.find_by user: user
   end
+
+  class << self
+    def top_reviews
+      review_ids = Activity.where(activity_type: :like).group(:review_id).
+        order("COUNT(review_id)").pluck :review_id
+      review_ids += pluck(:id) if review_ids.empty?
+      where id: review_ids.uniq
+    end
+  end
 end

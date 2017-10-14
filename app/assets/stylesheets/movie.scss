@@ -227,3 +227,51 @@ div {
   height: 10px;
   margin-top: 9px;
 }
+
+.movie-right {
+  padding: 5px;
+
+  .top-5,
+  .recent {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px;
+  }
+
+  .top-5:hover,
+  .recent:hover {
+    background-color: #f7db12;
+  }
+
+  .recent-list {
+    display: none;
+  }
+
+  .active {
+    background-color: #f7db12;
+  }
+
+  ul {
+    -webkit-padding-start: 0px;
+
+    li {
+      list-style: none;
+    }
+  }
+}
+
+.movie-mini {
+  .movie-left {
+    float: left;
+    margin-right: 10px;
+  }
+
+  .movie-right {
+    .movie-name {
+      .name {
+        font-size: 16px;
+        font-weight: bolder;
+      }
+    }
+  }
+}
