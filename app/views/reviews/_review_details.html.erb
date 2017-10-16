@@ -34,13 +34,18 @@
       </div>
       <hr class="style4">
     </div>
-    <% if (current_user.id == review.user_id) %>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-10">
-        <%= link_to 'Edit', edit_review_path(review), remote: true, :class => 'btn btn-sm btn-info del_edit' %>
-        <%= link_to 'Delete', review, remote: true, :method => :delete, data: {confirm: t("movies.review.sure")}, :class => 'btn btn-sm btn-danger del_edit' %>
+    <% if (current_user) %>
+      <% if (current_user.id == review.user_id) %>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-10">
+          <%= link_to 'Edit', edit_review_path(review), remote: true,
+            :class => 'btn btn-sm btn-info del_edit' %>
+          <%= link_to 'Delete', review, remote: true, :method => :delete, data:
+            {confirm: t("movies.review.sure")},
+            :class => 'btn btn-sm btn-danger del_edit' %>
+        </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
   </div>
   <br>
@@ -68,29 +73,34 @@
     </div>
   </div>
 
-  <div class="review-comment-form">
-    <%= form_for [review, Comment.new], remote: true do |f| %>
-      <%= image_tag avatar_profile(current_user),
-        class: "img-responsive img-avatar-comment" %>
-      <%= f.text_field :content, placeholder: t("comment.write"),
-        class: "form-control comment-form-content",
-        id: "review-comment-form-content-#{review.id}" %>
-    <% end %>
-    <hr>
-  </div>
+  <% if (current_user) %>
+    <div class="review-comment-form">
+      <%= form_for [review, Comment.new], remote: true do |f| %>
+        <%= image_tag avatar_profile(current_user),
+          class: "img-responsive img-avatar-comment" %>
+        <%= f.text_field :content, placeholder: t("comment.write"),
+          class: "form-control comment-form-content",
+          id: "review-comment-form-content-#{review.id}" %>
+      <% end %>
+      <hr>
+    </div>
 
-  <div class="reviews-comments" id="reviews-comments-<%= review.id %>">
-    <% review_comments = review.main_comments.offset(0)
-      .limit Settings.load_more_comment_size %>
-    <% review_comments.each do |comment| %>
-      <%= render "comments/comment", comment: comment %>
-      <%= render "comments/edit_form", review: review, comment: comment %>
-    <% end %>
-  </div>
-  <div id="load-more-review-comments-<%= review.id %>">
-    <% unless review_comments.empty? %>
-      <%= link_to t("comment.load_more"), review_comments_path(review,
-        comment_offset: review_comments.last.id), remote: true %>
-    <% end %>
-  </div>
+    <div class="reviews-comments" id="reviews-comments-<%= review.id %>">
+      <% review_comments = review.main_comments.offset(0)
+        .limit Settings.load_more_comment_size %>
+      <% review_comments.each do |comment| %>
+        <%= render "comments/comment", comment: comment %>
+        <%= render "comments/edit_form", review: review, comment: comment %>
+      <% end %>
+    </div>
+    <div id="load-more-review-comments-<%= review.id %>">
+      <% unless review_comments.empty? %>
+        <%= link_to t("comment.load_more"), review_comments_path(review,
+          comment_offset: review_comments.last.id), remote: true %>
+      <% end %>
+    </div>
+  <% else %>
+    <br>
+    <p class="bg-danger"><%= t("movies.review.login_require") %></p>
+  <% end %>
 </div>
