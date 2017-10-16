@@ -1,21 +1,23 @@
-<% if !movie.reviews.empty? %>
-  <% movie.reviews.last(3).each do |r| %>
+<div id="render-reviews">
+  <% if !movie.reviews.empty? %>
+  <% movie.reviews.last(3).each do |review| %>
     <div class="single_review col-lg-12 col-md-12 col-sm-12">
-      <% rating = Rate.find_by_rater_id_and_rateable_id_and_dimension(r.user_id, movie.id, "score") %>
-      <%= rating_for_user movie, User.find(r.user_id), "score" %>
+      <% rating = Rate.find_by_rater_id_and_rateable_id_and_dimension(review.user_id, movie.id, "score") %>
+      <%= rating_for_user movie, User.find(review.user_id), "score" %>
       <div class="ta8">
         <p>
-          <% r.content.scan(/\S+/)[0..100].join(' ').split(/\n/).each do |paragraph| %>
+          <% review.content.scan(/\S+/)[0..100].join(' ').split(/\n/).each do |paragraph| %>
             <%= paragraph.html_safe %><br>
           <% end %>
         </p>
-        <%user = User.find(r.user_id)%>
-        Reviewed by <%=link_to user.name, user_path(user) %> on <%=r.updated_at.to_s %>
-        <%= link_to("See more", r) %>
+        <%user = User.find(review.user_id)%>
+        Reviewed by <%=link_to user.name, user_path(user) %> on <%=review.updated_at.to_s %>
+        <%= link_to("See more", review) %>
       </div>
     </div>
   <% end %>
-<% else %>
-  <h1>Don't have any review</h1>
-<% end %>
-<br><br><br>
+  <% else %>
+    <h1>Don't have any review</h1>
+  <% end %>
+  <br><br><br>
+</div>

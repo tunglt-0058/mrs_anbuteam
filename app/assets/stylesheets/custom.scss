@@ -341,10 +341,9 @@ p {
   font-weight: bold;
 
   img {
-    height: 40px;
-    width: 40px;
-    margin-left: 5px;
-    margin-top: 5px
+    height: 16px;
+    width: 16px;
+    margin-top: 3px
   }
 }
 
@@ -355,7 +354,7 @@ p {
   img {
     height: 16px;
     width: 16px;
-    margin-top: 5px
+    margin-top: -3px
   }
 }
 
@@ -391,4 +390,8 @@ p {
 
 .cancel-button {
   margin-right: 15px;
+}
+
+.img-small {
+  margin-top: -4px;
 }

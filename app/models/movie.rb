@@ -21,7 +21,11 @@ class Movie < ApplicationRecord
   end
 
   def avarage_rate
-    (total_rate / reviews.size).to_f
+    if(reviews.size > 0)
+      (total_rate / reviews.size).to_f
+    else
+      total_rate = 0
+    end
   end
 
   class << self

@@ -9,6 +9,15 @@ en:
       rate: "レート: "
       rate_sum: "合計: "
       add_review: "レビューを追加"
+      edit_review: "レビューを遍集"
     popular:
       hot: "熱い映画"
       recent: "最近"
+    review:
+      content: "内容"
+      rating: "評価"
+      create: "投稿"
+      update: "アプデート"
+      cancel: "キャンセル"
+      success: "成功した"
+      sure: "本気ですか？"
