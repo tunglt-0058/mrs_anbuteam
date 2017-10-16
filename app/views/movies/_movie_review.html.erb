@@ -5,6 +5,11 @@
       <% rating = Rate.find_by_rater_id_and_rateable_id_and_dimension(review.user_id, movie.id, "score") %>
       <%= rating_for_user movie, User.find(review.user_id), "score" %>
       <div class="ta8">
+        <div class="star">
+          <% (1..review.point).each do |index| %>
+            <i class="fa fa-star"></i>
+          <% end %>
+        </div>
         <p>
           <% review.content.scan(/\S+/)[0..100].join(' ').split(/\n/).each do |paragraph| %>
             <%= paragraph.html_safe %><br>

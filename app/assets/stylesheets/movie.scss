@@ -12,7 +12,7 @@
     padding:0 0 4px 10px;
     text-transform:capitalize;
     min-height: 200px;
-    background-color: #303030;
+    background-color: #f0ffff;
   }
 
   .left_content {
@@ -46,12 +46,18 @@
     word-wrap: break-word;
     font-size:30px;
     line-height:1em;
+    color: #0c1a1e;
+    margin-left: 10px;
   }
 
   .movie_sum {
     font-size: 15px;
     text-transform: none;
     margin-top: 20px;
+
+    p {
+      color: #0c1a1e;
+    }
   }
 
   .movie_gallery {
@@ -216,12 +222,16 @@ div {
 }
 
 .movie-info-row {
-    margin-top: 10px;
+  margin-top: 10px;
+  color: #0000ff;
+  margin-left: 10px;
+  font-size: large;
 
-    span {
-      font-weight: bold;
-    }
+  span {
+    font-weight: bold;
+    color: #0c1a1e;
   }
+}
 
 .cus-link {
   height: 10px;

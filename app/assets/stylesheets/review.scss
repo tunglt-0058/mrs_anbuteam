@@ -73,10 +73,11 @@ body {
 
 .ta8 {
   border: 3px double #CCCCCC;
+  color: rgb(12, 26, 30);
 
   p {
     font-style: italic;
-    background-color: rgba(0, 51, 102, 0.42);
+    background-color: rgb(209, 236, 236);
   }
 }
 
@@ -213,13 +214,13 @@ content-review {
 }
 
 .star {
-  color: rgb(247, 219, 18);;
+  color: #b19e00;
   display: inline-block;
   font-size: 18px;
 }
 
 .fa-star {
-  color: #f7db12;
+  color: #f3d903;
   cursor: pointer;
   font-size: 18px;
 }
@@ -290,4 +291,12 @@ hr.style4 {
   height: 25px;
   padding: 3px;
 }
+
+.cmt_edit {
+  margin-top: 5px;
+  margin-left: 40px;
+  height: 25px;
+  padding: 3px;
+}
+
 

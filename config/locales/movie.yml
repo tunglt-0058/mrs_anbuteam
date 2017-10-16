@@ -21,3 +21,4 @@ en:
       cancel: "キャンセル"
       success: "成功した"
       sure: "本気ですか？"
+      login_require: "コメントを見られるようにログインください！！！"
