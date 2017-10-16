@@ -1,3 +1,10 @@
+page_actor_size: 6
+load_followings: 5
+load_know_users: 5
+load_following_users_size: 4
+page_movie_size: 6
+index_movie_size: 3
+random_movie_size: 5
 load_more_comment_size: 2
 load_more_reply_comment_size: 2
 length_comment: 80

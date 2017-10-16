@@ -5,9 +5,11 @@ class UsersController < ApplicationController
   def show
     type = params[:type]
     if type == "favorite_movie"
-      @movies = current_user.movies.paginate(page: params[:page], per_page: 6)
+      @movies = current_user.movies.paginate(page: params[:page],
+        per_page: Settings.page_actor_size)
     elsif type == "favorite_actor"
-      @actors = current_user.actors.paginate(page: params[:page], per_page: 6)
+      @actors = current_user.actors.paginate(page: params[:page],
+        per_page: Settings.page_movie_size)
     else
     end
   end

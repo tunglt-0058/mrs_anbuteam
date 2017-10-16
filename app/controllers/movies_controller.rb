@@ -3,16 +3,21 @@ class MoviesController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
+    index_movie_size = Settings.index_movie_size
     if params[:order_by] && params[:order_by] == "name" && !params[:commit]
-      @movies = Movie.paginate(page: params[:page], per_page: 3).order(:name)
+      @movies = Movie.paginate(page: params[:page],
+        per_page: index_movie_size).order(:name)
     elsif !params[:order_by] && !params[:commit]
-      @movies = Movie.paginate(page: params[:page], per_page: 3).order(id: :desc)
+      @movies = Movie.paginate(page: params[:page],
+        per_page: index_movie_size).order(id: :desc)
     elsif params[:commit] == "Search"
-      @movies = Movie.joins(:movie_genres).where(movie_genres: {genre_id: params[:genre_ids] }
+      @movies = Movie.joins(:movie_genres)
+        .where(movie_genres: {genre_id: params[:genre_ids] }
         .having("count(genre_id) >= ?", params[:genre_ids].count)
-        .group("movies.id").paginate(page: params[:page], per_page: 3).order(:id))
+        .group("movies.id").paginate(page: params[:page],
+        per_page: index_movie_size).order(:id))
     else
-      @movies = Movie.order("RANDOM()").first(5)
+      @movies = Movie.order("RANDOM()").first(Settings.random_movie_size)
     end
   end
 
