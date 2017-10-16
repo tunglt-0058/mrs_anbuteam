@@ -4,3 +4,10 @@ en:
     birth_day: "お誕生日:"
     catelory: "カテゴリー:"
     movie: "映画:"
+    avatar: "アバター:"
+    actor_list: "俳優リスト"
+    action:
+      add_actor: "俳優を追加"
+      add_button: "追加"
+      edit: "編集"
+      delete: "削除"

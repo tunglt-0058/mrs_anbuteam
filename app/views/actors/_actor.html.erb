@@ -9,18 +9,21 @@
             height: "200", width: "200")), actor %>
         </div>
       </div>
-      <div class="text-column btn-primary">
+      <div class="text-column btn btn-primary">
         <h3>
           <%= link_to actor.name.truncate(15), actor,
             "data-turbolinks": false %>
         </h3>
-        <div class="review-start">
-          <div class="rating_stars">
-            <div class="rating_down">
-              <div class="rating_up" style="width:100%;"></div>
-            </div>
-          </div>
-        </div>
+        <% if user_signed_in? %>
+          <h4>
+          <%= link_to edit_actor_path(actor),  class: "btn btn-warning glyphicon glyphicon-edit" do %>
+            <%= t "actor.action.edit" %>
+          <% end %>
+          <%= link_to t("actor.action.delete"), "/actors/#{actor.id}",
+          method: :delete,data: {confirm: "are you sure?"},
+            class: "btn btn-danger glyphicon glyphicon-erase" %>
+          </h4>
+        <% end %>
       </div>
     </div>
   </div>
