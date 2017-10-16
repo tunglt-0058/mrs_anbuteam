@@ -15,8 +15,8 @@
             <%= paragraph.html_safe %><br>
           <% end %>
         </p>
-        <%user = User.find(review.user_id)%>
-        Reviewed by <%=link_to user.name, user_path(user) %> on <%=review.updated_at.to_s %>
+        <% user = User.find(review.user_id) %>
+        Reviewed by <%=link_to user.name, user_path(user) %> on <%= review.updated_at.to_s %>
         <%= link_to("See more", review) %>
       </div>
     </div>

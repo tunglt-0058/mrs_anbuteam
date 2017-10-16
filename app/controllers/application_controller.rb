@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   def load_data_static
     if user_signed_in?
       @followings = current_user.just_followed
-        .limit 5
-      @know_users = current_user.know_users.limit 5
+        .limit Settings.load_followings
+      @know_users = current_user.know_users.limit Settings.load_know_users
     end
   end
 

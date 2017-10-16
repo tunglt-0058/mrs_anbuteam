@@ -3,11 +3,13 @@ class GenresController < ApplicationController
   before_action :load_genres, only: [:index, :show]
 
   def index
-    @movies = Movie.paginate(page: params[:page], per_page: 6).order(id: :desc)
+    @movies = Movie.paginate(page: params[:page],
+      per_page: Settings.page_movie_size).order(id: :desc)
   end
 
   def show
-    @movies = @genre.movies.paginate(page: params[:page], per_page: 6).order(id: :desc)
+    @movies = @genre.movies.paginate(page: params[:page],
+      per_page: Settings.page_movie_size).order(id: :desc)
   end
 
   private

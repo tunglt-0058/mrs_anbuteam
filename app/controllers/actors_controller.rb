@@ -2,7 +2,8 @@ class ActorsController < ApplicationController
   before_action :load_genres, only: [:index, :show]
   before_action :find_actor, only: [:index, :show]
   def index
-    @actors = Actor.paginate(page: params[:page], per_page: 6).order(id: :desc)
+    @actors = Actor.paginate(page: params[:page],
+      per_page: Settings.page_actor_size).order(id: :desc)
   end
 
   def show
