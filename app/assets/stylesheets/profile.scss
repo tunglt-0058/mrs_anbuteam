@@ -107,6 +107,12 @@
 }
 
 .form-group {
+
+  label {
+    margin-bottom: 5px;
+    font-size: 15px;
+  }
+
   &.has-warning .fileinput {
     .fileinput-preview {
       color: $pesto-approx;
@@ -475,13 +481,21 @@
 
 
 .pro {
-  background-color: rgba(0, 51, 102, 0.12);
+  background-color: rgb(51, 122, 183);
   height: 50px;
   text-align: center;
   padding: 15px;
   font-weight: 800;
+  color: #ffffff;
 }
 
 .width-input {
   width: 500px;
+}
+
+.btn-add {
+  margin-top: 10px;
+  width: 260px;
+  font-size: large;
+  font-weight: 700;
 }

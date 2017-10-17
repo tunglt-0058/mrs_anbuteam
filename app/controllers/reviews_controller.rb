@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
       if @review.save
         @movie = Movie.find(@review.movie_id)
         format.json { render json: @movie }
-        format.js
+        format.js { flash[:success] = t "movies.review.add_success" }
       else
         format.json { render json: @review.errors.full_messages,
           status: :unprocessable_entity }
@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       if @review.update(review_params)
         format.json { render json: @movie }
-        format.js
+        format.js { flash[:success] = t "movies.review.edit_success" }
       else
         format.json { render json: @review.errors.full_messages,
           status: :unprocessable_entity }
@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
     @review.destroy
     redirect_to movie_path(@review.movie_id)
     respond_to do |format|
-      format.js
+      format.js { flash[:success] = t "movies.review.delete_success" }
       format.html { redirect_to posts_url }
       format.json { head :no_content }
     end

@@ -1,4 +1,5 @@
 $('#dialog').modal('toggle');
+$("#flash").html('<%= j render "shared/flash_messages" %>');
 $('#rate').html('<%= j render "movies/rate", movie: @movie %>');
 var sum = $('.movie-sum-review span').prop('textContent');
   if (sum == 0) {
