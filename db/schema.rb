@@ -44,9 +44,11 @@ ActiveRecord::Schema.define(version: 20171015082738) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text "content"
     t.integer "user_id"
+    t.string "content"
     t.integer "review_id"
+    t.integer "parent_id"
+    t.integer "reply_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -114,6 +116,7 @@ ActiveRecord::Schema.define(version: 20171015082738) do
     t.string "status"
     t.text "summary"
     t.string "poster"
+    t.float "point", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -170,6 +173,8 @@ ActiveRecord::Schema.define(version: 20171015082738) do
     t.text "content"
     t.integer "user_id"
     t.integer "movie_id"
+    t.integer "comment_number", default: 0
+    t.integer "point", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

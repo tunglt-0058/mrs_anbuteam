@@ -1,12 +1,14 @@
 <div class="single_page">
-  <div class="movie_header col-lg-12 col-md-12 col-sm-12">
-    <div class="col-sm-6 col-sm-offset-3">
+  <div class="movie_header col-lg-12 col-md-12 col-sm-12 profile-usermenu">
+    <div class="col-sm-6 col-sm-offset-3 ta8">
       <h1 class="section-title" id="services">
         <div class="pro">
           <%= t("actor.action.add_actor") %>
         </div>
       </h1>
+      <hr>
       <%= form_for actor do |f| %>
+      <form>
         <%= render "shared/error_messages", object: actor %>
         <div class="form-group">
           <%= f.label t("actor.name") %>
@@ -24,8 +26,9 @@
           <%= f.text_field :avatar, class: "form-control" %>
         </div>
         <div align = "center">
-          <%= f.submit t("actor.action.add_button"), class: "btn btn-primary" %>
+          <%= f.submit t("actor.action.add_button"), class: "btn btn-primary btn-add" %>
         </div>
+      </form>
       <% end %>
       <br>
       <br>

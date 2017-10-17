@@ -14,16 +14,19 @@
           <%= link_to actor.name.truncate(15), actor,
             "data-turbolinks": false %>
         </h3>
-        <% if user_signed_in? %>
-          <h4>
-          <%= link_to edit_actor_path(actor),  class: "btn btn-warning glyphicon glyphicon-edit" do %>
-            <%= t "actor.action.edit" %>
+        <h4>
+          <% if user_signed_in? %>
+            <%= link_to edit_actor_path(actor),  class: "btn btn-warning" do %>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <%= t "actor.action.edit" %>
+            <% end %>
+            <%= link_to "/actors/#{actor.id}",  method: :delete,
+              data: {confirm: t("actor.action.sure")}, class: "btn btn-danger" do %>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+              <%= t "actor.action.delete" %>
+            <% end %>
           <% end %>
-          <%= link_to t("actor.action.delete"), "/actors/#{actor.id}",
-          method: :delete,data: {confirm: "are you sure?"},
-            class: "btn btn-danger glyphicon glyphicon-erase" %>
-          </h4>
-        <% end %>
+        </h4>
       </div>
     </div>
   </div>
