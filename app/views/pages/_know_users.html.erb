@@ -4,7 +4,10 @@
       <%= render "pages/user", user: user %>
     <% end %>
     <div class="users-load-more">
-      <%= link_to t("load_more"), follow_users_path(type: "know_users") %>
+      <%= link_to follow_users_path(type: "know_users") do %>
+        <i class="fa fa-eye" aria-hidden="true"></i>
+        <%= t("load_more") %>
+      <% end %>
     </div>
   <% else %>
     <p class="no-content">

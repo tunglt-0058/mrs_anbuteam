@@ -1,6 +1,6 @@
 class ActorsController < ApplicationController
   before_action :load_genres, only: [:index, :show]
-  before_action :find_actor
+  before_action :find_actor, :load_messages
 
   def new
     @actor = Actor.new

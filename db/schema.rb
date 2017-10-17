@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 20171018120256) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
+    t.index ["sender_id"], name: "index_conversations_on_sender_id"
+  end
+
   create_table "favorite_actors", force: :cascade do |t|
     t.integer "user_id"
     t.integer "actor_id"
@@ -86,6 +95,16 @@ ActiveRecord::Schema.define(version: 20171018120256) do
     t.integer "actor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.integer "conversation_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "movie_actors", force: :cascade do |t|

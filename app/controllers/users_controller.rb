@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_user
+  before_action :load_user, :load_messages
 
   def show
     type = params[:type]
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def load_user
     @user = User.find_by id: params[:id]
     return if @user.present?

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root "pages#show", page: "home"
   get "pages/:page", to: "pages#show", as: "page"
 
-  resources :users, only: :show
+  resources :users, only: [:show]
   resources :videos
   resources :images
   resources :reviews do
@@ -37,6 +37,11 @@ Rails.application.routes.draw do
   resources :follow_users, only: :index
   resources :users, only: [:show, :update] do
     resources :relationships, only: [:create, :destroy]
+    resources :conversations
+  end
+
+  resources :conversations do
+    resources :messages
   end
   resources :searches, only: :index
 end

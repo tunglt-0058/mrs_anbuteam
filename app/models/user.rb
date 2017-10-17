@@ -23,11 +23,14 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :activities, dependent: :destroy
+  has_many :conversations, :foreign_key => :sender_id
 
   scope :load_know_users, -> (user_ids){where.not(id: user_ids)
     .order id: :desc}
 
   mount_uploader :avatar, AvatarUploader
+
+  after_create :create_default_conversation
 
   def load_favorite_movies
     Movie.where(id: favorite_movies.pluck(:movie_id)).order id: :desc
@@ -108,4 +111,11 @@ class User < ApplicationRecord
   def disliked? review
     activities.find_by review: review, activity_type: :dislike
   end
+
+  private
+
+  def create_default_conversation
+    Conversation.create(sender_id: 1, recipient_id: self.id) unless self.id == 1
+  end
+
 end

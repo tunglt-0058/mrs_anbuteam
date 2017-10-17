@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
   before_action :find_genre, only: :show
-  before_action :load_genres, only: [:index, :show]
+  before_action :load_genres, :load_messages, only: [:index, :show]
 
   def index
     @movies = Movie.paginate(page: params[:page],

@@ -1,6 +1,8 @@
 User.create!([
+  {email: "admin@gmail.com", name: "Admin",
+    password: "12345678", password_confirmation: "12345678"},
   {email: "letattungtb@gmail.com", name: "Le Tat Tung",
-  password: "tung123", password_confirmation: "tung123"}
+    password: "tung123", password_confirmation: "tung123"}
 ])
 
 10.times do |n|

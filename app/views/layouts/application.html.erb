@@ -7,6 +7,7 @@
       "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application",
       "data-turbolinks-track": "reload" %>
+    <%= favicon_link_tag 'favicon.ico'%>
   </head>
 
   <body>
@@ -17,5 +18,11 @@
     </div>
     <div><%= yield %></div>
     <%= render "layouts/footer" %>
+    <script>
+      $(document).ready(function(){
+        $(".dropdown-toggle").dropdown();
+      });
+    </script>
+    <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
   </body>
 </html>

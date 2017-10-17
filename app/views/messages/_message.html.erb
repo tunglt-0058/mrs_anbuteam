@@ -1,0 +1,16 @@
+<li class="<%=  self_or_other(message) %>">
+  <% user = message.user%>
+  <div class="avatar">
+    <% if user.avatar != nil %>
+      <%= link_to image_tag(user.avatar), user_path(user) %>
+    <% else %>
+      <%= link_to image_tag("avatar.png"), user_path(user) %>
+    <% end %>&nbsp;
+  </div>
+  <div class="chatboxmessagecontent">
+    <p><%= message.body %></p>
+    <time datetime="<%= message.created_at %>" title="<%= message.created_at.strftime("%d %b  %Y at %I:%M%p") %>">
+      <%= message_interlocutor(message).name %> • <%= message.created_at.strftime("%H:%M %p") %>
+    </time>
+  </div>
+</li>

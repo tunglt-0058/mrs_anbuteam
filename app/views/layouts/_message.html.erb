@@ -1,0 +1,23 @@
+<div class="content">
+  <% if conversations.any? %>
+    <% conversations.each do |conversation| %>
+      <% user = User.find(conversation.recipient_id) %>
+      <div class="notification-item">
+        <li class="media">
+          <% if user.avatar != nil %>
+            <%= link_to image_tag(user.avatar), user_path(user) %>
+          <% else %>
+            <%= link_to image_tag("avatar.png"), user_path(user) %>
+          <% end %>
+          <div class="media-body">
+            <%= link_to "", conversation_url(conversation), class: "conversation", "data-cid" => conversation.id %>
+              <h4 class="media-heading"><%= conversation_interlocutor(conversation).name %></h4>
+              <p class="ta8"><%= conversation.messages.last.nil? ? "No messages" : truncate(conversation.messages.last.body, length: 45) %></p>
+          </div>
+        </li>
+      </div>
+    <% end %>
+  <% else %>
+    <p><%= t "not_message" %></p>
+  <% end %>
+</div>
