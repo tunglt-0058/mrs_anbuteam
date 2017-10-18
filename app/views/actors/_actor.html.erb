@@ -11,7 +11,7 @@
       </div>
       <div class="text-column btn btn-primary">
         <h3>
-          <%= link_to actor.name.truncate(15), actor,
+          <%= link_to actor.name.truncate(Settings.length_name), actor,
             "data-turbolinks": false %>
         </h3>
         <h4>

@@ -1,0 +1,32 @@
+.search-index {
+  margin-top: 20px;
+}
+
+.show-result {
+  padding: 5px;
+  margin-bottom: 20px;
+
+  .result-movies,
+  .result-actors {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px;
+  }
+
+  .result-movies:hover,
+  .result-actors:hover {
+    background-color: #f7db12;
+  }
+
+  .result-actors-list {
+    display: none;
+  }
+
+  .active {
+    background-color: #f7db12;
+  }
+}
+.result-movies-list,
+.result-actors-list {
+  margin: 40px 20px 20px -30px;
+}

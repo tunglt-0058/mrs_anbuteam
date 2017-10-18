@@ -1,0 +1,6 @@
+<div class="row search-index">
+  <% unless @results.empty? %>
+    <%= render "result_searches", results: @results, top_movies: @top_movies,
+      recent_movies: @recent_movies %>
+  <% end %>
+</div>

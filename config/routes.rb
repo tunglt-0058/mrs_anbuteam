@@ -37,4 +37,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :update] do
     resources :relationships, only: [:create, :destroy]
   end
+  resources :searches, only: :index
 end

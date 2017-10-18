@@ -7,4 +7,11 @@ class Actor < ApplicationRecord
   has_many :favorite_actors
   has_many :users, :through => :favorite_actors, :dependent => :destroy
   has_many :images, :dependent => :destroy
+
+  class << self
+    def search data
+      data = data.downcase
+      Actor.where "lower(name) LIKE ?", "%#{data}%"
+    end
+  end
 end
