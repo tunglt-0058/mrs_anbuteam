@@ -9,6 +9,14 @@
       <div class="movie-title">
         <%= link_to movie.name, movie_path(movie) %>
       </div>
+      <% if current_user %>
+        <div class="favorite-review-icon">
+          <span id="favorite-review-<%= review.id %>">
+            <%= render "favorite_reviews/favorite_form", review: review, favorite:
+              favorite %>
+          </span>
+        </div>
+      <% end %>
       <div class="user-avatar-small">
         <% if user.avatar != nil %>
           <%= link_to image_tag(user.avatar), "#" %>

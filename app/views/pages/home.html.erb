@@ -12,8 +12,9 @@
 
     <div class="col-md-6 show-follow-images">
       <% @reviews.each do |review| %>
+        <% favorite = review.favorite_reviews.find_by review: review %>
         <%= render "reviews/review", review: review, user: review.user,
-          movie: review.movie %>
+          movie: review.movie, favorite: favorite %>
       <% end %>
     </div>
     <div class="col-log-3 col-md-3 col-sm-12 col-xs-12 news-feed-right">

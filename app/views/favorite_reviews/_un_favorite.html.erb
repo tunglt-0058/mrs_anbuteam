@@ -1,0 +1,4 @@
+<%= link_to review_favorite_reviews_path(review), remote: true, method: :post,
+  "data-turbolinks": false, title: t("favorite.favorite") do %>
+    <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+<% end %>

@@ -10,6 +10,9 @@ class UsersController < ApplicationController
     elsif type == "favorite_actor"
       @actors = current_user.actors.paginate(page: params[:page],
         per_page: Settings.page_movie_size)
+    elsif type == "favorite_review"
+      @reviews = current_user.reviews.paginate(page: params[:page],
+        per_page: Settings.page_review_size)
     else
     end
   end

@@ -33,11 +33,12 @@
         <i class="fa fa-user-circle"></i>
           <%= t("user.edit.menu_item.information") %></li>
         <% end %>
-      <li class="filter">
-        <a>
-          <i class="fa fa-yelp" aria-hidden="true"></i>
-          <%= t "user.edit.menu_item.reviews" %>
-        </a>
+      <li class="filter" data-trigger=".fav-review-part">
+        <%= link_to user_path(user, type: "favorite_review"), remote: true,
+        "data-turbolinks":"false" do %>
+        <i class="fa fa-yelp"></i>
+          <%= t("user.edit.menu_item.reviews")%>
+        <% end %>
       </li>
       <li class="filter" data-trigger=".fav-movie-part">
         <%= link_to user_path(user, type: "favorite_movie"), remote: true,

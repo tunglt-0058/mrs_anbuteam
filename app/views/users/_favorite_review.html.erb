@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 tab-style-1-content">
+      <div class="row">
+        <% reviews.each do |review| %>
+          <% favorite = review.favorite_reviews.find_by review: review %>
+          <%= render "reviews/review", review: review, user: review.user,
+            movie: review.movie, favorite: favorite %>
+        <% end %>
+      </div>
+      <div class="row">
+        <div class="col-sm-9">
+          <hr>
+          <%= will_paginate reviews %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :reviews do
     resources :activities, only: [:create, :destroy]
     resources :comments, except: :show
+    resources :favorite_reviews, only: [:create, :destroy]
   end
   resources :comments do
     resources :reply_comments, except: :show
