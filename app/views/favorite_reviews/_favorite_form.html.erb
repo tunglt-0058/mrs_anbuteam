@@ -1,0 +1,5 @@
+<% if current_user.favorited_review? review %>
+  <%= render "favorite_reviews/favorite", review: review, favorite: favorite %>
+<% else %>
+  <%= render "favorite_reviews/un_favorite", review: review %>
+<% end %>

@@ -1,0 +1,4 @@
+<%= link_to review_favorite_review_path(review, favorite), remote: true,
+  method: :delete, "data-turbolinks": false, title: t("favorite.un_favorite") do %>
+    <i class="fa fa-bookmark" aria-hidden="true"></i>
+<% end %>

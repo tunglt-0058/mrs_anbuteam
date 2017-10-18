@@ -1,0 +1,2 @@
+$('#favorite-review-<%= @review.id %>')
+  .html('<%= j render "favorite", review: @review, favorite: @favorite %>');

@@ -8,3 +8,6 @@ en:
     actor:
       destroy_success: "好きな俳優を削除すろことが成功した!"
       destroy_fail: "好きな俳優を削除すろことが失敗した!"
+    review:
+      destroy_success: "好きなレビューを削除すろことが成功した!"
+      destroy_fail: "好きなレビューを削除すろことが失敗した!"

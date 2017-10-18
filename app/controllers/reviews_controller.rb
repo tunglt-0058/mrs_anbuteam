@@ -3,6 +3,9 @@ class ReviewsController < ApplicationController
 
   def show
     @top_reviews = Review.top_reviews
+    if current_user
+      @favorite = current_user.favorite_reviews.find_by review: @review
+    end
   end
 
   def new

@@ -10,7 +10,8 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: 50}
 
   has_many :comments, dependent: :destroy
-  has_many :reviews
+  has_many :favorite_reviews
+  has_many :reviews, :through => :favorite_reviews, :dependent => :destroy
   has_many :favorite_actors
   has_many :actors, :through => :favorite_actors, :dependent => :destroy
   has_many :favorite_movies
@@ -52,6 +53,14 @@ class User < ApplicationRecord
 
   def favorited_actor? actor
     self.favorite_actors.find_by(actor: actor).present? ? true : false
+  end
+
+  def load_favorite_reviews
+    Review.where(id: favorite_reviews.pluck(:review_id)).order id: :desc
+  end
+
+  def favorited_review? review
+    self.favorite_reviews.find_by(review: review).present? ? true : false
   end
 
   def self.new_with_session(params, session)
