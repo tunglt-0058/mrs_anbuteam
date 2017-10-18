@@ -36,6 +36,11 @@ class Movie < ApplicationRecord
     def recent_movies
       all.order(point: :desc).limit Settings.load_recent_movies
     end
+
+    def search data
+      data = data.downcase
+      Movie.where "lower(name) LIKE ?", "%#{data}%"
+    end
   end
 
   private

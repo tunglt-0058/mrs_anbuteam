@@ -5,19 +5,13 @@
         <div class="caption">
         </div>
         <div class="img-frame">
-          <%= link_to (image_tag(movie.poster, alt: "poster",
-            height: "200", width: "200")), movie %>
+          <%= link_to (image_tag(actor.avatar, alt: "image actor",
+            height: "200", width: "200")), actor %>
         </div>
       </div>
       <div class="text-column btn-primary">
-        <span>
-          <% movie.genres.each do |genre| %>
-            <%= link_to genre.name, genre, "data-turbolinks": false %>
-            <%= genre != movie.genres.last ? ", " : nil %>
-          <% end %>
-        </span>
         <h3>
-          <%= link_to movie.name.truncate(Settings.length_name), movie,
+          <%= link_to actor.name.truncate(Settings.length_name), actor,
             "data-turbolinks": false %>
         </h3>
         <div class="review-start">

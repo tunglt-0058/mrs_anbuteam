@@ -8,7 +8,7 @@ random_movie_size: 5
 load_more_comment_size: 2
 load_more_reply_comment_size: 2
 length_comment: 80
-load_top_movies: 6
+load_top_movies: 5
 load_recent_movies: 3
 load_reviews: 4
 rate:
@@ -17,3 +17,5 @@ rate:
   rate_three: 3
   rate_two: 2
   rate_one: 1
+search_objects: ["Movie", "Actor"]
+length_name: 15

@@ -15,13 +15,7 @@ en:
   cancel: "キャンセル"
   back: "バック"
   search: "検索"
-  members: "メンバー"
-  albums: "アルバム"
-  groups: "グループ"
   profile: "プロフィール"
-  settings: "設定"
-  new-group: "新しいグループ"
-  new-album: "新しいアルバム"
   liked: "好き"
   signup:
     name: "名前"
@@ -54,3 +48,6 @@ en:
       all_actor: "すべての俳優"
     show:
       actor: "俳優"
+  searches:
+    movies: "映画"
+    actors: "俳優"
