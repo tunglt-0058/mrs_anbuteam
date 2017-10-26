@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :find_review, only: [:show, :edit, :update, :destroy]
+  before_action :load_messages
 
   def show
     @top_reviews = Review.top_reviews

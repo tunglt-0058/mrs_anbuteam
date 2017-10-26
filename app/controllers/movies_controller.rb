@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   before_action :find_movie, only: [:show]
+  before_action :load_messages
   helper_method :sort_column, :sort_direction
 
   def index

@@ -9,8 +9,15 @@
         <% end %>
       </div>
       <span>
-        <%= truncate user.name, length: 15 %>
+        <%= truncate user.name, length: 20 %>
+        <br>
+        <%= link_to "#", class: "btn btn-xs start-conversation msg-btn",
+          "data-sid" => current_user.id, "data-rip" => user.id  do%>
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          <%= t "message" %>
+        <% end %>
       </span>
     </li>
   <% end %>
 </ul>
+<br>

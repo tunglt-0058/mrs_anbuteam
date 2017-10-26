@@ -36,7 +36,28 @@
             <%= link_to t("pages.actor"), actors_path %>
           </div>
         </li>
+        &nbsp;
         <% if user_signed_in? %>
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t "message" %></a>
+            <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
+              <div class="notification-heading">
+                <h4 class="menu-title"><%= t "message" %></h4>
+                <h4 class="menu-title pull-right"><%= t "all_message" %>
+                  <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                </h4>
+              </div>
+              <li class="divider"></li>
+              <div class="notifications-wrapper">
+                <%= render "layouts/message", conversations: @conversations %>
+
+              </div>
+              <li class="divider"></li>
+              <div class="notification-footer"><h4 class="menu-title"><%= t "all_message" %>
+                <i class="glyphicon glyphicon-circle-arrow-right"></i></h4></div>
+            </ul>
+          </div>
+          &nbsp;
           <div class="dropdown">
             <div class="dropbtn drop-text"><%= current_user.name %></div>
             <div class="dropdown-content">

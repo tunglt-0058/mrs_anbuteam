@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
       @followings = current_user.just_followed
         .limit Settings.load_followings
       @know_users = current_user.know_users.limit Settings.load_know_users
+      @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
+      @conversations = Conversation.involving(current_user).order("created_at DESC")
     end
   end
 
@@ -21,5 +23,11 @@ class ApplicationController < ActionController::Base
   def load_popular_movies
     @top_movies = Movie.top_movies.includes :genres
     @recent_movies = Movie.recent_movies.includes :genres
+  end
+
+  def load_messages
+    if (current_user)
+      @conversations = Conversation.involving(current_user).order("created_at DESC")
+    end
   end
 end

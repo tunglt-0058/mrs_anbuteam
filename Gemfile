@@ -28,6 +28,8 @@ gem "pry"
 gem "jquery-rails"
 gem "faker"
 gem "ransack"
+gem "private_pub"
+gem "thin"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

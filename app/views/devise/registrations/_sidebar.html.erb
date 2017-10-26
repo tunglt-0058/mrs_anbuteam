@@ -30,31 +30,30 @@
     <ul class="nav">
       <li class="active"  >
         <%= link_to user_path(user, type: "info"), "data-turbolinks": false do %>
-        <i class="fa fa-user-circle"></i>
+          <i class="fa fa-user-circle"></i>
           <%= t("user.edit.menu_item.information") %></li>
         <% end %>
       <li class="filter" data-trigger=".fav-review-part">
         <%= link_to user_path(user, type: "favorite_review"), remote: true,
         "data-turbolinks":"false" do %>
-        <i class="fa fa-yelp"></i>
+          <i class="fa fa-yelp"></i>
           <%= t("user.edit.menu_item.reviews")%>
         <% end %>
       </li>
       <li class="filter" data-trigger=".fav-movie-part">
         <%= link_to user_path(user, type: "favorite_movie"), remote: true,
         "data-turbolinks":"false" do %>
-        <i class="fa fa-film"></i>
+          <i class="fa fa-film"></i>
           <%= t("user.edit.menu_item.favorite_movies")%>
         <% end %>
       </li>
       <li class="filter" data-trigger=".fav-actor-part">
         <%= link_to user_path(user, type: "favorite_actor"), remote: true,
         "data-turbolinks":"false" do %>
-        <i class="fa fa-grav"></i>
+          <i class="fa fa-grav"></i>
           <%= t("user.edit.menu_item.favorite_actors")%>
         <% end %>
       </li>
     </ul>
   </div>
-  <!-- END MENU -->
 </div>

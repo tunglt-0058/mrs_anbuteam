@@ -9,11 +9,10 @@ $gray-light: #e9ebee;
 $white-dark: #e9ebee;
 
 .ltt-news-feed {
-  background-color: $gray-light;
-  min-height: 100vh;
+  background-color: #f1f3fa;
+  min-height: 110vh;
   min-width: 100px;
-  padding: 20px;
-  padding-top: 60px;
+  padding-top: 20px;
 
   ul {
     padding: 0;
@@ -68,7 +67,7 @@ $white-dark: #e9ebee;
     }
 
     a {
-      color: $black-color !important;
+      color: #000;
 
       .followed-users {
         border-bottom: 1px solid $gray-light;
@@ -219,6 +218,11 @@ $white-dark: #e9ebee;
 
 .follow_op {
   width: 200px;
+
+  h3 {
+    background: rgba(0, 51, 102, 0.27);
+    padding: 10px;
+  }
 }
 
 .follow_bgr {
