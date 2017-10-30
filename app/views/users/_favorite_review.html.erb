@@ -3,9 +3,7 @@
     <div class="col-sm-9 tab-style-1-content">
       <div class="row">
         <% reviews.each do |review| %>
-          <% favorite = review.favorite_reviews.find_by review: review %>
-          <%= render "reviews/review", review: review, user: review.user,
-            movie: review.movie, favorite: favorite %>
+          <%= render "movies/movie_review", review: review, movie: review.movie %>
         <% end %>
       </div>
       <div class="row">

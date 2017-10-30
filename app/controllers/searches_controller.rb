@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
   before_action :find_result, only: :index
-  before_action :load_popular_movies, only: :index
+  before_action :load_popular_movies, :load_messages, only: :index
   def index
     respond_to do |format|
       format.html
