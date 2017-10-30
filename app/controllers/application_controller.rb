@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_messages
-    if (current_user)
+    if current_user
       @conversations = Conversation.involving(current_user).order("created_at DESC")
     end
   end
