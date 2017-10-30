@@ -223,6 +223,19 @@ p {
     }
   }
 
+  .a-search > a {
+    color: $white;
+    float: left;
+    font-weight: bold;
+    padding: 15px;
+
+    &:hover {
+      color: $yellow1;
+      text-decoration: none;
+
+    }
+  }
+
   .sign-in > a {
     color: $white !important;
     font-size: 1.1em;

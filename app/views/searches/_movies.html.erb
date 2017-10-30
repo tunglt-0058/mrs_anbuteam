@@ -1,0 +1,6 @@
+<% movies.each_with_index do |movie, index| %>
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-9 as-list-movie-item">
+    <%= render "movies/mini", index: index + 1, movie: movie %>
+  </div>
+<% end %>
+<%= will_paginate movies %>

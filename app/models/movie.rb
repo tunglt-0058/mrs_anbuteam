@@ -41,6 +41,12 @@ class Movie < ApplicationRecord
       data = data.downcase
       Movie.where "lower(name) LIKE ?", "%#{data}%"
     end
+
+    def load_movie_with_genres genre_ids
+      movie_ids = MovieGenre.where(genre_id: genre_ids).group(:movie_id)
+        .having("COUNT(movie_id) >= ?", genre_ids.size).pluck :movie_id
+      Movie.where id: movie_ids
+    end
   end
 
   private

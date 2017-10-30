@@ -4,6 +4,9 @@
       <%= link_to t("app_title"), root_path %>
     </div>
     <% if user_signed_in? %>
+      <div class="a-search">
+        <%= link_to t("a-search.title"), new_search_path %>
+      </div>
       <div class="header-search col-md-4">
         <%= form_tag searches_path, method: :get do %>
           <span>
