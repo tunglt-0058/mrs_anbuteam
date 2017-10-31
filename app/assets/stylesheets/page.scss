@@ -260,3 +260,18 @@ $white-dark: #e9ebee;
     }
   }
 }
+
+.flash {
+  left: 20px;
+  margin-left: 64%;
+  margin-top: 6%;
+  padding: 10px;
+  position: fixed;
+  width: 30%;
+  word-wrap: break-word;
+  z-index: 10000;
+}
+
+.ltt-flash {
+  display: inline-block;
+}
