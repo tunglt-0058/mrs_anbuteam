@@ -14,3 +14,10 @@ document.addEventListener('turbolinks:load', function() {
     $('.recent-list').show();
   });
 });
+
+var flash = function(){
+  setTimeout(function(){
+    $('.flash').slideUp(1000);
+  }, 1500);
+};
+$(document).ready(flash);

@@ -12,9 +12,10 @@
 
   <body>
     <%= render "layouts/header" %>
-    <%=notice%>
-    <div id="flash">
-      <%= render :partial => 'shared/flash_messages', :flash => flash %>
+    <div class="flash" align="right">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-success ltt-flash "><%= message %></div>
+      <% end %>
     </div>
     <div><%= yield %></div>
     <%= render "layouts/footer" %>

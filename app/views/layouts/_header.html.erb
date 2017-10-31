@@ -62,7 +62,9 @@
           </div>
           &nbsp;
           <div class="dropdown">
-            <div class="dropbtn drop-text"><%= current_user.name %></div>
+            <div class="dropbtn drop-text">
+              <%= current_user.name.truncate(Settings.length_name) %>
+            </div>
             <div class="dropdown-content">
             <%= link_to t("profile"), current_user,
               "data-turbolinks":"false", class: "pmd-ripple-effect" %>
