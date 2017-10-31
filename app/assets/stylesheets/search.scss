@@ -30,3 +30,27 @@
 .result-actors-list {
   margin: 40px 20px 20px -30px;
 }
+
+.a-seach-show {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  .head {
+    margin-bottom: 30px;
+  }
+
+  .genres-list {
+    .genre-check-box {
+      -webkit-transform: scale(1.2);
+    }
+
+    .genre-name {
+      margin-right: 10px;
+      font-size: 18px;
+      padding: 0 5px;
+    }
+  }
+}
+
+.as-list-movie-item {
+  margin-bottom: 20px;
+}

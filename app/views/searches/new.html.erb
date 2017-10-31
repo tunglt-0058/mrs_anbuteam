@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="col-sm-9 tab-style-1-content a-seach-show">
+    <div class="head">
+      <h1><%= t "a-search.head" %></h1>
+    </div>
+    <div class="genres-list">
+      <%= form_tag new_search_path, method: :get, remote: true do %>
+        <% @genres.each do |genre| %>
+          <label>
+            <%= check_box_tag "genre_ids[]", genre.id, false,
+              {class: "genre-check-box"} %>
+            <span class="genre-name"><%= genre.name %></span>
+          </label>
+        <% end %>
+      <%= submit_tag t("search"), class: "btn btn-default" %>
+      <% end %>
+    </div>
+    <hr>
+    <div class="movie-list">
+      <h3><%= t "searches.movies" %></h3>
+      <div class="movie-list-content">
+        <%= render "movies", movies: @movies %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 news-feed-right">
+    <%= render "pages/right_news_feed", top_movies: @top_movies,
+    recent_movies: @recent_movies %>
+  </div>
+</div>
+<br><br>
