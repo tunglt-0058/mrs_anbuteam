@@ -48,6 +48,11 @@
         <li><a href="#"><%= t "layouts.footer.faq" %></a></li>
         <li><a href="#"><%= t "layouts.footer.contact_us" %></a></li>
         <li><a href="#"><%= t "layouts.footer.sitemap" %></a></li>
+        <li><%= link_to rails_admin_path do %>
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <%= t "layouts.footer.admin" %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>

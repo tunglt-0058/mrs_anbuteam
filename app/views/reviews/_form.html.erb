@@ -1,4 +1,4 @@
-<%= form_for(@review, remote: true, :html => { :role => "form" }) do |f| %>
+â<%= form_for(@review, remote: true, :html => { :role => "form" }) do |f| %>
 <div id="error_explanation" class="bg-danger text-danger">
 </div>
 <div class="row">
@@ -37,7 +37,7 @@
   <%= f.hidden_field :movie_id, :value => movie_id %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class=" col-lg-8 create-btn">
-    <%= f.submit  @review.new_record? ? t("movies.review.create") :
+    <%= aaord? ? t("movies.review.create") :
       t("movies.review.update"), :class => "btn btn-primary" %>
     <button type="button" class="btn btn-danger" data-dismiss="modal"
     aria-label="Close">

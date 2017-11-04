@@ -5,6 +5,11 @@ User.create!([
     password: "tung123", password_confirmation: "tung123"}
 ])
 
+Admin.create!([
+  {email: "admin@gmail.com",
+    password: "12345678", password_confirmation: "12345678"}
+])
+
 10.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@gmail.com"
