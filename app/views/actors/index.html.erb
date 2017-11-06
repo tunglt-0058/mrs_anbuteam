@@ -15,7 +15,7 @@
         <div class="col-sm-12">
           <div class="row genre-header">
             <div class="col-sm-9">
-              <h1 class="title-actor-list"> <br></h1>
+              <h2><%= t "genres.show.collection" %></h2>
             </div>
           </div>
         </div>
@@ -30,13 +30,6 @@
           <hr>
           <%= will_paginate @actors %>
         </div>
-        <br>
-        <% if user_signed_in? %>
-          <%= link_to new_actor_path, id: "button-add-actor",  class: "btn btn-primary pull-right"  do %>
-            <span class="glyphicon glyphicon-plus"></span>
-            <%= t "actor.action.add_actor" %>
-          <% end %>
-        <% end %>
       </div>
     </div>
   </div>

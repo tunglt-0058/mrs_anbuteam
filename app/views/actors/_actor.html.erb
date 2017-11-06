@@ -14,19 +14,6 @@
           <%= link_to actor.name.truncate(Settings.length_name), actor,
             "data-turbolinks": false %>
         </h3>
-        <h4>
-          <% if user_signed_in? %>
-            <%= link_to edit_actor_path(actor),  class: "btn btn-warning" do %>
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-              <%= t "actor.action.edit" %>
-            <% end %>
-            <%= link_to "/actors/#{actor.id}",  method: :delete,
-              data: {confirm: t("actor.action.sure")}, class: "btn btn-danger" do %>
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-              <%= t "actor.action.delete" %>
-            <% end %>
-          <% end %>
-        </h4>
       </div>
     </div>
   </div>
