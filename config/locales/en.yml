@@ -55,3 +55,352 @@ en:
   message: "メッセージ"
   not_message: "メッセージがありません！"
   all_message: "すべて見る"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+  date:
+    abbr_day_names:
+    - 日
+    - 月
+    - 火
+    - 水
+    - 木
+    - 金
+    - 土
+    abbr_month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 日曜日
+    - 月曜日
+    - 火曜日
+    - 水曜日
+    - 木曜日
+    - 金曜日
+    - 土曜日
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
+    month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 約1時間
+        other: 約%{count}時間
+      about_x_months:
+        one: 約1ヶ月
+        other: 約%{count}ヶ月
+      about_x_years:
+        one: 約1年
+        other: 約%{count}年
+      almost_x_years:
+        one: 1年弱
+        other: "%{count}年弱"
+      half_a_minute: 30秒前後
+      less_than_x_minutes:
+        one: 1分以内
+        other: "%{count}分未満"
+      less_than_x_seconds:
+        one: 1秒以内
+        other: "%{count}秒未満"
+      over_x_years:
+        one: 1年以上
+        other: "%{count}年以上"
+      x_days:
+        one: 1日
+        other: "%{count}日"
+      x_minutes:
+        one: 1分
+        other: "%{count}分"
+      x_months:
+        one: 1ヶ月
+        other: "%{count}ヶ月"
+      x_years:
+        one: 1年
+        other: "%{count}年"
+      x_seconds:
+        one: 1秒
+        other: "%{count}秒"
+    prompts:
+      day: 日
+      hour: 時
+      minute: 分
+      month: 月
+      second: 秒
+      year: 年
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      accepted: を受諾してください
+      blank: を入力してください
+      present: は入力しないでください
+      confirmation: と%{attribute}の入力が一致しません
+      empty: を入力してください
+      equal_to: は%{count}にしてください
+      even: は偶数にしてください
+      exclusion: は予約されています
+      greater_than: は%{count}より大きい値にしてください
+      greater_than_or_equal_to: は%{count}以上の値にしてください
+      inclusion: は一覧にありません
+      invalid: は不正な値です
+      less_than: は%{count}より小さい値にしてください
+      less_than_or_equal_to: は%{count}以下の値にしてください
+      model_invalid: "バリデーションに失敗しました: %{errors}"
+      not_a_number: は数値で入力してください
+      not_an_integer: は整数で入力してください
+      odd: は奇数にしてください
+      required: を入力してください
+      taken: はすでに存在します
+      too_long: は%{count}文字以内で入力してください
+      too_short: は%{count}文字以上で入力してください
+      wrong_length: は%{count}文字で入力してください
+      other_than: は%{count}以外の値にしてください
+    template:
+      body: 次の項目を確認してください
+      header:
+        one: "%{model}にエラーが発生しました"
+        other: "%{model}に%{count}個のエラーが発生しました"
+  helpers:
+    select:
+      prompt: 選択してください
+    submit:
+      create: 登録する
+      submit: 保存する
+      update: 更新する
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n%u"
+        precision: 0
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 円
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: 十億
+          million: 百万
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n%u"
+        units:
+          byte: バイト
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: 、
+      two_words_connector: 、
+      words_connector: 、
+  time:
+    am: 午前
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      short: "%y/%m/%d %H:%M"
+    pm: 午後
+  admin:
+    js:
+      true: True
+      false: False
+      is_present: が存在する
+      is_blank: が空
+      date: 日付指定
+      between_and_: 範囲指定
+      today: 今日
+      yesterday: 昨日
+      this_week: 今週
+      last_week: 先週
+      number: 数字指定
+      contains: 部分一致
+      is_exactly: 完全一致
+      starts_with: 文字列の先頭指定
+      ends_with: 文字列の末尾指定
+    loading: 読み込み中...
+    home:
+      name: ホーム
+    pagination:
+      previous: "&laquo; 前"
+      next: "次 &raquo;"
+      truncate: "…"
+    misc:
+      search: 検索
+      filter: フィルタ
+      refresh: 更新
+      show_all: 全て表示
+      add_filter: フィルタを追加
+      bulk_menu_title: 選択したアイテム
+      remove: 削除
+      add_new: 新規作成
+      chosen: "選択中: %{name}"
+      chose_all: 全て選択
+      clear_all: 全てクリア
+      up: Up
+      down: Down
+      navigation: ナビゲーション
+      navigation_static_label: リンク
+      log_out: ログアウト
+      ago: 前
+    flash:
+      successful: "%{name}の %{action} に成功しました"
+      error: "%{name} の %{action} に失敗しました"
+      noaction: アクションが指定されていません
+      model_not_found: "モデル '%{model}' が見つかりません"
+      object_not_found: "ID '%{id}' の%{model}が見つかりません"
+    table_headers:
+      model_name: モデル名
+      last_used: 最終更新
+      records: レコード
+      username: ユーザ
+      changes: 変更
+      created_at: 日時
+      item: アイテム
+      message: メッセージ
+    actions:
+      dashboard:
+        title: サイト管理
+        menu: ダッシュボード
+        breadcrumb: ダッシュボード
+      index:
+        title: "%{model_label_plural}の一覧"
+        menu: 一覧
+        breadcrumb: "%{model_label_plural}"
+      show:
+        title: "%{model_label} '%{object_label}' の詳細"
+        menu: 表示
+        breadcrumb: "%{object_label}"
+      show_in_app:
+        menu: アプリで表示
+      new:
+        title: "新規 %{model_label}"
+        menu: 新規作成
+        breadcrumb: 新規
+        link: "新規 %{model_label} を作成"
+        done: 作成しました
+      edit:
+        title: "%{model_label} '%{object_label}' の編集"
+        menu: 編集
+        breadcrumb: 編集
+        link: "この %{model_label} を編集"
+        done: 更新しました
+      delete:
+        title: "%{model_label} '%{object_label}' の削除"
+        menu: 削除
+        breadcrumb: 削除
+        link: "'%{object_label}' を削除"
+        done: 削除しました
+      bulk_delete:
+        title: "%{model_label_plural} の削除"
+        menu: 一括削除
+        breadcrumb: 一括削除
+        bulk_link: "選択した%{model_label_plural}の削除"
+      export:
+        title: "%{model_label_plural} のエクスポート"
+        menu: エクスポート
+        breadcrumb: エクスポート
+        link: "クエリ結果の%{model_label_plural}をエクスポート"
+        bulk_link: "選択した%{model_label_plural}のエクスポート"
+        done: エクスポートしました
+      history_index:
+        title: "%{model_label_plural} の履歴"
+        menu: 履歴
+        breadcrumb: 履歴
+      history_show:
+        title: "%{model_label} '%{object_label}' の履歴"
+        menu: 履歴
+        breadcrumb: 履歴
+    form:
+      cancel: キャンセル
+      basic_info: 基本情報
+      required: 必須
+      optional: オプション
+      one_char: 文字
+      char_length_up_to: "最大文字数:"
+      char_length_of: "文字数:"
+      save: 保存
+      save_and_add_another: 保存してもう一つ作成
+      save_and_edit: 保存して編集画面へ
+      all_of_the_following_related_items_will_be_deleted: ")を削除してよろしいですか？ 以下の関連するアイテムが削除されるかみなしご化されます:"
+      are_you_sure_you_want_to_delete_the_object: "本当に%{model_name} ("
+      confirmation: はい。間違いありません！
+      bulk_delete: "以下のオブジェクトが削除され、関連する依存オブジェクトも削除またはみなしご化されます:"
+      new_model: "%{name} (新規)"
+    export:
+      confirmation: "%{name}としてエクスポート"
+      select: エクスポートするフィールドの選択
+      select_all_fields: すべてのフィールドを選択
+      fields_from: "%{name}のフィールド"
+      fields_from_associated: "関連%{name}のフィールド"
+      display: "表示中: %{name}: %{type}"
+      options_for: "%{name}のオプション"
+      empty_value_for_associated_objects: "<空>"
+      click_to_reverse_selection: クリックで選択を反転
+      csv:
+        header_for_root_methods: "%{name}" # 'model' is available
+        header_for_association_methods: "%{name} [%{association}]"
+        encoding_to: "エンコード:"
+        encoding_to_help: "出力エンコードを選択して下さい。空のままにすると現在の入力エンコードのままになります: (%{name})"
+        skip_header: ヘッダを無し
+        skip_header_help: チェックするとヘッダ(フィールドのタイトル)を出力しません。
+        default_col_sep: ","
+        col_sep: カラム区切り文字
+        col_sep_help: "空白にすると標準の '%{value}' になります。" # value is default_col_sep
