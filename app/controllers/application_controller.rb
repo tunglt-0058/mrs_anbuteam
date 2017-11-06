@@ -31,4 +31,12 @@ class ApplicationController < ActionController::Base
       @conversations = Conversation.involving(current_user).order("created_at DESC")
     end
   end
+
+  def after_sign_in_path_for resource
+    if resource.class == Admin || (resource.class == User && resource.role == "Admin" )
+      rails_admin_path
+    else
+      root_path
+    end
+  end
 end

@@ -29,4 +29,9 @@ document.addEventListener('turbolinks:load', function() {
     $('.result-movies-list').hide();
     $('.result-actors-list').show();
   });
+
+  $(document).on('submit', '.form-search', function(e) {
+    if($('.movies-search').val() == '')
+      e.preventDefault();
+  });
 });

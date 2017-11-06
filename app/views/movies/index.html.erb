@@ -41,7 +41,7 @@
             </li>
           </ul>
         <% end %>
-        <%= will_paginate %>
+        <%= will_paginate @movies, renderer: BootstrapPagination::Rails %>
       </div>
     </div>
   </div>
