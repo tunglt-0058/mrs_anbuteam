@@ -28,7 +28,7 @@
       <div class="row">
         <div class="col-sm-9">
           <hr>
-          <%= will_paginate @actors %>
+          <%= will_paginate @actors, renderer: BootstrapPagination::Rails %>
         </div>
       </div>
     </div>

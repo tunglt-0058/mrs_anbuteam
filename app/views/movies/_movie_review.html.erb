@@ -2,8 +2,6 @@
   <% if !movie.reviews.empty? %>
   <% movie.reviews.last(3).each do |review| %>
     <div class="single_review col-lg-12 col-md-12 col-sm-12">
-      <% rating = Rate.find_by_rater_id_and_rateable_id_and_dimension(review.user_id, movie.id, "score") %>
-      <%= rating_for_user movie, User.find(review.user_id), "score" %>
       <div class="ta8">
         <div class="star">
           <% (1..review.point).each do |index| %>

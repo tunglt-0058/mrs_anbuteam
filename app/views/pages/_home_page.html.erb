@@ -1,9 +1,36 @@
-<div class="show-static-page">
-  <div class="center jumbotron">
-    <div class="hit-the-floor"><%= t "hello" %></div><br>
-    <%= link_to new_user_registration_path, class: "btn btn-lg btn-primary signup1" do %>
-      <i class="fa fa-user-plus" aria-hidden="true"></i>
-      <%= t "sign-up-now" %>
-    <% end %>
+<% provide :title, t("genres.index.all_genres") %>
+
+<div class="container-fluid header-block">
+  <h1 class="text-capitalize">
+    <%= t "genres.index.all_genres" %>
+  </h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <%= render "genres/slidebar", genres: genres %>
+    </div>
+    <div class="col-sm-9 tab-style-1-content">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row genre-header">
+            <div class="col-sm-9">
+              <h2><%= t "genres.show.collection" %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <% movies.each do |movie| %>
+          <%= render "genres/movie", movie: movie %>
+        <% end %>
+      </div>
+      <div class="row">
+        <div class="col-sm-9">
+          <hr>
+          <%= will_paginate movies, renderer: BootstrapPagination::Rails %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
