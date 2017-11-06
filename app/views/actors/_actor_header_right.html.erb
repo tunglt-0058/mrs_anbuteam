@@ -26,17 +26,4 @@
       <% end %>
     </p>
   <% end %>
-  <div class="btn-align">
-    <% if user_signed_in? %>
-      <%= link_to edit_actor_path(actor),  class: "btn btn-warning" do %>
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-        <%= t "actor.action.edit" %>
-      <% end %>
-      <%= link_to "/actors/#{actor.id}",  method: :delete,
-        data: {confirm: t("actor.action.sure")}, class: "btn btn-danger" do %>
-        <span class="glyphicon glyphicon-erase"></span>
-        <%= t "actor.action.delete" %>
-      <% end %>
-    <% end %>
-  </div>
 </aside>
