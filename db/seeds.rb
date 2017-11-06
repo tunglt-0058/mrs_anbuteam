@@ -377,3 +377,30 @@ Review.all.each do |review|
   Activity.create user_id: 4, review: review, activity_type: :dislike
   Activity.create user_id: 5, review: review, activity_type: :dislike
 end
+
+(2..5).each do |n|
+  Relationship.create! follower_id: 1, followed_id: n
+end
+
+FavoriteReview.create!([
+  {user_id: 1, review_id: 1},
+  {user_id: 1, review_id: 2},
+  {user_id: 2, review_id: 3},
+  {user_id: 2, review_id: 4},
+  {user_id: 3, review_id: 5},
+  {user_id: 3, review_id: 6},
+  {user_id: 4, review_id: 7},
+  {user_id: 4, review_id: 8},
+  {user_id: 5, review_id: 9},
+  {user_id: 5, review_id: 10},
+  {user_id: 6, review_id: 10},
+  {user_id: 6, review_id: 8},
+  {user_id: 7, review_id: 6},
+  {user_id: 7, review_id: 4},
+  {user_id: 8, review_id: 2},
+  {user_id: 8, review_id: 1},
+  {user_id: 9, review_id: 3},
+  {user_id: 9, review_id: 5},
+  {user_id: 10, review_id: 7},
+  {user_id: 10, review_id: 9}
+])

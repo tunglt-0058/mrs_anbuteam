@@ -45,15 +45,6 @@ ActiveRecord::Schema.define(version: 20171103173419) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "average_caches", force: :cascade do |t|
-    t.integer "rater_id"
-    t.string "rateable_type"
-    t.integer "rateable_id"
-    t.float "avg"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -106,14 +97,6 @@ ActiveRecord::Schema.define(version: 20171103173419) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", force: :cascade do |t|
-    t.string "link"
-    t.integer "movie_id"
-    t.integer "actor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.integer "conversation_id"
@@ -146,13 +129,6 @@ ActiveRecord::Schema.define(version: 20171103173419) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "movie_producers", force: :cascade do |t|
-    t.integer "movie_id"
-    t.integer "producer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "movies", force: :cascade do |t|
     t.string "name"
     t.integer "episodes"
@@ -160,47 +136,6 @@ ActiveRecord::Schema.define(version: 20171103173419) do
     t.text "summary"
     t.string "poster"
     t.float "point", default: 0.0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "musics", force: :cascade do |t|
-    t.string "link"
-    t.integer "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "overall_averages", force: :cascade do |t|
-    t.string "rateable_type"
-    t.integer "rateable_id"
-    t.float "overall_avg"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "produces", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "rates", force: :cascade do |t|
-    t.integer "rater_id"
-    t.string "rateable_type"
-    t.string "rateable_id"
-    t.float "stars"
-    t.string "dimension"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "rating_caches", force: :cascade do |t|
-    t.string "cacheable_type"
-    t.integer "cacheable_id"
-    t.float "avg"
-    t.integer "qty"
-    t.string "dimension"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -244,13 +179,6 @@ ActiveRecord::Schema.define(version: 20171103173419) do
     t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "videos", force: :cascade do |t|
-    t.string "link"
-    t.integer "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
