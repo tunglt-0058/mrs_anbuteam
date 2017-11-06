@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   get "pages/:page", to: "pages#show", as: "page"
 
   resources :users, only: [:show]
-  resources :videos
-  resources :images
   resources :reviews do
     resources :activities, only: [:create, :destroy]
     resources :comments, except: :show
