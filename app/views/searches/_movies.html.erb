@@ -3,4 +3,4 @@
     <%= render "movies/mini", index: index + 1, movie: movie %>
   </div>
 <% end %>
-<%= will_paginate movies %>
+<%= will_paginate movies, renderer: BootstrapPagination::Rails %>

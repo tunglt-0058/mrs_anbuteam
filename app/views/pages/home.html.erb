@@ -23,5 +23,5 @@
     </div>
   </div>
 <% else %>
-  <%= render "home_page" %>
+  <%= render "home_page", genres: @genres, movies: @movies %>
 <% end %>

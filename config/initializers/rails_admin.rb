@@ -3,7 +3,7 @@ RailsAdmin.config do |config|
     warden.authenticate! scope: :admin
   end
   config.current_user_method(&:current_admin)
-  config.main_app_name = ["映画レビューシステム"]
+  config.main_app_name = ["映画レビューシステム",""]
 
   ### Popular gems integration
 

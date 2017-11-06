@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     :omniauth_callbacks => "users/omniauth_callbacks"
   }
 
-  root "pages#show", page: "home"
-  get "pages/:page", to: "pages#show", as: "page"
+  root "pages#show", page_temp: "home"
+  get "pages/:page_temp", to: "pages#show", as: "page"
 
   resources :users, only: [:show]
   resources :reviews do

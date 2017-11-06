@@ -67,7 +67,7 @@
   width: 0;
   height: 0;
   border: 5px solid white;
-  border-left-color: transparent;
+  border-left-color: transparent !important;
   border-bottom-color: transparent;
 }
 
@@ -93,7 +93,7 @@
   width: 0;
   height: 0;
   border: 5px solid white;
-  border-right-color: transparent;
+  border-right-color: transparent !important;
   border-top-color: transparent;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
