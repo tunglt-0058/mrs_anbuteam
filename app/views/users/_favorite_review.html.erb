@@ -4,6 +4,7 @@
       <div class="row">
         <% reviews.each do |review| %>
           <%= render "movies/movie_review", review: review, movie: review.movie %>
+          <hr><hr>
         <% end %>
       </div>
       <div class="row">

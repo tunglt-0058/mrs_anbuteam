@@ -7,6 +7,7 @@ $yellow-color: #fed136;
 $yellow-dark: #fec503;
 $gray-light: #e9ebee;
 $white-dark: #e9ebee;
+$red: #ff0000;
 
 .ltt-news-feed {
   background-color: #f1f3fa;
@@ -274,4 +275,12 @@ $white-dark: #e9ebee;
 
 .ltt-flash {
   display: inline-block;
+}
+
+.error {
+  color: $red;
+  h2 {
+    color: $red;
+    font-weight: bolder;
+  }
 }

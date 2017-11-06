@@ -2,7 +2,6 @@
   <ol class="breadcrumb align-top">
     <li><%= link_to('Home', root_path) %></li>
     <li class="active"><%= @movie.name %></li>
-    <li><%= link_to('Reviews', movie_reviews_path(@movie)) %></li>
   </ol>
   <div class="movie_header col-lg-12 col-md-12 col-sm-12">
     <div class="col-lg-3 col-md-3 col-sm-3">
@@ -14,5 +13,4 @@
     <%= render "movie_sumary", movie: @movie %>
     <%= render "movie_review", movie: @movie %>
   </div>
-
 </div>

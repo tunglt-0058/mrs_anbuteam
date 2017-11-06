@@ -3,25 +3,23 @@
     <div class="logo">
       <%= link_to t("app_title"), root_path %>
     </div>
-    <% if user_signed_in? %>
-      <div class="a-search">
-        <%= link_to t("a-search.title"), new_search_path %>
-      </div>
-      <div class="header-search col-md-4">
-        <%= form_tag searches_path, method: :get, class: "form-search" do %>
-          <span>
-            <%= text_field_tag :search, params[:search], autocomplete: :off,
-              placeholder: t("search"), class: "form-control movies-search",
-              id: "movies-search" %>
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </span>
-        <% end %>
-        <span class="search-results">
-          <ul class="results">
-          </ul>
+    <div class="a-search">
+      <%= link_to t("a-search.title"), new_search_path %>
+    </div>
+    <div class="header-search col-md-4">
+      <%= form_tag searches_path, method: :get, class: "form-search" do %>
+        <span>
+          <%= text_field_tag :search, params[:search], autocomplete: :off,
+            placeholder: t("search"), class: "form-control movies-search",
+            id: "movies-search" %>
+          <i class="fa fa-search" aria-hidden="true"></i>
         </span>
-      </div>
-    <% end %>
+      <% end %>
+      <span class="search-results">
+        <ul class="results">
+        </ul>
+      </span>
+    </div>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li>
