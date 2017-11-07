@@ -28,11 +28,11 @@
           </div>
         </li>
         <% if user_signed_in? %>
-          <li>
-            <div class="home">
-              <%= link_to t("explorer.index.genres"), genres_path %>
-            </div>
-          </li>
+          <div class="dropdown">
+            <%= link_to genres_path do %>
+              <i class="fa fa-film " aria-hidden="true"></i>
+            <% end %>
+          </div>
         <% end %>
         &nbsp;
         <% if user_signed_in? %>
@@ -58,7 +58,7 @@
           &nbsp;
           <div class="w3-hide-small ltt-notification-icon"
             title="<%= t "tooltip.notifications" %>">
-            <div class="w3-padding-large w3-hover-white"%>
+            <div class="w3-padding-large w3-hover-white">
               <i class="fa fa-globe">
                 <div class="ltt-notification-count">
                   <%= current_user.new_notification %>

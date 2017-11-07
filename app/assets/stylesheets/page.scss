@@ -14,6 +14,8 @@ $red: #ff0000;
   min-width: 100px;
   padding-top: 20px;
   text-align: center;
+  background-color: #f0f8ff;
+  border-style: ridge;
 
   ul {
     padding: 0;
@@ -35,6 +37,7 @@ $red: #ff0000;
     padding-left: 0 !important;
     padding-top: 10px;
     position: fixed;
+    font-size: large;
 
     h3 {
       margin: 0;
@@ -59,7 +62,7 @@ $red: #ff0000;
     overflow-y: scroll;
     margin-bottom: 15px;
     padding: 10px;
-
+    font-size: large;
 
     .avatar-news-feed-left {
       border-radius: 100%;
@@ -206,8 +209,8 @@ $red: #ff0000;
   background-color: $white-dark;
   min-height: 100vh;
   min-width: 1000px;
-  padding: 20px !important;
-  padding-top: 50px !important;
+  padding: 10px !important;
+  padding-top: 10px !important;
 }
 
 .ltt-body-content::before,
@@ -218,16 +221,17 @@ $red: #ff0000;
 }
 
 .follow_op {
+  background-color: #f0f8ff;
 
   h3 {
-    background: rgba(0, 51, 102, 0.27);
+    background: #c0e0fb;
     padding: 10px;
   }
 }
 
 .news-feed-right {
   padding: 5px;
-  background-color: white;
+  background-color: #f0f8ff;
   .top-5,
   .recent {
     cursor: pointer;

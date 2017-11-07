@@ -9,6 +9,12 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    font-size: large;
+
+    i {
+      padding: 0 8px 0px 8px;
+      color: #ffffff;
+    }
 }
 
 .dropdown-content {

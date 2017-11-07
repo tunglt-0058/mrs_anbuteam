@@ -3,10 +3,11 @@ $black-color: #000;
 $blue-dark: #365899;
 
 .middle-follow-users {
-  background-color: $white-color !important;
+  background-color: #f5ffff;
   padding: 10px !important;
   z-index: 2;
   margin-bottom: 20px;
+  border-style: ridge;
 
   .follow-users {
     border-bottom: 1px solid $black-color;
