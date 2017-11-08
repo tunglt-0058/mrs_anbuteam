@@ -1,0 +1,31 @@
+<div id="genre-actor" class="tab-pane fade in active">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <%= render "genres/slidebar_actor", genres: genres %>
+      </div>
+      <div class="col-sm-9 tab-style-1-content">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="row genre-header">
+              <div class="col-sm-9">
+                <h2><%= t "genres.show.collection" %></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <% actors.each do |actor| %>
+            <%= render "genres/actor", actor: actor %>
+          <% end %>
+        </div>
+        <div class="row">
+          <div class="col-sm-9">
+            <hr>
+            <%= will_paginate actors,  {link_options: {'data-remote': true}, renderer: BootstrapPagination::Rails}%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

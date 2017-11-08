@@ -3,13 +3,23 @@ class GenresController < ApplicationController
   before_action :load_genres, :load_messages, only: [:index, :show]
 
   def index
-    @movies = Movie.paginate(page: params[:page],
-      per_page: Settings.page_movie_size).order(id: :desc)
+    if params[:genre_type] == "genre_actor"
+      @actors = Actor.paginate(page: params[:page],
+        per_page: Settings.page_actor_size).order(id: :desc)
+    else
+      @movies = Movie.paginate(page: params[:page],
+        per_page: Settings.page_movie_size).order(id: :desc)
+    end
   end
 
   def show
-    @movies = @genre.movies.paginate(page: params[:page],
-      per_page: Settings.page_movie_size).order(id: :desc)
+    if params[:genre_type] == "genre_actor"
+      @actors = @genre.actors.paginate(page: params[:page],
+        per_page: Settings.page_actor_size).order(id: :desc)
+    else
+      @movies = @genre.movies.paginate(page: params[:page],
+        per_page: Settings.page_movie_size).order(id: :desc)
+    end
   end
 
   private
