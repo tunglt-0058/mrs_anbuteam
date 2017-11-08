@@ -4,12 +4,6 @@ User.create!([
   {email: "letattungtb@gmail.com", name: "Le Tat Tung",
     password: "tung123", password_confirmation: "tung123"}
 ])
-
-Admin.create!([
-  {email: "admin@gmail.com",
-    password: "12345678", password_confirmation: "12345678"}
-])
-
 10.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@gmail.com"
@@ -17,6 +11,13 @@ Admin.create!([
   User.create!(name: name, email: email, password: password,
     password_confirmation: password)
 end
+puts "Create Account User"
+
+Admin.create!([
+  {email: "admin@gmail.com",
+    password: "12345678", password_confirmation: "12345678"}
+])
+puts "Create Account Admin"
 
 Genre.create!([
   {name: "Action"},
@@ -37,6 +38,7 @@ Genre.create!([
   {name: "School"},
   {name: "Sci-fi"}
 ])
+puts "Create Genres"
 
 Movie.create!([
   {name: "5 Centimeters per Second", episodes: 3,status:"Completed",
@@ -98,6 +100,7 @@ Movie.create!([
     This is the story of his path to redemptio (...)",
     poster: "https://c2.staticflickr.com/8/7545/26678893374_ff427f0760_b.jpg"}
 ])
+puts "Create Movies"
 
 MovieGenre.create!([
   {genre_id: 1, movie_id: 1},
@@ -161,6 +164,7 @@ MovieGenre.create!([
   {genre_id: 16, movie_id: 6},
   {genre_id: 17, movie_id: 8}
 ])
+puts "Add Movie to Genre"
 
 FavoriteMovie.create!([
   {user_id: 1, movie_id: 1},
@@ -209,6 +213,7 @@ FavoriteMovie.create!([
   {user_id: 10, movie_id: 4},
   {user_id: 10, movie_id: 5}
 ])
+puts "Create Favorite Movie"
 
 FavoriteActor.create!([
   {user_id: 1, actor_id: 1},
@@ -246,6 +251,7 @@ FavoriteActor.create!([
   {user_id: 10, actor_id: 2},
   {user_id: 10, actor_id: 6}
 ])
+puts "Create Favorite Actor"
 
 Actor.create!([
   {name: "Arimura Kasumi", date_of_birth: "10/8/1995", avatar: "https://i.imgur.com/P4J77s7.jpg"},
@@ -264,6 +270,7 @@ Actor.create!([
   {name: "Takei Emi", date_of_birth: "10/8/1995", avatar: "https://i.imgur.com/1CjGz93.jpg"},
   {name: "Hiro Mizushima", date_of_birth: "10/8/1995", avatar: "https://i.imgur.com/Os2JCR8.jpg"}
 ])
+puts "Create Actors"
 
 MovieActor.create!([
   {movie_id: 1, actor_id: 1},
@@ -316,6 +323,7 @@ MovieActor.create!([
   {movie_id: 10, actor_id: 13},
   {movie_id: 10, actor_id: 12}
 ])
+puts "Create Movie Actor"
 
 Category.create!([
   {name: "male protagonist"},
@@ -329,6 +337,7 @@ Category.create!([
   {name: "heart-warming"},
   {name: "fighting"}
 ])
+puts "Create Categories"
 
 MovieCategory.create!([
   {movie_id: 1, category_id: 1},
@@ -352,6 +361,7 @@ MovieCategory.create!([
   {movie_id: 10, category_id: 7},
   {movie_id: 10, category_id: 9}
 ])
+puts "Add movie to Category"
 
 Movie.all.each do |movie|
   Review.create! movie_id: movie.id, user_id: 1, point: 5,
@@ -361,6 +371,7 @@ Movie.all.each do |movie|
   movie.point = 5
   movie.save
 end
+puts "Add Review to Movie"
 
 Review.all.each do |review|
   (1..5).each do
@@ -370,6 +381,7 @@ Review.all.each do |review|
     content: "そうですね。本当に面白いです。"
   end
 end
+puts "Add Comment to Review"
 
 Review.all.each do |review|
   Activity.create user_id: 2, review: review, activity_type: :like
@@ -377,10 +389,12 @@ Review.all.each do |review|
   Activity.create user_id: 4, review: review, activity_type: :dislike
   Activity.create user_id: 5, review: review, activity_type: :dislike
 end
+puts "Add Like and Dislike to Review"
 
 (2..5).each do |n|
   Relationship.create! follower_id: 1, followed_id: n
 end
+puts "Add Relationship"
 
 FavoriteReview.create!([
   {user_id: 1, review_id: 1},
@@ -404,3 +418,4 @@ FavoriteReview.create!([
   {user_id: 10, review_id: 7},
   {user_id: 10, review_id: 9}
 ])
+puts "Create Favorite Review"

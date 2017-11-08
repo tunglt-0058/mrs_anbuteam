@@ -25,7 +25,12 @@ class PagesController < ApplicationController
 
   def load_data
     @genres = Genre.all
-    @movies = Movie.paginate(page: params[:page],
-      per_page: Settings.page_movie_size).order(id: :desc)
+    if params[:genre_type] == "genre_actor"
+      @actors = Actor.paginate(page: params[:page],
+        per_page: Settings.page_actor_size).order(id: :desc)
+    else
+      @movies = Movie.paginate(page: params[:page],
+        per_page: Settings.page_movie_size).order(id: :desc)
+    end
   end
 end
