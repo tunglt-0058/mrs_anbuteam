@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :actors do
+  resources :actors, only: [:show] do
     resources :favorite_actors, only: [:create, :destroy]
   end
   resources :not_found, only: :index

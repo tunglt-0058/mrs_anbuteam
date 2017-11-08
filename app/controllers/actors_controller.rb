@@ -1,19 +1,11 @@
 class ActorsController < ApplicationController
-  before_action :load_genres, only: [:index, :show]
+  before_action :load_genres, only: :show
   before_action :find_actor, :load_messages
-
-  def index
-    @actors = Actor.paginate(page: params[:page],
-      per_page: Settings.page_actor_size).order(id: :desc)
-  end
 
   def show
     if current_user
      @favorite = current_user.favorite_actors.find_by actor: @actor
     end
-  end
-
-  def edit
   end
 
   private

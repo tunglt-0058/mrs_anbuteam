@@ -3,32 +3,14 @@
   <h2><%= t "genres.show.genre" %> </h2>
   <h1 class="text-capitalize"><%= @genre.name %></h1>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-3">
-      <%= render "genres/slidebar", genres: @genres%>
-    </div>
-    <div class="col-sm-9 tab-style-1-content">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="row genre-header">
-            <div class="col-sm-9">
-              <h2><%= t "genres.show.collection" %></h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <% @movies.each do |movie| %>
-          <%= render "genres/movie", movie: movie %>
-        <% end %>
-      </div>
-      <div class="row">
-        <div class="col-sm-9">
-          <hr>
-          <%= will_paginate @movies, renderer: BootstrapPagination::Rails %>
-        </div>
-      </div>
-    </div>
-  </div>
+
+<ul class="nav nav-tabs">
+  <li class="genre-movie active">
+    <a data-toggle="tab" href="#genre-movie"><%= t "pages.movie" %></a></li>
+  <li class="genre-actor">
+    <a data-toggle="tab" href="#genre-actor"><%= t "pages.actor" %></a></li>
+</ul>
+
+<div class="tab-content genre-content">
+  <%= render "genres/genre_movie", genres: @genres, movies: @movies %>
 </div>

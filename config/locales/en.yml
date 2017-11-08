@@ -33,6 +33,7 @@ en:
     facebook: "Facebookでログイン"
   pages:
     home: "ホーム"
+    movie: "映画"
     actor: "俳優"
   layouts:
     footer:

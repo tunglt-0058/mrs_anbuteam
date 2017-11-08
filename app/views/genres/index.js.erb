@@ -1,0 +1,7 @@
+<% if @movies %>
+  $('.genre-content').html('<%= j render "genres/genre_movie",
+    genres: @genres, movies: @movies %>');
+<% else %>
+  $('.genre-content').html('<%= j render "genres/genre_actor",
+    genres: @genres, actors: @actors %>');
+<% end %>
