@@ -6,11 +6,13 @@
     <div class="genres-list">
       <%= form_tag new_search_path, method: :get, remote: true do %>
         <% @genres.each do |genre| %>
-          <label>
-            <%= check_box_tag "genre_ids[]", genre.id, false,
-              {class: "genre-check-box"} %>
-            <span class="genre-name"><%= genre.name %></span>
-          </label>
+          <div class="col-md-3">
+            <label>
+              <%= check_box_tag "genre_ids[]", genre.id, false,
+                {class: "genre-check-box"} %>
+              <span class="genre-name"><%= genre.name %></span>
+            </label>
+          </div>
         <% end %>
       <%= submit_tag t("search"), class: "btn btn-default" %>
       <% end %>
