@@ -10,10 +10,10 @@ $white-dark: #e9ebee;
 $red: #ff0000;
 
 .ltt-news-feed {
-  background-color: #f1f3fa;
   min-height: 110vh;
   min-width: 100px;
   padding-top: 20px;
+  text-align: center;
 
   ul {
     padding: 0;
@@ -56,9 +56,9 @@ $red: #ff0000;
 
   .news-feed-left-content {
     height: 200px;
-    width: 200px;
     overflow-y: scroll;
     margin-bottom: 15px;
+    padding: 10px;
 
 
     .avatar-news-feed-left {
@@ -218,16 +218,11 @@ $red: #ff0000;
 }
 
 .follow_op {
-  width: 200px;
 
   h3 {
     background: rgba(0, 51, 102, 0.27);
     padding: 10px;
   }
-}
-
-.follow_bgr {
-  background-color: rgba(0, 51, 102, 0.11);
 }
 
 .news-feed-right {
