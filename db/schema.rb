@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103173419) do
+ActiveRecord::Schema.define(version: 20171113081239) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -140,6 +140,17 @@ ActiveRecord::Schema.define(version: 20171103173419) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.integer "recipient_id"
+    t.boolean "read"
+    t.integer "review_id"
+    t.integer "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_notifications_on_movie_id"
+    t.index ["review_id"], name: "index_notifications_on_review_id"
+  end
+
   create_table "relationships", force: :cascade do |t|
     t.integer "followed_id"
     t.integer "follower_id"
@@ -164,6 +175,7 @@ ActiveRecord::Schema.define(version: 20171103173419) do
     t.string "avatar"
     t.string "role", default: "Regular"
     t.string "sex", default: "Male"
+    t.integer "new_notification", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "encrypted_password", default: "", null: false

@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :avatar
       t.string :role, default: "Regular"
       t.string :sex, default: "Male"
+      t.integer :new_notification, default: 0
 
       t.timestamps
     end
