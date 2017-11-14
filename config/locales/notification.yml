@@ -1,0 +1,5 @@
+en:
+  notification:
+    has_new: " has a new review!"
+  tooltip:
+    notifications: "Notifications"

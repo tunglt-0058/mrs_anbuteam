@@ -13,6 +13,10 @@ document.addEventListener('turbolinks:load', function() {
     $('.top-5-list').hide();
     $('.recent-list').show();
   });
+
+  if($('.ckeditor').length) {
+    CKEDITOR.replace('ckeditor');
+  }
 });
 
 var flash = function(){

@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   add_flash_types :success, :danger, :info
-  before_action :load_messages
+  before_action :load_messages, :load_notification
 
   def load_data_static
     if user_signed_in?
@@ -38,5 +38,10 @@ class ApplicationController < ActionController::Base
     else
       root_path
     end
+  end
+
+  private
+  def load_notification
+    @notifications = current_user.notifications if current_user
   end
 end

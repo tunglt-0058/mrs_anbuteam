@@ -28,4 +28,8 @@ module ApplicationHelper
       "activity-opacity"
     end
   end
+
+  def notification_content notification
+    ("<strong>#{notification.movie.name}</strong>" + t("notification.has_new")).html_safe
+  end
 end

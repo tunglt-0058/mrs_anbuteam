@@ -55,6 +55,45 @@
             </ul>
           </div>
           &nbsp;
+          <div class="w3-hide-small ltt-notification-icon"
+            title="<%= t "tooltip.notifications" %>">
+            <div class="w3-padding-large w3-hover-white"%>
+              <i class="fa fa-globe">
+                <div class="ltt-notification-count">
+                  <%= current_user.new_notification %>
+                </div>
+              </i>
+            </div>
+            <div class="ltt-notifications">
+              <ul class="ltt-noti-list">
+                <% @notifications.each do |notification| %>
+                  <li class="ltt-notification notification-<%= notification.id %>
+                    <%= notification.read %>-notification">
+                    <%= link_to notification.review do %>
+                      <span class="col-md-2 col-lg-2">
+                      <div class="ltt-notification-avatar">
+                        <%= image_tag notification.movie.poster, id: "avatar-#{notification.id}",
+                          class: "ltt-avatar" %>
+                        <div class="clearfix"></div>
+                      </div>
+                      </span>
+                      <span class="col-md-10 col-lg-10 ltt-notification-content">
+                        <span>
+                          <%= notification_content notification %>
+                        </span>
+                        <div>
+                          <%= time_ago_in_words notification.created_at %>
+                        </div>
+                        <div class="clearfix"></div>
+                      </span>
+                      <div class="clearfix"></div>
+                    <% end %>
+                  </li>
+                <% end %>
+                <div class="clearfix"></div>
+              </ul>
+            </div>
+          </div>
           <div class="dropdown">
             <div class="dropbtn drop-text">
               <%= current_user.name.truncate(Settings.length_name) %>

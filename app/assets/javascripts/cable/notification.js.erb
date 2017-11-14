@@ -1,0 +1,84 @@
+
+var channel = "NotificationChannel";
+var reviews = [];
+var movies = [];
+var notifications = [];
+
+App.notification = App.cable.subscriptions.create({
+  channel: channel}, {
+  received: function(data) {
+    if (data.notification !== undefined) {
+      movie = data.movie;
+      review = data.review;
+      notification = data.notification;
+      reviews.push(review);
+      movies.push(movies);
+      notifications.push(notification);
+
+      $('.ltt-notification-count').show();
+      $('.ltt-notification-count')[0].innerText = notifications.length.toString();
+
+      html = convertNotification(review, movie, notification);
+      $('.ltt-noti-list').prepend(html);
+
+      if (movie.poster != 'movie.jpg') {
+        $('#avatar-' + notification.id)[0].src = movie.poster;
+      } else {
+        $('#avatar-' + notification.id)[0].src = '<%= asset_path "movie.jpg" %>';
+      }
+
+      notification_id = '.notification-' + notification.id;
+      $('.notification-' + notification.id).on('click', function() {
+        window.location.assign(window.location.origin + '/reviews/' + review.id);
+      });
+
+    } else if (data.notification_id !== undefined) {
+      notification_id = data.notification_id;
+      if (notification_id == 'all') {
+        $('.ltt-notification-count').hide();
+      }
+    }
+  },
+
+  speak: function(data) {
+    this.perform('speak', data);
+  }
+});
+
+function convertNotification(review, movie, notification) {
+  message = '<strong>' + movie.name + ' </strong> has a new review';
+  html = '<li class="ltt-notification notification-' + notification.id + ' false-notification">';
+  html += '<span class="col-md-2 col-lg-2 ltt-notification-avatar">';
+  html += '<img src="" id="avatar-' + notification.id + '" class="ltt-avatar">';
+  html += '<div class="clearfix"></div></span>';
+  html += '<span class="col-md-10 col-lg-10 ltt-notification-content">';
+  html += message + '<div class="small">' + jQuery.timeago(notification.created_at) + '</div></span>';
+  html += '<div class="clearfix"></div></li><div class="clearfix"></div>';
+  return html;
+}
+
+document.addEventListener("turbolinks:load", function() {
+  if ($('.ltt-notification-count').is(':visible')) {
+    if($('.ltt-notification-count')[0].innerText == '0') {
+      $('.ltt-notification-count').hide();
+    } else {
+      $('.ltt-notifications').show();
+    }
+  }
+
+  if($('.ltt-notifications').length) {
+    $('.ltt-notifications').hide();
+  }
+
+  $('.ltt-notification-icon').on('click', function() {
+    if(!$('.ltt-notifications').is(':visible')) {
+      App.notification.speak({action_type: "new_notification", notification_id: "all"});
+    }
+    $('.ltt-notifications').toggle();
+  });
+
+  $('.ltt-notification').on('click', function() {
+    var id = parseInt(this.className.split(' ')[1].split('-')[1]);
+    App.notification.speak({action_type: "new_notification", notification_id: id});
+  });
+});
