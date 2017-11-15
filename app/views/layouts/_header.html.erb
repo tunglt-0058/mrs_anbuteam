@@ -37,7 +37,8 @@
         &nbsp;
         <% if user_signed_in? %>
           <div class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t "message" %></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-comment-o"></i></a>
             <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
               <div class="notification-heading">
                 <h4 class="menu-title"><%= t "message" %></h4>
