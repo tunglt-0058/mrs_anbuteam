@@ -1,4 +1,3 @@
-
 var channel = "NotificationChannel";
 var reviews = [];
 var movies = [];
@@ -12,7 +11,7 @@ App.notification = App.cable.subscriptions.create({
       review = data.review;
       notification = data.notification;
       reviews.push(review);
-      movies.push(movies);
+      movies.push(movie);
       notifications.push(notification);
 
       $('.ltt-notification-count').show();
