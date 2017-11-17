@@ -28,19 +28,21 @@
           <p class="form-control-static"><strong><%= user.role %></strong></p>
         </div>
       </div>
-      <div class="form-group pmd-textfield">
-        <%= f.label t("user.edit.profile.sex"), class: "col-sm-3 control-label" %>
-        <div class="col-sm-9 width-input">
-          <%= f.text_field :sex, class: "form-control empty", id: "inputSex",
-            required: true%>
+      <% if user == current_user %>
+        <div class="form-group pmd-textfield">
+          <%= f.label t("user.edit.profile.sex"), class: "col-sm-3 control-label" %>
+          <div class="col-sm-9 width-input">
+            <%= f.text_field :sex, class: "form-control empty", id: "inputSex",
+              required: true%>
+          </div>
         </div>
-      </div>
-      <div class="form-group btns margin-bot-30">
-        <div class="col-sm-9 col-sm-offset-3">
-         <%= f.submit t("update"), class: "btn btn-primary user-edit-btn" %>
-        <button class="btn btn-danger"><%= t "cancel" %></button>
+        <div class="form-group btns margin-bot-30">
+          <div class="col-sm-9 col-sm-offset-3">
+           <%= f.submit t("update"), class: "btn btn-primary user-edit-btn" %>
+          <button class="btn btn-danger"><%= t "cancel" %></button>
+          </div>
         </div>
-      </div>
+      <% end %>
     </fieldset>
   <% end %>
 </div>

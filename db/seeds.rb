@@ -1,7 +1,7 @@
 User.create!([
   {email: "admin@gmail.com", name: "Admin", role: "Admin",
     password: "12345678", password_confirmation: "12345678"},
-  {email: "letattungtb@gmail.com", name: "Le Tat Tung",
+  {email: "letattungtb@gmail.com", name: "Le Tung",
     password: "tung123", password_confirmation: "tung123"}
 ])
 10.times do |n|
@@ -391,10 +391,15 @@ Review.all.each do |review|
 end
 puts "Add Like and Dislike to Review"
 
-(2..5).each do |n|
-  Relationship.create! follower_id: 1, followed_id: n
+(3..6).each do |n|
+  Relationship.create! follower_id: 2, followed_id: n
 end
-puts "Add Relationship"
+puts "Add Relationship User 2"
+
+(4..7).each do |n|
+  Relationship.create! follower_id: 3, followed_id: n
+end
+puts "Add Relationship User 3"
 
 FavoriteReview.create!([
   {user_id: 1, review_id: 1},
