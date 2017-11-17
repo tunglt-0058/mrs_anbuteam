@@ -28,7 +28,7 @@
           </div>
         </li>
         <% if user_signed_in? %>
-          <div class="dropdown">
+          <div class="dropdown" title="<%= t "tooltip.genres" %>">
             <%= link_to genres_path do %>
               <i class="fa fa-film " aria-hidden="true"></i>
             <% end %>
@@ -36,7 +36,7 @@
         <% end %>
         &nbsp;
         <% if user_signed_in? %>
-          <div class="dropdown">
+          <div class="dropdown" title="<%= t "tooltip.messages" %>">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-comment-o"></i></a>
             <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">

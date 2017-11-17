@@ -1,6 +1,39 @@
 <div class="row search-index">
-  <% unless @results.empty? %>
-    <%= render "result_searches", results: @results, top_movies: @top_movies,
+  <div class="container">
+    <div class="col-sm-9 tab-style-1-content show-result">
+      <div class="result-movies active">
+        <h4 class="tab-title"><%= t "searches.movies" %></h4>
+      </div>
+      <div class="result-actors">
+        <h4 class="tab-title"><%= t "searches.actors" %></h4>
+      </div>
+      <div class="clearfix"></div>
+      <div class="row">
+        <div class="row result-movies-list">
+          <% if @results["movies"].empty? %>
+            <h1><%= t "not_found.movie" %></h1>
+          <% else %>
+            <% @results["movies"].each do |movie| %>
+              <%= render "genres/movie", movie: movie %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row result-actors-list">
+          <% if @results["actors"].empty? %>
+            <h1><%= t "not_found.actor" %></h1>
+          <% else %>
+            <% @results["actors"].each do |actor| %>
+              <%= render "actors/actor", actor: actor %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="col-sm-3 news-feed-right">
+      <%= render "pages/right_news_feed", top_movies: @top_movies,
       recent_movies: @recent_movies %>
-  <% end %>
+    </div>
+  </div>
 </div>
