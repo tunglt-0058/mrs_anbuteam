@@ -1,5 +1,7 @@
 en:
   notification:
-    has_new: " has a new review!"
+    has_new: " 新しいレビューがあります。"
   tooltip:
-    notifications: "Notifications"
+    genres: "ジャンル"
+    messages: "メッセージ"
+    notifications: "通知"
