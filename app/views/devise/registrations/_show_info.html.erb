@@ -1,0 +1,43 @@
+<h1 class="section-title" id="services">
+  <div class="pro"><%= t "user.edit.profile.title" %></div>
+</h1>
+<h3 class="heading"><%= t "user.edit.profile.info" %></h3>
+<div class="row">
+  <%= render "shared/error_messages", object: user %>
+  <%= form_for user, html: {class: "form-horizontal"},
+    url: user_registration_path do |f| %>
+    <fieldset>
+      <div class="form-group prousername pmd-textfield">
+        <%= f.label t("user.edit.profile.email"), class: "control-label col-sm-3" %>
+        <div class="col-sm-9 width-input">
+          <p class="form-control-static"><strong>
+            <%= user.email %>
+          </strong></p>
+        </div>
+      </div>
+      <div class="form-group pmd-textfield">
+        <%= f.label t("user.edit.profile.name"), class: "col-sm-3 control-label" %>
+        <div class="col-sm-9 width-input">
+          <p class="form-control-static"><strong>
+            <%= user.name %>
+          </strong></p>
+        </div>
+      </div>
+      <div class="form-group prousername pmd-textfield">
+        <label class="control-label col-sm-3"><%= t "user.edit.profile.role" %></label>
+        <div class="col-sm-9 width-input">
+          <p class="form-control-static"><strong><%= user.role %></strong></p>
+        </div>
+      </div>
+      <div class="form-group pmd-textfield">
+        <%= f.label t("user.edit.profile.sex"), class: "col-sm-3 control-label" %>
+        <div class="col-sm-9 width-input">
+          <p class="form-control-static"><strong>
+            <%= user.sex %>
+          </strong></p>
+        </div>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+<br>

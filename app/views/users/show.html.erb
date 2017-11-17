@@ -9,8 +9,12 @@
             </div>
             <div class="col-md-9 custom-col-8 profile-content">
               <div class="info-part">
-                <%= render "devise/registrations/change_info", user: @user %>
-                <%= render "devise/registrations/change_pass", user: @user %>
+                <% if @user == current_user %>
+                  <%= render "devise/registrations/change_info", user: @user %>
+                  <%= render "devise/registrations/change_pass", user: @user %>
+                <% else %>
+                  <%= render "devise/registrations/show_info", user: @user %>
+                <% end %>
               </div>
             </div>
           </div>

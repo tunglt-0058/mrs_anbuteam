@@ -1,13 +1,6 @@
 <ul>
   <%= link_to user do %>
     <li title="<%= current_user.name %>" class="followed-users">
-      <div class="avatar-news-feed-left">
-        <% if current_user.avatar != nil %>
-          <% link_to image_tag(current_user.avatar), "#" %>
-        <% else %>
-          <% link_to image_tag("avatar.png"), "#" %>
-        <% end %>
-      </div>
       <span>
         <%= truncate user.name, length: 20 %>
         <br>

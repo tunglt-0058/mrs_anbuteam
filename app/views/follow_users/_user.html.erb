@@ -5,6 +5,11 @@
         <h6><%= link_to user.name, user %></h6>
         <div><b><%= t "user.email" %></b><%= user.email %></div>
         <div><b><%= t "user.sex" %></b><%= user.sex %></div>
+        <%= link_to "#", class: "btn btn-xs start-conversation",
+          "data-sid" => current_user.id, "data-rip" => user.id  do%>
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          <%= t "message" %>
+        <% end %>
         <div class="follow-users-btn">
           <%= render "relationships/follow_form", user: user %>
         </div>
