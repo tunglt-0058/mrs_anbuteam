@@ -25,3 +25,4 @@ en:
       add_success: "追加することは成功です！"
       edit_success: "遍集することは成功です！"
       delete_success: "削除することは成功です！"
+      delete_noti: "あなたの投稿は管理者によって削除されました!"

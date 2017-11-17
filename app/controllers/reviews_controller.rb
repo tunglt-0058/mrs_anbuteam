@@ -44,6 +44,12 @@ class ReviewsController < ApplicationController
 
 
   def destroy
+    if ((@review.user_id != current_user.id) && (current_user.role == "Admin"))
+      @cvt = Conversation.between(current_user.id,@review.user_id).first
+      text = t "movies.review.delete_noti"
+      Message.create(body: text, conversation_id: @cvt.id,
+        user_id: current_user.id)
+    end
     @review.destroy
     redirect_to movie_path(@review.movie_id)
     respond_to do |format|

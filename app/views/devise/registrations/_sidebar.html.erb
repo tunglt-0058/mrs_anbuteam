@@ -11,13 +11,15 @@
               <li><%= message %></li>
             <% end %>
           <% end %>
-          <span class="btn btn-default btn-raised btn-file ripple-effect">
-            <span class="fileinput-new">
-              <i class="fa fa-picture-o"></i></span>
-            <span class="fileinput-exists">
-              <i class="material-icons md-light pmd-xs">mode_edit</i></span>
-            <%= f.file_field :avatar, class: "upload-avatar" %>
-          </span>
+          <% if user == current_user %>
+            <span class="btn btn-default btn-raised btn-file ripple-effect">
+              <span class="fileinput-new">
+                <i class="fa fa-picture-o"></i></span>
+              <span class="fileinput-exists">
+                <i class="material-icons md-light pmd-xs">mode_edit</i></span>
+              <%= f.file_field :avatar, class: "upload-avatar" %>
+            </span>
+          <% end %>
         <% end %>
         <a data-dismiss="fileinput" class="btn btn-default btn-raised btn-file
           ripple-effect fileinput-exists" href="javascript:void(0);">
