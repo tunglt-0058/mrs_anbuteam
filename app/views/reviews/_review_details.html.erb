@@ -35,11 +35,13 @@
       <hr class="style4">
     </div>
     <% if current_user %>
-      <% if current_user.id == review.user_id %>
+      <% if (current_user.id == review.user_id) || current_user.role == "Admin" %>
       <div class="row">
         <div class="col-md-4 col-md-offset-10">
-          <%= link_to 'Edit', edit_review_path(review), remote: true,
-            :class => 'btn btn-sm btn-info del_edit' %>
+          <% if (current_user.id == review.user_id) %>
+            <%= link_to 'Edit', edit_review_path(review), remote: true,
+              :class => 'btn btn-sm btn-info del_edit' %>
+          <% end %>
           <%= link_to 'Delete', review, remote: true, :method => :delete, data:
             {confirm: t("movies.review.sure")},
             :class => 'btn btn-sm btn-danger del_edit' %>
