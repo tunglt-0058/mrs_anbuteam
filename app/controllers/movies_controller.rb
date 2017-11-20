@@ -7,6 +7,8 @@ class MoviesController < ApplicationController
     if current_user
       @favorite = current_user.favorite_movies.find_by movie: @movie
     end
+    @suggest_movie = SuggestMovie.new
+    @users = current_user.load_suggest_movie_to_users
   end
 
   private

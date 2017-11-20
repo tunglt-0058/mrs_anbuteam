@@ -114,6 +114,10 @@ class User < ApplicationRecord
     activities.find_by review: review, activity_type: :dislike
   end
 
+  def load_suggest_movie_to_users
+    User.where.not(id: self.id).order id: :asc
+  end
+
   private
 
   def create_default_conversation

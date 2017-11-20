@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   resources :movies do
   resources :favorite_movies, only: [ :create, :destroy ]
+  resource :suggest_movies, only: :create
   resources :reviews
     member do
       :reviews

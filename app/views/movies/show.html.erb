@@ -12,5 +12,8 @@
     </div>
     <%= render "movie_sumary", movie: @movie %>
     <%= render "movie_review", movie: @movie %>
+    <div class="modal-suggest-result"></div>
   </div>
 </div>
+<%= render "suggest_movies/form",
+  movie: @movie, suggest_movie: @suggest_movie, users: @users %>

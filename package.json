@@ -1,5 +1,7 @@
 {
   "name": "mrs_anbuteam",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "propellerkit-select2": "^1.1.0"
+  }
 }

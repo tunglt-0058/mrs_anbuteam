@@ -62,12 +62,16 @@
   <% end %>
 
   <%= render "rate", movie: @movie %>
-
-  <p class="movie-info-row">
-    <% if current_user %>
-      <%= link_to t("movies.show.add_review"), new_movie_review_path(movie),
-        remote: true, class: "btn btn-danger" %>
-    <% end %>
-    <%= render "reviews/dialog" %>
-  </p>
+  <div class="row">
+    <p class="movie-info-row col-sm-1">
+      <% if current_user %>
+        <%= link_to t("movies.show.add_review"), new_movie_review_path(movie),
+          remote: true, class: "btn btn-primary" %>
+      <% end %>
+      <%= render "reviews/dialog" %>
+    </p>
+    <p class="movie-info-row col-sm-3 btn btn-primary btn-suggest-movie">
+      <%= t "movies.suggest_movie.suggest" %>
+    </p>
+  </div>
 </aside>
