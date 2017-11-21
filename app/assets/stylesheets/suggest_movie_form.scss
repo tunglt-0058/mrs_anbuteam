@@ -1,0 +1,130 @@
+@import "colors";
+
+.suggest-movie-form {
+  .field {
+    margin-bottom: 10px;
+
+    .suggest-movie-content {
+      min-height: 150px;
+    }
+  }
+
+  .actions {
+    float: right;
+
+    .suggest-movie-btn-cancel {
+      margin-right: 10px;
+    }
+  }
+}
+
+.select2 {
+
+  width: 570px !important;
+
+  .suggest-movie-select {
+    width: 100%;
+  }
+}
+
+.receiver-name {
+  background: $white;
+  border-radius: 8px;
+  color: $success-popup-color;
+  font-weight: 300;
+}
+
+.btn-suggest-movie {
+  cursor: pointer;
+  margin-left: 100px;
+}
+
+.modal-title {
+  font-family: $font-lato;
+  font-size: 40px;
+  font-weight: 60;
+  margin: 50px 0;
+  text-align: center;
+}
+
+.form-group {
+  &.has-warning .fileinput {
+    .fileinput-preview {
+      color: $pesto-approx;
+    }
+
+    .thumbnail {
+      border-color: $champagne-approx;
+    }
+  }
+
+  &.has-error .fileinput {
+    .fileinput-preview {
+      color: $apple-blossom-approx;
+    }
+
+    .thumbnail {
+      border-color: $oyster-pink-approx;
+    }
+  }
+
+  &.has-success .fileinput {
+    .fileinput-preview {
+      color: $killarney-approx;
+    }
+
+    .thumbnail {
+      border-color: $beryl-green-approx;
+    }
+  }
+}
+
+.modal-book-img {
+  background: $white;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px $shadow-light, 0 3px 6px $shadow-normal;
+  padding: 2px;
+}
+
+
+.modal-borrow-info {
+  border: 1px solid $frame;
+  box-shadow: 0 2px 4px $shadow-light, 0 3px 6px $shadow-normal;
+  height: 350px;
+  padding: 0 5px 0 25px;
+
+  .h2-text {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin-top: 5px;
+  }
+}
+
+.pmd-card,
+.modal-footer {
+  background: $modal-background;
+  border: 0;
+}
+
+.modal-header {
+  padding: 25px 15px 0;
+}
+
+.modal-title {
+  font-family: $font-lato;
+  font-size: 25px;
+  font-weight: 450;
+  margin: 50px 0;
+}
+
+.modal-footer {
+  text-align: center !important;
+}
+
+.modal-dialog {
+  color: black;
+}

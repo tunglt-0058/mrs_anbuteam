@@ -9,6 +9,7 @@ class Movie < ApplicationRecord
   has_many :favorite_movies
   has_many :users, :through => :favorite_movies, :dependent => :destroy
   has_many :favorite_users, through: :favorite_movies, source: :user
+  has_many :suggest_movies
 
   ["rate_five", "rate_four", "rate_three", "rate_two", "rate_one"]
     .each do |rate|

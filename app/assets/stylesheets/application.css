@@ -13,4 +13,7 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+ *= require select2/dist/css/select2.min
+ *= require select2-bootstrap-theme/dist/select2-bootstrap.min
+ *= require propellerkit/components/select2/css/pmd-select2
  */

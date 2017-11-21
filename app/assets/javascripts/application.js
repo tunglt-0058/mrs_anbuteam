@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap-sprockets
+//= require bootstrap/dist/js/bootstrap.min
+//= require propellerkit/dist/js/propeller.min
 //= require chat
 //= require private_pub
 //= require turbolinks
