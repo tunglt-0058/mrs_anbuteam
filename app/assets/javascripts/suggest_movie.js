@@ -1,8 +1,6 @@
 /* global SimpleMDE */
 
 //= require select2/dist/js/select2.min
-//= require propellerkit/components/datetimepicker/js/bootstrap-datetimepicker
-
 
 $(document).on('shown.bs.modal', function () {
     $('.suggest-movie-select').select2({
