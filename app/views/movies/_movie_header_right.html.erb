@@ -70,8 +70,10 @@
       <% end %>
       <%= render "reviews/dialog" %>
     </p>
-    <p class="movie-info-row col-sm-3 btn btn-primary btn-suggest-movie">
-      <%= t "movies.suggest_movie.suggest" %>
-    </p>
+    <% if current_user %>
+      <p class="movie-info-row col-sm-3 btn btn-primary btn-suggest-movie">
+        <%= t "movies.suggest_movie.suggest" %>
+      </p>
+    <% end %>
   </div>
 </aside>
