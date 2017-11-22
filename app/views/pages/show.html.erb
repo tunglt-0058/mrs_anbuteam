@@ -1,7 +1,7 @@
 <% provide :title, t("pages.home") %>
 <% if user_signed_in? %>
   <div class="container">
-    <div class="col-md-3 ta8">
+    <div class="col-md-3">
       <div class="ltt-news-feed follow_bgr">
         <div class="left-news-feed">
           <%= render "left_news_feed", followings: @followings,
