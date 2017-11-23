@@ -13,9 +13,7 @@
   <body>
     <%= render "layouts/header" %>
     <div class="flash" align="right">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-success ltt-flash "><%= message %></div>
-      <% end %>
+      <%= render "layouts/flash" %>
     </div>
     <div><%= yield %></div>
     <%= render "layouts/footer" %>
