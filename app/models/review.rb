@@ -13,12 +13,18 @@ class Review < ApplicationRecord
 
   default_scope -> {order created_at: :desc}
 
+  after_save :update_movie_point
+
   def main_comments
     comments.where(parent_id: nil).order id: :desc
   end
 
   def activity_by_user user
     activities.find_by user: user
+  end
+
+  def update_movie_point
+    movie.update_attributes point: movie.avarage_rate
   end
 
   class << self
