@@ -143,12 +143,13 @@ ActiveRecord::Schema.define(version: 20171120090000) do
   create_table "notifications", force: :cascade do |t|
     t.integer "recipient_id"
     t.boolean "read"
-    t.integer "review_id"
     t.integer "movie_id"
+    t.string "notiable_type"
+    t.integer "notiable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["movie_id"], name: "index_notifications_on_movie_id"
-    t.index ["review_id"], name: "index_notifications_on_review_id"
+    t.index ["notiable_type", "notiable_id"], name: "index_notifications_on_notiable_type_and_notiable_id"
   end
 
   create_table "relationships", force: :cascade do |t|

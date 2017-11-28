@@ -30,6 +30,12 @@ module ApplicationHelper
   end
 
   def notification_content notification
-    ("<strong>#{notification.movie.name}</strong>" + t("notification.has_new")).html_safe
+    if notification.notiable_type == Review.name
+      ("<strong>#{notification.movie.name}</strong>"
+        + t("notification.has_new_review")).html_safe
+    else
+      ("<strong>#{notification.movie.name}</strong>"
+        + t("notification.has_new_suggest")).html_safe
+    end
   end
 end

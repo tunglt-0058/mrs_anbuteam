@@ -70,7 +70,9 @@
                 <% @notifications.each do |notification| %>
                   <li class="ltt-notification notification-<%= notification.id %>
                     <%= notification.read %>-notification">
-                    <%= link_to notification.review do %>
+                    <% link = notification.notiable_type == Review.name ?
+                      notification.notiable : notification.movie  %>
+                    <%= link_to link do %>
                       <span class="col-md-2 col-lg-2">
                       <div class="ltt-notification-avatar">
                         <%= image_tag notification.movie.poster, id: "avatar-#{notification.id}",

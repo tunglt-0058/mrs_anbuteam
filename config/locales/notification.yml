@@ -1,6 +1,7 @@
 en:
   notification:
-    has_new: " 新しいレビューがあります。"
+    has_new_review: " 新しいレビューがあります。"
+    has_new_suggest: "新しい映画をお進めることがあります。"
   tooltip:
     genres: "ジャンル"
     messages: "メッセージ"
