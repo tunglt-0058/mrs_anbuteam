@@ -36,7 +36,7 @@ $(document).on('keyup', '#movies-search', function() {
 
       $('.results').append('<a href="/searches?search=' + search);
     });
-  }, 100);
+  }, 1000);
 });
 
 document.addEventListener('turbolinks:load', function() {
