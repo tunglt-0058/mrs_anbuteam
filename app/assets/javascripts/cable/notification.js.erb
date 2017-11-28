@@ -28,7 +28,10 @@ App.notification = App.cable.subscriptions.create({
 
       notification_id = '.notification-' + notification.id;
       $('.notification-' + notification.id).on('click', function() {
-        window.location.assign(window.location.origin + '/reviews/' + review.id);
+        if (notification.notiable_type == 'Review')
+          window.location.assign(window.location.origin + '/reviews/' + review.id);
+        else
+          window.location.assign(window.location.origin + '/movies/' + movie.id);
       });
 
     } else if (data.notification_id !== undefined) {
@@ -45,7 +48,7 @@ App.notification = App.cable.subscriptions.create({
 });
 
 function convertNotification(review, movie, notification) {
-  message = '<strong>' + movie.name + ' </strong> has a new review';
+  message = '<strong>' + movie.name + ' </strong> has a new review or suggest';
   html = '<li class="ltt-notification notification-' + notification.id + ' false-notification">';
   html += '<span class="col-md-2 col-lg-2 ltt-notification-avatar">';
   html += '<img src="" id="avatar-' + notification.id + '" class="ltt-avatar">';

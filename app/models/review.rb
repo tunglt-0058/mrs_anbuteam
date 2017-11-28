@@ -9,7 +9,7 @@ class Review < ApplicationRecord
   has_many :dislikes, -> {where activity_type: :dislike}, class_name: Activity.name
   has_many :favorite_reviews
   has_many :users, :through => :favorite_reviews, :dependent => :destroy
-  has_many :notifications, dependent: :destroy
+  has_many :notifications, dependent: :destroy, as: :notiable
 
   validates :user, presence: true
   validates :movie, presence: true
@@ -44,11 +44,12 @@ class Review < ApplicationRecord
   private
   def send_notification
     self.movie.favorite_users.each do |user|
-      notification = Notification.create! review_id: self.id, movie_id: self.movie_id,
-        recipient_id: user.id
+      notification = Notification.create! movie_id: self.movie_id,
+        recipient_id: user.id, notiable_id: id,
+        notiable_type: Review.name
       channel = user.email + "_notification_channel"
       user.update_attributes new_notification: (user.new_notification + 1)
-      NotificationService.new(channel: channel, review: notification.review,
+      NotificationService.new(channel: channel, review: notification.notiable,
         movie: notification.movie, notification: notification).perform
     end
   end

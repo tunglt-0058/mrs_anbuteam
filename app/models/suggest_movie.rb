@@ -2,6 +2,22 @@ class SuggestMovie < ApplicationRecord
   belongs_to :movie
   belongs_to :sender, class_name: User.name, foreign_key: :sender_id
   belongs_to :receiver, class_name: User.name, foreign_key: :receiver_id
+  has_many :notifications, dependent: :destroy, as: :notiable
+
+  after_create :send_notification
+
+  private
+  def send_notification
+    self.movie.favorite_users.each do |user|
+      notification = Notification.create! movie_id: self.movie_id,
+        recipient_id: user.id, notiable_id: id,
+        notiable_type: SuggestMovie.name
+      channel = user.email + "_notification_channel"
+      user.update_attributes new_notification: (user.new_notification + 1)
+      NotificationService.new(channel: channel,
+        movie: notification.movie, notification: notification).perform
+    end
+  end
 
   class << self
     def create_suggest_movie suggest_movies_params, movie, sender_id
