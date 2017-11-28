@@ -11,6 +11,11 @@ class Review < ApplicationRecord
   has_many :users, :through => :favorite_reviews, :dependent => :destroy
   has_many :notifications, dependent: :destroy
 
+  validates :user, presence: true
+  validates :movie, presence: true
+  validates :content, presence: true
+  validates :point, presence: true
+
   default_scope -> {order created_at: :desc}
 
   after_save :update_movie_point

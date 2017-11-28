@@ -8,12 +8,14 @@
       </div>
     <% end %>
   </div>
-
-  <p class="movie-info-row">
-    <span><%= t "actor.birth_day" %></span>
-    <%= actor.date_of_birth.year %>/<%= actor.date_of_birth.month %>/<%= actor.date_of_birth.day %>
-  </p>
-
+  <% if actor.movies %>
+    <p class="movie-info-row">
+      <span><%= t "actor.birth_day" %><span>
+      <span><%= actor.date_of_birth.year %>/
+        <%= actor.date_of_birth.month %>/
+        <%= actor.date_of_birth.day %></span>
+    </p>
+  <% end %>
   <% if actor.movies %>
     <p class="movie-info-row">
     <span><%= t "actor.movie" %></span>
