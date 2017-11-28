@@ -38,9 +38,9 @@
       <% if current_user.id == review.user_id %>
       <div class="row">
         <div class="col-md-4 col-md-offset-10">
-          <%= link_to 'Edit', edit_review_path(review), remote: true,
+          <%= link_to t("comment.edit"), edit_review_path(review), remote: true,
             :class => 'btn btn-sm btn-info del_edit' %>
-          <%= link_to 'Delete', review, remote: true, :method => :delete, data:
+          <%= link_to t("comment.delete"), review, remote: true, :method => :delete, data:
             {confirm: t("movies.review.sure")},
             :class => 'btn btn-sm btn-danger del_edit' %>
         </div>
