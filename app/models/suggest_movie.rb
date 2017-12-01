@@ -8,15 +8,14 @@ class SuggestMovie < ApplicationRecord
 
   private
   def send_notification
-    self.movie.favorite_users.each do |user|
-      notification = Notification.create! movie_id: self.movie_id,
-        recipient_id: user.id, notiable_id: id,
-        notiable_type: SuggestMovie.name
-      channel = user.email + "_notification_channel"
-      user.update_attributes new_notification: (user.new_notification + 1)
-      NotificationService.new(channel: channel,
-        movie: notification.movie, notification: notification).perform
-    end
+    user = User.find(self.receiver_id)
+    notification = Notification.create! movie_id: self.movie_id,
+      recipient_id: user.id, notiable_id: id,
+      notiable_type: SuggestMovie.name
+    channel = user.email + "_notification_channel"
+    user.update_attributes new_notification: (user.new_notification + 1)
+    NotificationService.new(channel: channel,
+      movie: notification.movie, notification: notification).perform
   end
 
   class << self
