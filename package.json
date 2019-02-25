@@ -2,6 +2,7 @@
   "name": "mrs_anbuteam",
   "private": true,
   "dependencies": {
+    "jquery": "^3.3.1",
     "propellerkit-select2": "^1.1.0"
   }
 }
